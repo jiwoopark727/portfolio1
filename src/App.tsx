@@ -1,8 +1,7 @@
-import styled from '@emotion/styled';
 import Footer from './components/Layout/Footer';
 import Navbar from './components/Layout/Navbar';
-import Banner from './components/Section/Banner';
 import { Global, css } from '@emotion/react';
+import MainView from './views/MainView';
 // import { PretendardRegular } from './assets/Pretendard-1.3.9/web/';
 
 const globalStyles = css`
@@ -13,20 +12,15 @@ const globalStyles = css`
   }
 `;
 
-const Section = styled.div`
-  height: auto;
-  min-height: 100%;
-  padding-bottom: 280px;
-`;
-
 function App() {
   return (
     <>
       <Global styles={globalStyles} />
+      {/* 헤더 */}
       <Navbar></Navbar>
-      <Section>
-        <Banner></Banner>
-      </Section>
+      {/* 메인 콘텐츠 */}
+      <MainView />
+      {/* 푸터 */}
       <Footer></Footer>
     </>
   );
