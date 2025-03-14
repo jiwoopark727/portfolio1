@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 const NavbarWrapper = styled.div<{ scrolled: boolean }>`
   height: 70px;
   width: 100%;
-  background-color: #f7f7f7;
+  background-color: #f5f5f5;
   position: fixed;
   top: 0;
   left: 0;
@@ -90,7 +90,8 @@ const Navbar = () => {
           <Logo>PJW</Logo>
           <NavbarContent>
             <Menu>
-              <MenuItem>자기소개</MenuItem>
+              <MenuItem>들어가는 말</MenuItem>
+              <MenuItem>프로필</MenuItem>
               <MenuItem>스킬</MenuItem>
               <MenuItem>아카이빙</MenuItem>
               <MenuItem>프로젝트</MenuItem>

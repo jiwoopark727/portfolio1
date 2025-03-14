@@ -16,10 +16,10 @@ const ArrowDownContainer = styled.div`
 
   span {
     display: block;
-    width: 45px; /* 너비를 조금 조정 */
-    height: 40px; /* 높이를 다르게 설정 */
-    border-bottom: 6px solid #717171;
-    border-right: 6.8px solid #717171;
+    width: 35px; /* 너비를 조금 조정 */
+    height: 31.5px; /* 높이를 다르게 설정 */
+    border-bottom: 6px solid #f4f4f4;
+    border-right: 6.8px solid #f4f4f4;
     transform: skewX(-20deg); /* 🔥 skew를 활용해 120도 각 만들기 */
     animation: animate 3.5s infinite;
   }

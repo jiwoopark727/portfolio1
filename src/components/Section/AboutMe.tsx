@@ -10,17 +10,16 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const AboutMeWrapper = styled.div`
-  height: 50vh;
-  /* background-color: #f9fafb; */
-  background-color: white;
-
+  height: 54vh;
+  background-color: #fff;
+  margin-top: 28vh;
+  margin-bottom: 150px;
   .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 65px;
-    padding-bottom: 65px;
-    font-size: 30px;
+    padding-bottom: 70px;
+    font-size: 40px;
     font-weight: 900;
   }
 `;
