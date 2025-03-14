@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import bannerBg from '../../assets/images/banner_bg.jpg';
 import ArrowDown from '../Styled/ArrowDown';
+import TypeIt from 'typeit-react';
 
 const BannerWrapper = styled.div`
   height: 100vh;
@@ -46,6 +47,7 @@ const BannerText = styled.div`
   }
 
   .Introduction {
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,13 +70,35 @@ const Banner = () => {
           <h1 className='name'>- 박지우 -</h1>
           <h2 className='title'>웹 개발자 포트폴리오</h2>
           {/* <span className='contour'></span> */}
-          <h3 className='Introduction'>
-            안녕하세요.
-            <br />
-            감각 있는 웹 개발자
-            <br />
-            박지우입니다.
-          </h3>
+          <TypeIt
+            options={{
+              speed: 50,
+              waitUntilVisible: true,
+              cursor: false,
+            }}
+          >
+            <h3 className='Introduction'>안녕하세요.</h3>
+          </TypeIt>
+          <TypeIt
+            options={{
+              speed: 50,
+              startDelay: 1000,
+              waitUntilVisible: true,
+              cursor: false,
+            }}
+          >
+            <h3 className='Introduction'>감각 있는 웹 개발자</h3>
+          </TypeIt>
+          <TypeIt
+            options={{
+              speed: 50,
+              startDelay: 1500,
+              waitUntilVisible: true,
+              cursor: false,
+            }}
+          >
+            <h3 className='Introduction'>박지우입니다.</h3>
+          </TypeIt>
         </BannerText>
 
         <ArrowDown onClick={handleArrowClick} />
