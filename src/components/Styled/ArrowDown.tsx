@@ -21,13 +21,13 @@ const ArrowDownContainer = styled.div`
     border-bottom: 6px solid #717171;
     border-right: 6.8px solid #717171;
     transform: skewX(-20deg); /* 🔥 skew를 활용해 120도 각 만들기 */
-    animation: animate 4s infinite;
+    animation: animate 3.5s infinite;
   }
 
   @keyframes animate {
     0% {
       opacity: 0;
-      transform: skewX(-20deg) translate(-30px, -30px);
+      transform: skewX(-20deg) translate(-40px, -40px);
     }
     25% {
       opacity: 1;
@@ -35,7 +35,7 @@ const ArrowDownContainer = styled.div`
     }
     50% {
       opacity: 1;
-      transform: skewX(-20deg) translate(-15px, -15px);
+      transform: skewX(-20deg) translate(-20px, -20px);
     }
     75% {
       opacity: 1;
@@ -43,7 +43,7 @@ const ArrowDownContainer = styled.div`
     }
     100% {
       opacity: 0;
-      transform: skewX(-20deg) translate(-30px, -30px);
+      transform: skewX(-20deg) translate(-40px, -40px);
     }
   }
 `;
