@@ -47,6 +47,7 @@ const BannerText = styled.div`
   }
 
   .Introduction {
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
