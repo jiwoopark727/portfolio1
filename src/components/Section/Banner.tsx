@@ -42,7 +42,6 @@ const BannerText = styled.div`
   }
 
   .contour {
-    width: 1000px;
     border-bottom: 5px solid black;
   }
 
@@ -51,6 +50,19 @@ const BannerText = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 40px;
+    visibility: hidden;
+    animation: showText 0.1s 0.5s forwards;
+    padding-bottom: 15px;
+  }
+
+  @keyframes showText {
+    0% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
   }
 `;
 
@@ -69,36 +81,44 @@ const Banner = () => {
         <BannerText>
           <h1 className='name'>- 박지우 -</h1>
           <h2 className='title'>웹 개발자 포트폴리오</h2>
-          {/* <span className='contour'></span> */}
-          <TypeIt
-            options={{
-              speed: 50,
-              waitUntilVisible: true,
-              cursor: false,
-            }}
-          >
-            <h3 className='Introduction'>안녕하세요.</h3>
-          </TypeIt>
-          <TypeIt
-            options={{
-              speed: 50,
-              startDelay: 1000,
-              waitUntilVisible: true,
-              cursor: false,
-            }}
-          >
-            <h3 className='Introduction'>감각 있는 웹 개발자</h3>
-          </TypeIt>
-          <TypeIt
-            options={{
-              speed: 50,
-              startDelay: 1500,
-              waitUntilVisible: true,
-              cursor: false,
-            }}
-          >
-            <h3 className='Introduction'>박지우입니다.</h3>
-          </TypeIt>
+          <span className='contour'></span>
+
+          <h3 className='Introduction'>
+            <TypeIt
+              options={{
+                speed: 80,
+                startDelay: 700,
+                waitUntilVisible: true,
+                cursor: false,
+              }}
+            >
+              안녕하세요.
+            </TypeIt>
+          </h3>
+          <h3 className='Introduction'>
+            <TypeIt
+              options={{
+                speed: 80,
+                startDelay: 1300,
+                waitUntilVisible: true,
+                cursor: false,
+              }}
+            >
+              감각 있는 웹 개발자
+            </TypeIt>
+          </h3>
+          <h3 className='Introduction'>
+            <TypeIt
+              options={{
+                speed: 80,
+                startDelay: 2400,
+                waitUntilVisible: true,
+                cursor: false,
+              }}
+            >
+              박지우입니다.
+            </TypeIt>
+          </h3>
         </BannerText>
 
         <ArrowDown onClick={handleArrowClick} />

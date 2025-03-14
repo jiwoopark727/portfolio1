@@ -4,3 +4,11 @@
 * {
   font-family: 'Toss Product Sans';
 }
+
+/* 텍스트만 드래그 허용하도록 */
+.draggable {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
