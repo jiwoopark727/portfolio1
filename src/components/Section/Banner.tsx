@@ -10,7 +10,8 @@ const BannerWrapper = styled.div`
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  padding-top: 230px;
 `;
 
 const BannerContainer = styled.div``;
@@ -33,16 +34,19 @@ const BannerText = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 80px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
   }
 
   .title {
     font-size: 80px;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
   }
 
   .contour {
-    border-bottom: 5px solid black;
+    border: 2px solid #8596f2;
+    margin: 20px auto;
+    width: 25%;
+    margin-bottom: 100px;
   }
 
   .Introduction {
@@ -79,15 +83,15 @@ const Banner = () => {
     <BannerWrapper>
       <BannerContainer>
         <BannerText>
-          <h1 className='name'>- 박지우 -</h1>
+          <h1 className='name'>&lt; 박지우 /&gt;</h1>
           <h2 className='title'>웹 개발자 포트폴리오</h2>
-          <span className='contour'></span>
-
+          {/* 구분선 */}
+          <hr className='contour' />
           <h3 className='Introduction'>
             <TypeIt
               options={{
-                speed: 80,
-                startDelay: 700,
+                speed: 100,
+                startDelay: 2000,
                 waitUntilVisible: true,
                 cursor: false,
               }}
@@ -98,8 +102,8 @@ const Banner = () => {
           <h3 className='Introduction'>
             <TypeIt
               options={{
-                speed: 80,
-                startDelay: 1300,
+                speed: 110,
+                startDelay: 2900,
                 waitUntilVisible: true,
                 cursor: false,
               }}
@@ -110,8 +114,8 @@ const Banner = () => {
           <h3 className='Introduction'>
             <TypeIt
               options={{
-                speed: 80,
-                startDelay: 2400,
+                speed: 120,
+                startDelay: 4300,
                 waitUntilVisible: true,
                 cursor: false,
               }}
