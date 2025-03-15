@@ -19,10 +19,11 @@ const AboutMeWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding-bottom: 70px;
-    font-size: 40px;
-    font-weight: 900;
+    font-size: 50px;
+    font-weight: 800;
   }
 `;
+
 const AboutMeContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -73,7 +74,7 @@ const ItemText = styled.div`
 const AboutMe = () => {
   return (
     <AboutMeWrapper>
-      <div className='title'>자기소개</div>
+      <div className='title'>프로필</div>
       <AboutMeContainer>
         {/* 이름 */}
         <AboutMeBox>
@@ -82,7 +83,7 @@ const AboutMe = () => {
           </ItemIcon>
           <ItemText>
             <span className='subject'>이름</span>
-            <span className='content'>박지우</span>
+            <span className='content'>박지우(朴志祐)</span>
           </ItemText>
         </AboutMeBox>
         {/* 생년월일 */}

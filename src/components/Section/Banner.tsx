@@ -11,14 +11,14 @@ const BannerWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: start;
-  padding-top: 230px;
+  padding-top: 200px;
 `;
 
 const BannerContainer = styled.div``;
 
 const BannerText = styled.div`
   opacity: 0;
-  animation: fadeIn 3s forwards;
+  animation: fadeIn 4s forwards;
 
   @keyframes fadeIn {
     0% {

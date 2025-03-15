@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import Banner from '../components/Section/Banner';
-import AboutMe from '../components/Section/AboutMe';
+import Profile from '../components/Section/Profile';
 import Skills from '../components/Section/Skills';
 import Archiving from '../components/Section/Archiving';
 import Project from '../components/Section/Project';
 import Career from '../components/Section/Career';
 import Introduction from '../components/Section/Introduction';
+import Awards from '../components/Section/Awards';
+import Certificates from '../components/Section/Certificates';
 
 const MainViewContainer = styled.div`
   height: auto;
@@ -18,11 +20,13 @@ const MainView = () => {
     <MainViewContainer>
       <Banner />
       <Introduction />
-      <AboutMe />
+      <Profile />
       <Skills />
       <Archiving />
       <Project />
       <Career />
+      <Awards />
+      <Certificates />
     </MainViewContainer>
   );
 };
