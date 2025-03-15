@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 
 const SkillsWrapper = styled.div`
   height: 75vh;
-  background-color: rgba(51, 112, 255, 0.07);
+  /* background-color: rgba(51, 112, 255, 0.07); */
+  background-color: #f9fafb;
   font-size: 40px;
   font-weight: bold;
   line-height: 1.9;
@@ -21,7 +22,7 @@ const SkillsContainer = styled.div`
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   row-gap: 10px;
-  max-width: 1000px;
+  max-width: 980px;
   margin: 0 auto;
   align-items: center;
 `;
@@ -36,6 +37,7 @@ const SkillsBox = styled.div`
   }
 
   .content {
+    overflow: hidden;
   }
 
   .content img {
@@ -47,10 +49,10 @@ const SkillsBox = styled.div`
 const Skills = () => {
   return (
     <SkillsWrapper>
-      <div className='title'>스 킬</div>
+      <div className='title'>Skills</div>
       <SkillsContainer>
         <SkillsBox>
-          <span className='subject'>프론트엔드</span>
+          <span className='subject'>프로그래밍 언어</span>
           <span className='content'>
             <img src='https://img.shields.io/badge/HTML-white.svg?style=for-the-badge&logo=html5&logoColor=E34F26' />
             <img src='https://img.shields.io/badge/JavaScript-white.svg?style=for-the-badge&logo=javascript&logoColor=F7DF1E' />
@@ -59,7 +61,7 @@ const Skills = () => {
           </span>
         </SkillsBox>
         <SkillsBox>
-          <span className='subject'>스타일</span>
+          <span className='subject'>스타일링</span>
           <span className='content'>
             <img src='https://img.shields.io/badge/styled components-white.svg?style=for-the-badge&logo=styled-components&logoColor=DB7093' />
             <img src='https://img.shields.io/badge/Tailwind CSS-white.svg?style=for-the-badge&logo=TailwindCSS&logoColor=06B6D4' />
@@ -84,7 +86,7 @@ const Skills = () => {
           </span>
         </SkillsBox>
         <SkillsBox>
-          <span className='subject'>도구</span>
+          <span className='subject'>개발 도구</span>
           <span className='content'>
             <img src='https://img.shields.io/badge/GIT-white.svg?style=for-the-badge&logo=git&logoColor=F05032' />
             <img src='https://img.shields.io/badge/Notion-white.svg?style=for-the-badge&logo=notion&logoColor=000000' />

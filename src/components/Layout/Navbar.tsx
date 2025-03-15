@@ -94,7 +94,6 @@ const Navbar = () => {
               <MenuItem>스킬</MenuItem>
               <MenuItem>아카이빙</MenuItem>
               <MenuItem>프로젝트</MenuItem>
-              <MenuItem>커리어</MenuItem>
               <MenuItem>수상내역</MenuItem>
               <MenuItem>자격증</MenuItem>
             </Menu>

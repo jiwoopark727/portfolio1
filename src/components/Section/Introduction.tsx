@@ -5,9 +5,9 @@ const IntroductionWrapper = styled.div`
   background-color: #f9fafb;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 18vh;
   text-align: center;
-  font-size: 40px;
+  font-size: 38px;
   font-weight: bold;
   line-height: 1.9;
 `;

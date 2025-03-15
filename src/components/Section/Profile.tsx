@@ -74,7 +74,7 @@ const ItemText = styled.div`
 const AboutMe = () => {
   return (
     <AboutMeWrapper>
-      <div className='title'>프로필</div>
+      <div className='title'>Profile</div>
       <AboutMeContainer>
         {/* 이름 */}
         <AboutMeBox>
