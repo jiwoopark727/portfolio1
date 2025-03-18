@@ -1,17 +1,21 @@
 import styled from '@emotion/styled';
+import g_logo from './../../assets/images/github_logo.png';
+import t_logo from './../../assets/images/tistory_logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const ArchivingWrapper = styled.div`
-  height: 70vh;
+  height: 60vh;
   background-color: #fff;
   padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
 
   .title {
     display: flex;
     justify-content: center;
     font-size: 50px;
-    font-weight: bold;
-    padding-top: 80;
+    font-weight: 800;
   }
 `;
 
@@ -37,6 +41,50 @@ const ArchivingBox = styled.div`
   cursor: pointer;
 `;
 
+const InnerContent = styled.div<{ bg_logo: string }>`
+  .icon {
+    font-size: 40px;
+  }
+
+  .title_wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .g_title {
+    padding-left: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .g_link {
+    font-size: 20px;
+    color: #45c3f5;
+    text-decoration: none;
+  }
+
+  .t_title {
+    background-image: url(${(props) => props.bg_logo});
+    background-size: cover;
+    background-position: center center;
+    width: 150px;
+    height: 47px;
+    margin-bottom: 20px;
+  }
+
+  .t_link {
+    font-size: 20px;
+    color: #45c3f5;
+    text-decoration: none;
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 2.5;
+  }
+`;
+
 const Archiving = () => {
   const openGitHub = () => {
     window.open('https://github.com/jiwoopark727', '_blank'); // 새 창으로 GitHub 열기
@@ -49,8 +97,29 @@ const Archiving = () => {
     <ArchivingWrapper>
       <div className='title'>Archiving</div>
       <ArchivingContainer>
-        <ArchivingBox onClick={openGitHub}>깃허브</ArchivingBox>
-        <ArchivingBox onClick={openBlog}>티스토리</ArchivingBox>
+        <ArchivingBox onClick={openGitHub}>
+          <InnerContent bg_logo={g_logo}>
+            <div className='g_title'>
+              <FontAwesomeIcon icon={faGithub} className='icon' />
+              <span style={{ marginLeft: '7px' }}>GitHub</span>
+            </div>
+            <a target='_blank' rel='noopener noreferrer' className='g_link'>
+              github.com/jiwoopark727
+            </a>
+            <div className='text'>소스 코드 저장소</div>
+          </InnerContent>
+        </ArchivingBox>
+        <ArchivingBox onClick={openBlog}>
+          <InnerContent bg_logo={t_logo}>
+            <div className='title_wrapper'>
+              <div className='t_title'></div>
+            </div>
+            <a target='_blank' rel='noopener noreferrer' className='t_link'>
+              github.com/jiwoopark727
+            </a>
+            <div className='text'>공부 및 지식 공유 목적의 블로그</div>
+          </InnerContent>
+        </ArchivingBox>
       </ArchivingContainer>
     </ArchivingWrapper>
   );

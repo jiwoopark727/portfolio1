@@ -46,7 +46,7 @@ const BannerText = styled.div`
     /* border: 2px solid #8596f2; */
     border: 2px solid black;
     margin: 20px auto;
-    width: 25%;
+    width: 10%;
     margin-bottom: 110px;
   }
 
