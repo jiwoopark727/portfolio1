@@ -3,12 +3,24 @@ import g_logo from './../../assets/images/github_logo.png';
 import t_logo from './../../assets/images/tistory_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
+import { keyframes } from '@emotion/react';
+import { useEffect, useRef, useState } from 'react';
+
+const slideUp = keyframes`
+  from {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const ArchivingWrapper = styled.div`
-  height: 60vh;
+  height: 50vh;
   background-color: #fff;
-  padding-top: 10vh;
+  padding-top: 5vh;
   padding-bottom: 5vh;
 
   .title {
@@ -25,6 +37,13 @@ const ArchivingContainer = styled.div`
   margin: 0 auto;
   max-width: 1200px;
   justify-items: center;
+
+  opacity: 0;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+  &.visible {
+    animation: ${slideUp} 1.5s ease-out forwards;
+  }
 `;
 
 const ArchivingBox = styled.div`
@@ -39,6 +58,12 @@ const ArchivingBox = styled.div`
   border-radius: 25px;
   background-color: rgba(51, 112, 255, 0.07);
   cursor: pointer;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const InnerContent = styled.div<{ bg_logo: string }>`
@@ -86,6 +111,30 @@ const InnerContent = styled.div<{ bg_logo: string }>`
 `;
 
 const Archiving = () => {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.9 } // 20% 이상 보이면 실행
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   const openGitHub = () => {
     window.open('https://github.com/jiwoopark727', '_blank'); // 새 창으로 GitHub 열기
   };
@@ -93,10 +142,14 @@ const Archiving = () => {
   const openBlog = () => {
     window.open('https://devvoo.tistory.com', '_blank'); // 새 창으로 Blog 열기
   };
+
   return (
     <ArchivingWrapper>
       <div className='title'>Archiving</div>
-      <ArchivingContainer>
+      <ArchivingContainer
+        ref={containerRef}
+        className={isVisible ? 'visible' : ''}
+      >
         <ArchivingBox onClick={openGitHub}>
           <InnerContent bg_logo={g_logo}>
             <div className='g_title'>
@@ -115,7 +168,7 @@ const Archiving = () => {
               <div className='t_title'></div>
             </div>
             <a target='_blank' rel='noopener noreferrer' className='t_link'>
-              github.com/jiwoopark727
+              devvoo.tistory.com
             </a>
             <div className='text'>공부 및 지식 공유 목적의 블로그</div>
           </InnerContent>

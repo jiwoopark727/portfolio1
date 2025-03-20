@@ -109,7 +109,7 @@ const Banner = () => {
                 cursor: false,
               }}
             >
-              감각 있는 웹 개발자
+              감각적인 웹 개발자
             </TypeIt>
           </h3>
           <h3 className='Introduction'>

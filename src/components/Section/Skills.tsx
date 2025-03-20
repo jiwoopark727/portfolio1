@@ -1,8 +1,9 @@
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useEffect, useRef, useState } from 'react';
 
 const SkillsWrapper = styled.div`
-  height: 75vh;
-  /* background-color: rgba(51, 112, 255, 0.07); */
+  height: 85vh;
   background-color: #f9fafb;
   font-size: 40px;
   font-weight: bold;
@@ -18,6 +19,17 @@ const SkillsWrapper = styled.div`
   }
 `;
 
+const slideIn = keyframes`
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(5%);
+    opacity: 1;
+  }
+`;
+
 const SkillsContainer = styled.div`
   display: grid;
   grid-template-rows: repeat(4, 1fr);
@@ -25,6 +37,15 @@ const SkillsContainer = styled.div`
   max-width: 980px;
   margin: 0 auto;
   align-items: center;
+  margin-bottom: 2vh;
+
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+
+  &.visible {
+    animation: ${slideIn} 2s ease-out forwards;
+  }
 `;
 
 const SkillsBox = styled.div`
@@ -47,10 +68,37 @@ const SkillsBox = styled.div`
 `;
 
 const Skills = () => {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 } // 20% 이상 보이면 실행
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <SkillsWrapper>
       <div className='title'>Skills</div>
-      <SkillsContainer>
+      <SkillsContainer
+        ref={containerRef}
+        className={isVisible ? 'visible' : ''}
+      >
         <SkillsBox>
           <span className='subject'>프로그래밍 언어</span>
           <span className='content'>
