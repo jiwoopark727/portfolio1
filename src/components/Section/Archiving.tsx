@@ -6,9 +6,20 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { keyframes } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
 
-const slideUp = keyframes`
+const slideLeftIn = keyframes`
   from {
-    transform: translateY(10vh);
+    transform: translateX(-10vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const slideRightIn = keyframes`
+  from {
+    transform: translateX(10vh);
     opacity: 0;
   }
   to {
@@ -35,18 +46,12 @@ const ArchivingContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1000px;
   justify-items: center;
-
-  opacity: 0;
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-
-  &.visible {
-    animation: ${slideUp} 1.5s ease-out forwards;
-  }
 `;
 
-const ArchivingBox = styled.div`
+// 깃헙 박스
+const ArchivingBox1 = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +68,41 @@ const ArchivingBox = styled.div`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  opacity: 0;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+  &.visible {
+    animation: ${slideLeftIn} 1.5s ease-out forwards;
+  }
+`;
+
+// 티스토리 박스
+const ArchivingBox2 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 80px;
+  font-size: 30px;
+  width: 400px;
+  height: 250px;
+  border-radius: 25px;
+  background-color: rgba(51, 112, 255, 0.07);
+  cursor: pointer;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  opacity: 0;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+  &.visible {
+    animation: ${slideRightIn} 1.5s ease-out forwards;
   }
 `;
 
@@ -146,11 +186,12 @@ const Archiving = () => {
   return (
     <ArchivingWrapper>
       <div className='title'>Archiving</div>
-      <ArchivingContainer
-        ref={containerRef}
-        className={isVisible ? 'visible' : ''}
-      >
-        <ArchivingBox onClick={openGitHub}>
+      <ArchivingContainer>
+        <ArchivingBox1
+          onClick={openGitHub}
+          ref={containerRef}
+          className={isVisible ? 'visible' : ''}
+        >
           <InnerContent bg_logo={g_logo}>
             <div className='g_title'>
               <FontAwesomeIcon icon={faGithub} className='icon' />
@@ -161,8 +202,12 @@ const Archiving = () => {
             </a>
             <div className='text'>소스 코드 저장소</div>
           </InnerContent>
-        </ArchivingBox>
-        <ArchivingBox onClick={openBlog}>
+        </ArchivingBox1>
+        <ArchivingBox2
+          onClick={openBlog}
+          ref={containerRef}
+          className={isVisible ? 'visible' : ''}
+        >
           <InnerContent bg_logo={t_logo}>
             <div className='title_wrapper'>
               <div className='t_title'></div>
@@ -172,7 +217,7 @@ const Archiving = () => {
             </a>
             <div className='text'>공부 및 지식 공유 목적의 블로그</div>
           </InnerContent>
-        </ArchivingBox>
+        </ArchivingBox2>
       </ArchivingContainer>
     </ArchivingWrapper>
   );

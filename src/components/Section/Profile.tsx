@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const slideDown = keyframes`
   from {
-    transform: translateY(-5vh);
+    transform: translateY(-10vh);
     opacity: 0;
   }
   to {
