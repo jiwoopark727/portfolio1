@@ -1,3 +1,4 @@
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import {
   faCalendar,
@@ -8,6 +9,18 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect, useRef, useState } from 'react';
+
+const slideDown = keyframes`
+  from {
+    transform: translateY(-5vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const AboutMeWrapper = styled.div`
   height: 54vh;
@@ -31,6 +44,13 @@ const AboutMeContainer = styled.div`
   row-gap: 100px;
   max-width: 1450px;
   margin: 0 auto;
+
+  opacity: 0;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+  &.visible {
+    animation: ${slideDown} 1.5s ease-out forwards;
+  }
 `;
 
 const AboutMeBox = styled.div`
@@ -72,10 +92,36 @@ const ItemText = styled.div`
 `;
 
 const AboutMe = () => {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 } // 20% 이상 보이면 실행
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
   return (
     <AboutMeWrapper>
-      <div className='title'>프로필</div>
-      <AboutMeContainer>
+      <div className='title'>Profile</div>
+      <AboutMeContainer
+        ref={containerRef}
+        className={isVisible ? 'visible' : ''}
+      >
         {/* 이름 */}
         <AboutMeBox>
           <ItemIcon>

@@ -33,20 +33,21 @@ const BannerText = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 80px;
+    font-size: 70px;
     padding-bottom: 30px;
   }
 
   .title {
-    font-size: 80px;
-    padding-bottom: 70px;
+    font-size: 70px;
+    padding-bottom: 80px;
   }
 
   .contour {
-    border: 2px solid #8596f2;
+    /* border: 2px solid #8596f2; */
+    border: 2px solid black;
     margin: 20px auto;
-    width: 25%;
-    margin-bottom: 100px;
+    width: 10%;
+    margin-bottom: 110px;
   }
 
   .Introduction {
@@ -108,7 +109,7 @@ const Banner = () => {
                 cursor: false,
               }}
             >
-              감각 있는 웹 개발자
+              감각적인 웹 개발자
             </TypeIt>
           </h3>
           <h3 className='Introduction'>
