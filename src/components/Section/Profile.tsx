@@ -36,10 +36,10 @@ const AboutMeWrapper = styled.div`
     font-weight: 800;
 
     opacity: 0;
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 
     &.visible {
-      animation: ${slideDown} 1.5s ease-out forwards;
+      animation: ${slideDown} 0.7s ease-out forwards;
     }
   }
 `;
@@ -53,10 +53,10 @@ const AboutMeContainer = styled.div`
   margin: 0 auto;
 
   opacity: 0;
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 
   &.visible {
-    animation: ${slideDown} 1.5s ease-out forwards;
+    animation: ${slideDown} 0.7s ease-out forwards;
   }
 `;
 

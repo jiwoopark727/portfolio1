@@ -13,13 +13,11 @@ const slideIn = keyframes`
   }
 `;
 
-const slideInTitle = keyframes`
+const fadeIn = keyframes`
   from {
-    transform: translateX(-5%);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
     opacity: 1;
   }
 `;
@@ -43,7 +41,7 @@ const SkillsWrapper = styled.div`
     transition: opacity 2s ease-out, transform 2s ease-out;
 
     &.visible {
-      animation: ${slideInTitle} 2s ease-out forwards;
+      animation: ${fadeIn} 2s ease-out forwards;
     }
   }
 `;
@@ -57,10 +55,10 @@ const SkillsContainer = styled.div`
   align-items: center;
 
   opacity: 0;
-  transition: opacity 2s ease-out, transform 2s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
   &.visible {
-    animation: ${slideIn} 2s ease-out forwards;
+    animation: ${slideIn} 0.5s ease-out forwards;
   }
 `;
 

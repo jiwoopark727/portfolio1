@@ -2,6 +2,28 @@ import styled from '@emotion/styled';
 import itq_logo from './../../assets/images/itq_logo.png';
 import word_logo from './../../assets/images/word_logo.png';
 import info_logo from './../../assets/images/info_logo.png';
+import { useEffect, useRef, useState } from 'react';
+import { keyframes } from '@emotion/react';
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const slideDown = keyframes`
+  from {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const CertificatesWrapper = styled.div`
   background-color: #f9fafb;
@@ -13,6 +35,12 @@ const CertificatesWrapper = styled.div`
     justify-content: center;
     font-size: 50px;
     font-weight: 800;
+
+    opacity: 0;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    &.visible {
+      animation: ${fadeIn} 3s forwards;
+    }
   }
 `;
 
@@ -24,6 +52,13 @@ const CertificatesContainer = styled.div`
   max-width: 1000px;
   justify-items: start;
   padding-top: 80px;
+
+  opacity: 0;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+  &.visible {
+    animation: ${slideDown} 1.5s ease-out forwards;
+  }
 `;
 
 const TypeContainer = styled.div`
@@ -65,10 +100,39 @@ const DescribeContainer = styled.div`
 `;
 
 const Certificates = () => {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <CertificatesWrapper>
-      <div className='title'>자격증</div>
-      <CertificatesContainer>
+      <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
+        자격증
+      </div>
+      <CertificatesContainer
+        ref={containerRef}
+        className={isVisible ? 'visible' : ''}
+      >
         {/* 1 */}
         <TypeContainer>
           <TypeBox bg_logo={itq_logo}></TypeBox>
