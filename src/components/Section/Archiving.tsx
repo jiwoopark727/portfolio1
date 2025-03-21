@@ -21,7 +21,7 @@ const slideLeftIn = keyframes`
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
 `;
@@ -32,7 +32,7 @@ const slideRightIn = keyframes`
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
 `;
@@ -50,9 +50,9 @@ const ArchivingWrapper = styled.div`
     font-weight: 800;
 
     opacity: 0;
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
     &.visible {
-      animation: ${fadeIn} 3s forwards;
+      animation: ${fadeIn} 2s forwards;
     }
   }
 `;
@@ -80,14 +80,14 @@ const ArchivingBox1 = styled.div`
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.02) !important;
+    transform: scale(1.05) !important;
   }
 
   opacity: 0;
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
   &.visible {
-    animation: ${slideLeftIn} 1.5s ease-out forwards;
+    animation: ${slideLeftIn} 0.5s ease-out forwards;
   }
 `;
 
@@ -106,13 +106,13 @@ const ArchivingBox2 = styled.div`
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.02) !important;
+    transform: scale(1.05) !important;
   }
   opacity: 0;
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
   &.visible {
-    animation: ${slideRightIn} 1.5s ease-out forwards;
+    animation: ${slideRightIn} 0.5s ease-out forwards;
   }
 `;
 
@@ -135,7 +135,7 @@ const InnerContent = styled.div<{ bg_logo: string }>`
 
   .g_link {
     font-size: 20px;
-    color: #45c3f5;
+    color: #1e1ef7;
     text-decoration: none;
   }
 
@@ -150,7 +150,7 @@ const InnerContent = styled.div<{ bg_logo: string }>`
 
   .t_link {
     font-size: 20px;
-    color: #45c3f5;
+    color: #1e1ef7;
     text-decoration: none;
   }
 

@@ -27,11 +27,10 @@ const IntroductionContainer = styled.div`
   font-weight: bold;
   line-height: 1.9;
   opacity: 0;
-  /* transform: translateY(-100px); */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 
   &.visible {
-    animation: ${slideDown} 1.5s ease-out forwards;
+    animation: ${slideDown} 0.7s ease-out forwards;
   }
 `;
 
