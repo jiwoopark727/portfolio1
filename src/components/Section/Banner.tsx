@@ -33,12 +33,12 @@ const BannerText = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 70px;
+    font-size: 75px;
     padding-bottom: 30px;
   }
 
   .title {
-    font-size: 70px;
+    font-size: 75px;
     padding-bottom: 80px;
   }
 
@@ -92,7 +92,7 @@ const Banner = () => {
             <TypeIt
               options={{
                 speed: 100,
-                startDelay: 2000,
+                startDelay: 1700,
                 waitUntilVisible: true,
                 cursor: false,
               }}
@@ -104,7 +104,7 @@ const Banner = () => {
             <TypeIt
               options={{
                 speed: 110,
-                startDelay: 2900,
+                startDelay: 2600,
                 waitUntilVisible: true,
                 cursor: false,
               }}
@@ -116,7 +116,7 @@ const Banner = () => {
             <TypeIt
               options={{
                 speed: 120,
-                startDelay: 4300,
+                startDelay: 4000,
                 waitUntilVisible: true,
                 cursor: false,
               }}

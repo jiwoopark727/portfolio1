@@ -45,7 +45,7 @@ const Introduction = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.5 } // 20% 이상 보이면 실행
+      { threshold: 0.5 }
     );
 
     if (containerRef.current) {

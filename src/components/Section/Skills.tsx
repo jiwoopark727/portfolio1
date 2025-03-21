@@ -68,16 +68,17 @@ const SkillsBox = styled.div`
 
   .subject {
     width: 210px;
-    font-size: 27px;
+    font-size: 30px;
   }
 
   .content {
+    padding-left: 15px;
     overflow: hidden;
   }
 
   .content img {
     height: 38px;
-    margin-right: 20px; /* 이미지 간격 조정 */
+    margin-right: 20px;
   }
 `;
 
@@ -92,7 +93,7 @@ const Skills = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.5 } // 20% 이상 보이면 실행
+      { threshold: 0.6 }
     );
 
     if (containerRef.current) {
