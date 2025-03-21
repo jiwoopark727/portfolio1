@@ -61,7 +61,7 @@ const ArchivingContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1100px;
   justify-items: center;
 `;
 
@@ -196,7 +196,7 @@ const Archiving = () => {
   return (
     <ArchivingWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        Archiving
+        아카이빙
       </div>
       <ArchivingContainer>
         <ArchivingBox1
