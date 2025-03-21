@@ -8,14 +8,14 @@ const slideIn = keyframes`
     opacity: 0;
   }
   to {
-    transform: translateX(3%);
+    transform: translateX(5%);
     opacity: 1;
   }
 `;
 
 const slideInTitle = keyframes`
   from {
-    transform: translateX(-10%);
+    transform: translateX(-5%);
     opacity: 0;
   }
   to {
@@ -25,7 +25,7 @@ const slideInTitle = keyframes`
 `;
 
 const SkillsWrapper = styled.div`
-  height: 85vh;
+  height: 75vh;
   background-color: #f9fafb;
   font-size: 40px;
   font-weight: bold;
@@ -55,7 +55,6 @@ const SkillsContainer = styled.div`
   max-width: 980px;
   margin: 0 auto;
   align-items: center;
-  margin-bottom: 2vh;
 
   opacity: 0;
   transition: opacity 2s ease-out, transform 2s ease-out;
@@ -112,7 +111,7 @@ const Skills = () => {
   return (
     <SkillsWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        Skills
+        스 킬
       </div>
       <SkillsContainer
         ref={containerRef}
