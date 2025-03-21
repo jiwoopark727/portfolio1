@@ -6,6 +6,15 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { keyframes } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 const slideLeftIn = keyframes`
   from {
     transform: translateX(-10vh);
@@ -39,6 +48,12 @@ const ArchivingWrapper = styled.div`
     justify-content: center;
     font-size: 50px;
     font-weight: 800;
+
+    opacity: 0;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    &.visible {
+      animation: ${fadeIn} 3s forwards;
+    }
   }
 `;
 
@@ -64,10 +79,8 @@ const ArchivingBox1 = styled.div`
   background-color: rgba(51, 112, 255, 0.07);
   cursor: pointer;
 
-  transition: transform 0.3s;
-
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02) !important;
   }
 
   opacity: 0;
@@ -92,12 +105,9 @@ const ArchivingBox2 = styled.div`
   background-color: rgba(51, 112, 255, 0.07);
   cursor: pointer;
 
-  transition: transform 0.3s;
-
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02) !important;
   }
-
   opacity: 0;
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 
@@ -185,7 +195,9 @@ const Archiving = () => {
 
   return (
     <ArchivingWrapper>
-      <div className='title'>Archiving</div>
+      <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
+        Archiving
+      </div>
       <ArchivingContainer>
         <ArchivingBox1
           onClick={openGitHub}
