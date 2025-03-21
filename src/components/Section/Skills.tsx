@@ -2,6 +2,28 @@ import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useEffect, useRef, useState } from 'react';
 
+const slideIn = keyframes`
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(3%);
+    opacity: 1;
+  }
+`;
+
+const slideInTitle = keyframes`
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
 const SkillsWrapper = styled.div`
   height: 85vh;
   background-color: #f9fafb;
@@ -16,17 +38,13 @@ const SkillsWrapper = styled.div`
     font-size: 50px;
     font-weight: 800;
     padding-bottom: 50px;
-  }
-`;
 
-const slideIn = keyframes`
-  from {
-    transform: translateX(-10%);
     opacity: 0;
-  }
-  to {
-    transform: translateX(5%);
-    opacity: 1;
+    transition: opacity 2s ease-out, transform 2s ease-out;
+
+    &.visible {
+      animation: ${slideInTitle} 2s ease-out forwards;
+    }
   }
 `;
 
@@ -40,7 +58,6 @@ const SkillsContainer = styled.div`
   margin-bottom: 2vh;
 
   opacity: 0;
-  transform: translateX(-100px);
   transition: opacity 2s ease-out, transform 2s ease-out;
 
   &.visible {
@@ -94,7 +111,9 @@ const Skills = () => {
 
   return (
     <SkillsWrapper>
-      <div className='title'>Skills</div>
+      <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
+        Skills
+      </div>
       <SkillsContainer
         ref={containerRef}
         className={isVisible ? 'visible' : ''}

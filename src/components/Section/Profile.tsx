@@ -34,6 +34,13 @@ const AboutMeWrapper = styled.div`
     padding-bottom: 70px;
     font-size: 50px;
     font-weight: 800;
+
+    opacity: 0;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+    &.visible {
+      animation: ${slideDown} 1.5s ease-out forwards;
+    }
   }
 `;
 
@@ -61,11 +68,12 @@ const AboutMeBox = styled.div`
   margin-left: 10px;
   padding: 20px;
   text-align: center;
+  border: 1.5px solid #dadada;
   border-radius: 8px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 8px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 17px 17px 10px rgba(0, 0, 0, 0.15);
 `;
 
 const ItemIcon = styled.div`
@@ -117,7 +125,9 @@ const AboutMe = () => {
   }, []);
   return (
     <AboutMeWrapper>
-      <div className='title'>Profile</div>
+      <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
+        Profile
+      </div>
       <AboutMeContainer
         ref={containerRef}
         className={isVisible ? 'visible' : ''}
