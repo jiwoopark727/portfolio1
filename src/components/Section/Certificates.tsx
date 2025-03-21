@@ -27,8 +27,8 @@ const slideDown = keyframes`
 
 const CertificatesWrapper = styled.div`
   background-color: #f9fafb;
-  padding-top: 5vh;
-  padding-bottom: 10vh;
+  padding-top: 10vh;
+  padding-bottom: 15vh;
 
   .title {
     display: flex;
@@ -37,27 +37,27 @@ const CertificatesWrapper = styled.div`
     font-weight: 800;
 
     opacity: 0;
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
     &.visible {
-      animation: ${fadeIn} 3s forwards;
+      animation: ${fadeIn} 1s forwards;
     }
   }
 `;
 
 const CertificatesContainer = styled.div`
   display: grid;
-  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 3.8fr 6.2fr;
   row-gap: 50px;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 950px;
   justify-items: start;
   padding-top: 80px;
 
   opacity: 0;
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
   &.visible {
-    animation: ${slideDown} 1.5s ease-out forwards;
+    animation: ${slideDown} 0.5s ease-out forwards;
   }
 `;
 
@@ -72,8 +72,8 @@ const TypeBox = styled.div<{ bg_logo: string }>`
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 100px;
   border: 1px solid #cfcfcf;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
@@ -81,21 +81,22 @@ const TypeBox = styled.div<{ bg_logo: string }>`
 
 const DescribeContainer = styled.div`
   line-height: 1.7;
+  padding-top: 10px;
   .type {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .year {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .issuer {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .num {
-    font-size: 20px;
+    font-size: 24px;
   }
 `;
 

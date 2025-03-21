@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const slideDown = keyframes`
   from {
-    transform: translateY(-10vh);
+    transform: translateY(-15vh);
     opacity: 0;
   }
   to {
@@ -31,7 +31,7 @@ const AboutMeWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 70px;
+    padding-bottom: 85px;
     font-size: 50px;
     font-weight: 800;
 
@@ -110,7 +110,7 @@ const AboutMe = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.5 } // 20% 이상 보이면 실행
+      { threshold: 0.4 }
     );
 
     if (containerRef.current) {

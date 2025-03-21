@@ -38,10 +38,10 @@ const slideRightIn = keyframes`
 `;
 
 const ArchivingWrapper = styled.div`
-  height: 50vh;
+  height: 55vh;
   background-color: #fff;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 
   .title {
     display: flex;
@@ -76,7 +76,8 @@ const ArchivingBox1 = styled.div`
   width: 400px;
   height: 250px;
   border-radius: 25px;
-  background-color: rgba(51, 112, 255, 0.07);
+  /* background-color: rgba(51, 112, 255, 0.07); */
+  background-color: #f9fafb;
   cursor: pointer;
 
   &:hover {
@@ -102,7 +103,8 @@ const ArchivingBox2 = styled.div`
   width: 400px;
   height: 250px;
   border-radius: 25px;
-  background-color: rgba(51, 112, 255, 0.07);
+  /* background-color: rgba(51, 112, 255, 0.07); */
+  background-color: #f9fafb;
   cursor: pointer;
 
   &:hover {
@@ -171,7 +173,7 @@ const Archiving = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.9 } // 20% 이상 보이면 실행
+      { threshold: 0.9 }
     );
 
     if (containerRef.current) {
