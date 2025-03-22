@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import CodingAwards from './../../assets/images/CodingAwards.jpg';
 import EsportsAwards from './../../assets/images/EsportsAwards.jpg';
 import GameAwards from './../../assets/images/GameAwards.jpg';
+import WorkExperienceCompletion from './../../assets/images/WorkExperienceCompletion.png';
 import { useEffect, useRef, useState } from 'react';
 import { keyframes } from '@emotion/react';
 
@@ -35,6 +36,18 @@ const AwardsWrapper = styled.div`
     justify-content: center;
     font-size: 50px;
     font-weight: 800;
+
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    &.visible {
+      animation: ${fadeIn} 1s forwards;
+    }
+  }
+
+  .sub_title {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
 
     opacity: 0;
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -81,26 +94,33 @@ const TypeBox = styled.div<{ bg_logo: string }>`
 
 const DescribeContainer = styled.div`
   line-height: 1.7;
-  padding-top: 10px;
+  margin-top: 10px;
   .type {
     font-weight: bold;
     font-size: 32px;
+    padding-bottom: 15px;
+  }
+
+  .sub_type {
+    font-weight: bold;
+    margin-right: 4px;
+    font-size: 24px;
   }
 
   .year {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .issuer {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .num {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .des {
-    font-size: 24px;
+    font-size: 23px;
   }
 `;
 
@@ -134,6 +154,13 @@ const Awards = () => {
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
         수상 내역
       </div>
+      <br />
+      <div
+        ref={containerRef}
+        className={isVisible ? 'visible sub_title' : 'sub_title'}
+      >
+        + 수료증
+      </div>
       <AwardsContainer
         ref={containerRef}
         className={isVisible ? 'visible' : ''}
@@ -144,12 +171,19 @@ const Awards = () => {
         </TypeContainer>
         <DescribeContainer>
           <div className='type'>제2회 코딩 경시대회</div>
-          <div className='num'>등급 : 장려상</div>
-          <div className='year'>수상 연도 : 2024년 9월 30일</div>
-          <div className='issuer'>
-            주최 기관 : 순천향대학교 SW벤처스타트업아카데미센터
+          <div className='num'>
+            <span className='sub_type'>등급 :</span> 장려상
           </div>
-          <div className='des'>설명 : </div>
+          <div className='year'>
+            <span className='sub_type'>수상 연도 :</span> 2024.09.30
+          </div>
+          <div className='issuer'>
+            <span className='sub_type'>주최 기관 :</span> 순천향대학교
+            SW벤처스타트업아카데미센터
+          </div>
+          <div className='des'>
+            <span className='sub_type'>설명 :</span>{' '}
+          </div>
         </DescribeContainer>
         {/* 2 */}
         <TypeContainer>
@@ -157,12 +191,19 @@ const Awards = () => {
         </TypeContainer>
         <DescribeContainer>
           <div className='type'>앱/게임 개발 경진대회</div>
-          <div className='num'>등급 : 장려상</div>
-          <div className='year'>수상 연도 : 2024년 10월 31일</div>
-          <div className='issuer'>
-            주최 기관 : 순천향대학교 SW벤처스타트업아카데미센터
+          <div className='num'>
+            <span className='sub_type'>등급 :</span> 장려상
           </div>
-          <div className='des'>설명 : </div>
+          <div className='year'>
+            <span className='sub_type'>수상 연도 :</span> 2024.10.31
+          </div>
+          <div className='issuer'>
+            <span className='sub_type'>주최 기관 :</span> 순천향대학교
+            SW벤처스타트업아카데미센터
+          </div>
+          <div className='des'>
+            <span className='sub_type'>설명 :</span>{' '}
+          </div>
         </DescribeContainer>
         {/* 3 */}
         <TypeContainer>
@@ -170,10 +211,42 @@ const Awards = () => {
         </TypeContainer>
         <DescribeContainer>
           <div className='type'>SW융합대학 학술제 | e-sports 개발 경진대회</div>
-          <div className='num'>등급 : 우수상</div>
-          <div className='year'>수상 연도 : 2024년 11월 6일</div>
-          <div className='issuer'>주최 기관 : 순천향대학교 SW융합대학</div>
-          <div className='des'>설명 : </div>
+          <div className='num'>
+            <span className='sub_type'>등급 :</span> 우수상
+          </div>
+          <div className='year'>
+            <span className='sub_type'>수상 연도 :</span> 2024.11.06
+          </div>
+          <div className='issuer'>
+            <span className='sub_type'>주최 기관 :</span> 순천향대학교
+            SW융합대학
+          </div>
+          <div className='des'>
+            <span className='sub_type'>설명 :</span>{' '}
+          </div>
+        </DescribeContainer>
+        {/* 4 */}
+        <TypeContainer>
+          <TypeBox bg_logo={WorkExperienceCompletion}></TypeBox>
+        </TypeContainer>
+        <DescribeContainer>
+          <div className='type'>
+            청년 일경험 과정 React 2기(프로젝트형) | 고용노동부 주관
+          </div>
+          <div className='num'>
+            <span className='sub_type'>등급 :</span> 수료
+          </div>
+          <div className='year'>
+            <span className='sub_type'>수료 날짜 :</span>
+            2024.09.27
+          </div>
+          <div className='issuer'>
+            <span className='sub_type'>주최 기관 :</span>
+            (주) 웅진싱크빅 - 기업 : 테라파이
+          </div>
+          <div className='des'>
+            <span className='sub_type'>설명 :</span>{' '}
+          </div>
         </DescribeContainer>
       </AwardsContainer>
     </AwardsWrapper>
