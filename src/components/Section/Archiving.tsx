@@ -78,6 +78,8 @@ const ArchivingBox1 = styled.div`
   border-radius: 25px;
   /* background-color: rgba(51, 112, 255, 0.07); */
   background-color: #f9fafb;
+  border: 1px solid #cacaca;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 
   &:hover {
@@ -105,6 +107,8 @@ const ArchivingBox2 = styled.div`
   border-radius: 25px;
   /* background-color: rgba(51, 112, 255, 0.07); */
   background-color: #f9fafb;
+  border: 1px solid #cacaca;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 
   &:hover {
@@ -198,7 +202,7 @@ const Archiving = () => {
   return (
     <ArchivingWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        아카이빙
+        Archiving
       </div>
       <ArchivingContainer>
         <ArchivingBox1

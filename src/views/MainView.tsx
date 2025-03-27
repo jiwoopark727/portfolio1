@@ -6,7 +6,7 @@ import Archiving from '../components/Section/Archiving';
 import Project from '../components/Section/Project';
 import Introduction from '../components/Section/Introduction';
 import Awards from '../components/Section/Awards';
-import Certificates from '../components/Section/Certificates';
+import License from '../components/Section/License';
 
 const MainViewContainer = styled.div`
   height: auto;
@@ -24,7 +24,7 @@ const MainView = () => {
       <Archiving />
       <Project />
       <Awards />
-      <Certificates />
+      <License />
     </MainViewContainer>
   );
 };

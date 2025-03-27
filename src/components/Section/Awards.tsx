@@ -152,14 +152,14 @@ const Awards = () => {
   return (
     <AwardsWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        수상 내역
+        Awards
       </div>
       <br />
       <div
         ref={containerRef}
         className={isVisible ? 'visible sub_title' : 'sub_title'}
       >
-        + 수료증
+        + Completion
       </div>
       <AwardsContainer
         ref={containerRef}
@@ -182,7 +182,10 @@ const Awards = () => {
             SW벤처스타트업아카데미센터
           </div>
           <div className='des'>
-            <span className='sub_type'>설명 :</span>{' '}
+            <span className='sub_type'>설명 : </span>
+            SW벤처스타트업아카데미센터에서 실시한 코딩 경시대회에서 작년엔
+            입상하지 못했지만 백준 문제와 알고리즘 관련 책을 공부함으로써 입상을
+            했습니다.
           </div>
         </DescribeContainer>
         {/* 2 */}
@@ -202,7 +205,10 @@ const Awards = () => {
             SW벤처스타트업아카데미센터
           </div>
           <div className='des'>
-            <span className='sub_type'>설명 :</span>{' '}
+            <span className='sub_type'>설명 :</span>
+            캔버스와 JavaScript로 버블 슈팅 퍼즐 게임을 만들어 출품하여
+            입상하였습니다. 공 부착과 반사 매커니즘과 전체적인 UI 디자인에
+            집중하여 개발했습니다.
           </div>
         </DescribeContainer>
         {/* 3 */}
@@ -222,7 +228,9 @@ const Awards = () => {
             SW융합대학
           </div>
           <div className='des'>
-            <span className='sub_type'>설명 :</span>{' '}
+            <span className='sub_type'>설명 :</span>
+            모바일 게임 Flappy Bird를 모티브로 개발하였으며 Firebase Realtime
+            DB로 랭킹시스템을 추가했습니다.
           </div>
         </DescribeContainer>
         {/* 4 */}
@@ -245,7 +253,9 @@ const Awards = () => {
             (주) 웅진싱크빅 - 기업 : 테라파이
           </div>
           <div className='des'>
-            <span className='sub_type'>설명 :</span>{' '}
+            <span className='sub_type'>설명 :</span>
+            청년 일경험 React 과정에 참가하여 React에 대한 동작원리와 중요 개념
+            강의르 수강하고 회사 측과 연계 협업 프로젝트를 완료했습니다.
           </div>
         </DescribeContainer>
       </AwardsContainer>

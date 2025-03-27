@@ -110,7 +110,7 @@ const Skills = () => {
   return (
     <SkillsWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        스 킬
+        Skills
       </div>
       <SkillsContainer
         ref={containerRef}

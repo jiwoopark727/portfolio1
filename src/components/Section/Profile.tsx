@@ -126,7 +126,7 @@ const AboutMe = () => {
   return (
     <AboutMeWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        프로필
+        Profile
       </div>
       <AboutMeContainer
         ref={containerRef}
