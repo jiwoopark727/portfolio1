@@ -4,7 +4,7 @@ import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ProjectWrapper = styled.div`
-  background-color: #f9fafb;
+  background-color: #fff;
   padding-top: 10vh;
   padding-bottom: 15vh;
 

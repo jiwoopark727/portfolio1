@@ -27,7 +27,7 @@ const slideDown = keyframes`
 `;
 
 const CertificatesWrapper = styled.div`
-  background-color: #f9fafb;
+  background-color: #fff;
   padding-top: 10vh;
   padding-bottom: 15vh;
 
@@ -148,7 +148,7 @@ const Certificates = () => {
         ref={containerRef}
         className={isVisible ? 'visible' : ''}
       >
-        {/* 5 */}
+        {/* 1 */}
         <TypeContainer>
           <TypeBox bg_logo={info_license}></TypeBox>
         </TypeContainer>
@@ -158,7 +158,7 @@ const Certificates = () => {
           <div className='issuer'>발급기관 : 한국산업인력공단</div>
           <div className='num'>자격증 번호 : 24203080322F</div>
         </DescribeContainer>
-        {/* 4 */}
+        {/* 2 */}
         <TypeContainer>
           <TypeBox bg_logo={word_logo}></TypeBox>
         </TypeContainer>
@@ -178,7 +178,7 @@ const Certificates = () => {
           <div className='issuer'>발급기관 : 한국생산성본부</div>
           <div className='num'>자격증 번호 : A001-2009109-002936</div>
         </DescribeContainer>
-        {/* 2 */}
+        {/* 4 */}
         <TypeContainer>
           <TypeBox bg_logo={itq_logo}></TypeBox>
         </TypeContainer>
@@ -188,7 +188,7 @@ const Certificates = () => {
           <div className='issuer'>발급기관 : 한국생산성본부</div>
           <div className='num'>자격증 번호 : A001-2009109-002936</div>
         </DescribeContainer>
-        {/* 1 */}
+        {/* 5 */}
         <TypeContainer>
           <TypeBox bg_logo={itq_logo}></TypeBox>
         </TypeContainer>

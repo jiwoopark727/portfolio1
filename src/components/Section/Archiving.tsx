@@ -38,10 +38,10 @@ const slideRightIn = keyframes`
 `;
 
 const ArchivingWrapper = styled.div`
-  height: 55vh;
-  background-color: #fff;
+  height: 60vh;
+  background-color: #f9fafb;
   padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-bottom: 12vh;
 
   .title {
     display: flex;
