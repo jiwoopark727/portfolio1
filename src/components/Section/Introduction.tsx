@@ -15,7 +15,7 @@ const slideDown = keyframes`
 
 const IntroductionWrapper = styled.div`
   height: 67vh;
-  background-color: #f9fafb;
+  background-color: #fff;
   padding-top: 18vh;
 `;
 

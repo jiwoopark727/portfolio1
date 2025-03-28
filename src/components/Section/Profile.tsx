@@ -23,10 +23,9 @@ const slideDown = keyframes`
 `;
 
 const AboutMeWrapper = styled.div`
-  height: 54vh;
-  background-color: #fff;
-  margin-top: 28vh;
-  margin-bottom: 150px;
+  background-color: #f9fafb;
+  padding-top: 28vh;
+  padding-bottom: 250px;
   .title {
     display: flex;
     justify-content: center;
@@ -126,7 +125,7 @@ const AboutMe = () => {
   return (
     <AboutMeWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        프로필
+        Profile
       </div>
       <AboutMeContainer
         ref={containerRef}

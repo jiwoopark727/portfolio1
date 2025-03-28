@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import itq_logo from './../../assets/images/itq_logo.png';
 import word_logo from './../../assets/images/word_logo.png';
 import info_logo from './../../assets/images/info_logo.png';
+import info_license from './../../assets/images/info_license.png';
 import { useEffect, useRef, useState } from 'react';
 import { keyframes } from '@emotion/react';
 
@@ -26,7 +27,7 @@ const slideDown = keyframes`
 `;
 
 const CertificatesWrapper = styled.div`
-  background-color: #f9fafb;
+  background-color: #fff;
   padding-top: 10vh;
   padding-bottom: 15vh;
 
@@ -42,6 +43,19 @@ const CertificatesWrapper = styled.div`
       animation: ${fadeIn} 1s forwards;
     }
   }
+`;
+
+const PictureBox = styled.div<{ bg_logo: string }>`
+  background-color: #fff;
+  background-image: url(${(props) => props.bg_logo});
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 269px;
+  border-radius: 20px;
+  border: 1px solid #cfcfcf;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const CertificatesContainer = styled.div`
@@ -128,7 +142,7 @@ const Certificates = () => {
   return (
     <CertificatesWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        자격증
+        License
       </div>
       <CertificatesContainer
         ref={containerRef}
@@ -136,23 +150,23 @@ const Certificates = () => {
       >
         {/* 1 */}
         <TypeContainer>
-          <TypeBox bg_logo={itq_logo}></TypeBox>
+          <TypeBox bg_logo={info_license}></TypeBox>
         </TypeContainer>
         <DescribeContainer>
-          <div className='type'>ITQ 아래한글 A등급</div>
-          <div className='year'>취득년도 : 2009</div>
-          <div className='issuer'>발급기관 : 한국생산성본부</div>
-          <div className='num'>자격증 번호 : A001-2009109-002936</div>
+          <div className='type'>정보처리기사</div>
+          <div className='year'>취득년도 : 2024</div>
+          <div className='issuer'>발급기관 : 한국산업인력공단</div>
+          <div className='num'>자격증 번호 : 24203080322F</div>
         </DescribeContainer>
         {/* 2 */}
         <TypeContainer>
-          <TypeBox bg_logo={itq_logo}></TypeBox>
+          <TypeBox bg_logo={word_logo}></TypeBox>
         </TypeContainer>
         <DescribeContainer>
-          <div className='type'>ITQ 한글파워포인트 A등급</div>
-          <div className='year'>취득년도 : 2010</div>
-          <div className='issuer'>발급기관 : 한국생산성본부</div>
-          <div className='num'>자격증 번호 : A001-2009109-002936</div>
+          <div className='type'>워드프로세스 1급</div>
+          <div className='year'>취득년도 : 2011</div>
+          <div className='issuer'>발급기관 : 대한상공회의소</div>
+          <div className='num'>자격증 번호 : 11-I9-639764-00</div>
         </DescribeContainer>
         {/* 3 */}
         <TypeContainer>
@@ -166,23 +180,23 @@ const Certificates = () => {
         </DescribeContainer>
         {/* 4 */}
         <TypeContainer>
-          <TypeBox bg_logo={word_logo}></TypeBox>
+          <TypeBox bg_logo={itq_logo}></TypeBox>
         </TypeContainer>
         <DescribeContainer>
-          <div className='type'>워드프로세스 1급</div>
-          <div className='year'>취득년도 : 2011</div>
-          <div className='issuer'>발급기관 : 대한상공회의소</div>
-          <div className='num'>자격증 번호 : 11-I9-639764-00</div>
+          <div className='type'>ITQ 한글파워포인트 A등급</div>
+          <div className='year'>취득년도 : 2010</div>
+          <div className='issuer'>발급기관 : 한국생산성본부</div>
+          <div className='num'>자격증 번호 : A001-2009109-002936</div>
         </DescribeContainer>
         {/* 5 */}
         <TypeContainer>
-          <TypeBox bg_logo={info_logo}></TypeBox>
+          <TypeBox bg_logo={itq_logo}></TypeBox>
         </TypeContainer>
         <DescribeContainer>
-          <div className='type'>정보처리기사</div>
-          <div className='year'>취득년도 : 2024</div>
-          <div className='issuer'>발급기관 : 한국산업인력공단</div>
-          <div className='num'>자격증 번호 : 24203080322F</div>
+          <div className='type'>ITQ 아래한글 A등급</div>
+          <div className='year'>취득년도 : 2009</div>
+          <div className='issuer'>발급기관 : 한국생산성본부</div>
+          <div className='num'>자격증 번호 : A001-2009109-002936</div>
         </DescribeContainer>
       </CertificatesContainer>
     </CertificatesWrapper>

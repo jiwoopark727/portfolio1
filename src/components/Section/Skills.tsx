@@ -24,7 +24,7 @@ const fadeIn = keyframes`
 
 const SkillsWrapper = styled.div`
   height: 75vh;
-  background-color: #f9fafb;
+  background-color: #fff;
   font-size: 40px;
   font-weight: bold;
   line-height: 1.9;
@@ -79,6 +79,8 @@ const SkillsBox = styled.div`
   .content img {
     height: 38px;
     margin-right: 20px;
+    border: 1px solid #cacaca;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -110,7 +112,7 @@ const Skills = () => {
   return (
     <SkillsWrapper>
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        스 킬
+        Skills
       </div>
       <SkillsContainer
         ref={containerRef}
