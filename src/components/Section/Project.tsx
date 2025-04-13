@@ -4,7 +4,18 @@ import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import JobNestReadmeModal from '../Modal/JobNestReadmeModal.tsx';
 import JamCinemaReadmeModal from '../Modal/JamCinemaReadmeModal.tsx';
-import { useState } from 'react';
+import MemoryBoardReadmeModal from '../Modal/MemoryBoardReadmeModal.tsx';
+import { useEffect, useRef, useState } from 'react';
+import { keyframes } from '@emotion/react';
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 const ProjectWrapper = styled.div`
   background-color: #fff;
@@ -18,6 +29,12 @@ const ProjectWrapper = styled.div`
     padding-bottom: 85px;
     font-size: 50px;
     font-weight: 800;
+
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    &.visible {
+      animation: ${fadeIn} 2s forwards;
+    }
   }
 `;
 
@@ -40,7 +57,7 @@ const ProjectBox = styled.div`
   margin: auto;
   padding: 40px;
 
-  .title {
+  .p_title {
     width: fit-content;
     padding: 0 12px;
     height: 45px;
@@ -185,7 +202,7 @@ const Project = () => {
 
   const [jobNestReadmeOpen, setJobNestReadmeOpen] = useState(false);
   const [jamCinemaReadmeOpen, setJamCinemaReadmeOpen] = useState(false);
-  // const [memoryBoardReadmeOpen, setMemoryBoardReadmeOpen] = useState(false);
+  const [memoryBoardReadmeOpen, setMemoryBoardReadmeOpen] = useState(false);
   // const [flappBirdReadmeOpen, setflappyBirdReadmeOpen] = useState(false);
 
   const openJobNestReadme = () => {
@@ -196,22 +213,51 @@ const Project = () => {
     setJamCinemaReadmeOpen(true);
   };
 
-  // const openMemoryBoardReadme = () => {
-  //   setMemoryBoardReadmeOpen(true);
-  // };
+  const openMemoryBoardReadme = () => {
+    setMemoryBoardReadmeOpen(true);
+  };
 
   // const openflappyBirdReadme = () => {
   //   setflappyBirdReadmeOpen(true);
   // };
 
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.9 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
       <ProjectWrapper>
-        <div className='title'>Project</div>
+        <div
+          ref={containerRef}
+          className={isVisible ? 'title visible' : 'title'}
+        >
+          Project
+        </div>
         <ProjectContainer>
           {/* 1 */}
           <ProjectBox>
-            <div className='title'>
+            <div className='p_title'>
               졸업 기념 온라인 롤링페이퍼 - 추억의칠판
             </div>
             <div className='date'>2024.12 - 2025.02 (4人 팀 프로젝트)</div>
@@ -253,7 +299,7 @@ const Project = () => {
               TypeScript, React, Python, Vercel, styled-components, Zustand
             </div>
             <div className='ref'>
-              <div className='readme'>
+              <div className='readme' onClick={openMemoryBoardReadme}>
                 <FontAwesomeIcon
                   icon={faReadme}
                   style={{ paddingRight: '5px' }}
@@ -271,7 +317,7 @@ const Project = () => {
           </ProjectBox>
           {/* 2 */}
           <ProjectBox>
-            <div className='title'>
+            <div className='p_title'>
               영화 종합 정보 플랫폼 - Jam Cinema (잼 시네마)
             </div>
             <div className='date'>2024.11 - 2025.03 (2人 팀 프로젝트)</div>
@@ -335,7 +381,7 @@ const Project = () => {
           </ProjectBox>
           {/* 3 */}
           <ProjectBox>
-            <div className='title'>
+            <div className='p_title'>
               부동산 매물 관리 프로젝트 - JobNest (잡네스트)
             </div>
             <div className='date'>2024.08 - 2024.09 (4人 팀 프로젝트)</div>
@@ -394,10 +440,9 @@ const Project = () => {
               </div>
             </div>
           </ProjectBox>
-
           {/* 4 */}
           <ProjectBox>
-            <div className='title'>부동산 매물 관리 프로젝트</div>
+            <div className='p_title'>부동산 매물 관리 프로젝트</div>
             <div className='date'>2024.08 - 2024.09 (4人 팀 프로젝트)</div>
             <hr className='contour' />
             <div className='sub_title'>
@@ -446,6 +491,11 @@ const Project = () => {
         isOpen={jamCinemaReadmeOpen}
         onClose={() => setJamCinemaReadmeOpen(false)}
         readmeUrl='https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/README.md'
+      />
+      <MemoryBoardReadmeModal
+        isOpen={memoryBoardReadmeOpen}
+        onClose={() => setMemoryBoardReadmeOpen(false)}
+        readmeUrl='https://raw.githubusercontent.com/jiwoopark727/memory-board/main/README.md'
       />
     </>
   );

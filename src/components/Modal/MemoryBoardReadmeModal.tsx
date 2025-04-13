@@ -24,7 +24,7 @@ const ModalWrapper = styled.div`
 
 const ModalContent = styled.div`
   background: #fafafa;
-  max-width: 1150px;
+  max-width: 1000px;
   max-height: 85vh;
   padding: 40px;
   overflow-y: scroll;
