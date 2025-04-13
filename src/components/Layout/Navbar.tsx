@@ -9,10 +9,7 @@ const NavbarWrapper = styled.div<{ scrolled: boolean }>`
   top: 0;
   left: 0;
   z-index: 1000;
-  border-bottom: ${(props) =>
-    props.scrolled
-      ? '1px solid lightgray'
-      : 'none'}; /* 스크롤에 따라 밑줄 추가 */
+  border-bottom: ${(props) => (props.scrolled ? '1px solid #b0b0b0' : 'none')};
 `;
 
 const NavbarContainer = styled.div`
