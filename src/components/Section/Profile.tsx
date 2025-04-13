@@ -109,7 +109,7 @@ const AboutMe = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.3 }
     );
 
     if (containerRef.current) {

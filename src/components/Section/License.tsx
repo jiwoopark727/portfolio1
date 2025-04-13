@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import itq_logo from './../../assets/images/itq_logo.png';
 import word_logo from './../../assets/images/word_logo.png';
-import info_logo from './../../assets/images/info_logo.png';
 import info_license from './../../assets/images/info_license.png';
 import { useEffect, useRef, useState } from 'react';
 import { keyframes } from '@emotion/react';
@@ -29,7 +28,6 @@ const slideDown = keyframes`
 const CertificatesWrapper = styled.div`
   background-color: #fff;
   padding-top: 10vh;
-  padding-bottom: 15vh;
 
   .title {
     display: flex;
@@ -43,19 +41,6 @@ const CertificatesWrapper = styled.div`
       animation: ${fadeIn} 1s forwards;
     }
   }
-`;
-
-const PictureBox = styled.div<{ bg_logo: string }>`
-  background-color: #fff;
-  background-image: url(${(props) => props.bg_logo});
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 200px;
-  height: 269px;
-  border-radius: 20px;
-  border: 1px solid #cfcfcf;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const CertificatesContainer = styled.div`
@@ -173,28 +158,9 @@ const Certificates = () => {
           <TypeBox bg_logo={itq_logo}></TypeBox>
         </TypeContainer>
         <DescribeContainer>
-          <div className='type'>ITQ 한글엑셀 A등급</div>
+          <div className='type'>ITQ OA 마스터 | 한글, 엑셀, 파워포인트</div>
+          <div className='year'>등급 : ALL A </div>
           <div className='year'>취득년도 : 2011</div>
-          <div className='issuer'>발급기관 : 한국생산성본부</div>
-          <div className='num'>자격증 번호 : A001-2009109-002936</div>
-        </DescribeContainer>
-        {/* 4 */}
-        <TypeContainer>
-          <TypeBox bg_logo={itq_logo}></TypeBox>
-        </TypeContainer>
-        <DescribeContainer>
-          <div className='type'>ITQ 한글파워포인트 A등급</div>
-          <div className='year'>취득년도 : 2010</div>
-          <div className='issuer'>발급기관 : 한국생산성본부</div>
-          <div className='num'>자격증 번호 : A001-2009109-002936</div>
-        </DescribeContainer>
-        {/* 5 */}
-        <TypeContainer>
-          <TypeBox bg_logo={itq_logo}></TypeBox>
-        </TypeContainer>
-        <DescribeContainer>
-          <div className='type'>ITQ 아래한글 A등급</div>
-          <div className='year'>취득년도 : 2009</div>
           <div className='issuer'>발급기관 : 한국생산성본부</div>
           <div className='num'>자격증 번호 : A001-2009109-002936</div>
         </DescribeContainer>
