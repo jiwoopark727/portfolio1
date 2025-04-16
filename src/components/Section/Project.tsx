@@ -7,6 +7,7 @@ import JamCinemaReadmeModal from '../Modal/JamCinemaReadmeModal.tsx';
 import MemoryBoardReadmeModal from '../Modal/MemoryBoardReadmeModal.tsx';
 import { useEffect, useRef, useState } from 'react';
 import { keyframes } from '@emotion/react';
+import FlappyBirdReadmeModal from '../Modal/FlappyBirdReadmeModal.tsx';
 
 const fadeIn = keyframes`
   0% {
@@ -96,7 +97,7 @@ const ProjectContainer = styled.div`
 `;
 
 const ProjectBox = styled.div`
-  height: 660px;
+  height: 680px;
   width: 660px;
   background-color: #fff;
   border-radius: 20px;
@@ -143,7 +144,7 @@ const ProjectBox = styled.div`
     font-size: 19px;
     color: black;
     line-height: 1.7;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     list-style-position: outside;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
@@ -152,7 +153,7 @@ const ProjectBox = styled.div`
   .des li {
     text-indent: 0;
     padding-left: 0.5rem;
-    border-bottom: 1px solid black;
+    margin-bottom: 4px;
   }
 
   .link {
@@ -162,7 +163,7 @@ const ProjectBox = styled.div`
     color: #d22bc7;
     text-decoration: none;
     cursor: pointer;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
     padding-left: 10px;
     border-left: 5px solid #d22bc7;
   }
@@ -239,17 +240,17 @@ const Project = () => {
     window.open('https://github.com/jiwoopark727/memory-board', '_blank');
   };
 
-  // const openFlappyBird = () => {
-  //   window.open('https://memory-page.vercel.app', '_blank');
-  // };
-  // const openFlappyBirdGH = () => {
-  //   window.open('https://memory-page.vercel.app', '_blank');
-  // };
+  const openFlappyBird = () => {
+    window.open('https://flappy-bird-jiwoo-park.vercel.app/', '_blank');
+  };
+  const openFlappyBirdGH = () => {
+    window.open('https://github.com/jiwoopark727/flappy-bird', '_blank');
+  };
 
   const [jobNestReadmeOpen, setJobNestReadmeOpen] = useState(false);
   const [jamCinemaReadmeOpen, setJamCinemaReadmeOpen] = useState(false);
   const [memoryBoardReadmeOpen, setMemoryBoardReadmeOpen] = useState(false);
-  // const [flappBirdReadmeOpen, setflappyBirdReadmeOpen] = useState(false);
+  const [flappBirdReadmeOpen, setflappyBirdReadmeOpen] = useState(false);
 
   const openJobNestReadme = () => {
     setJobNestReadmeOpen(true);
@@ -263,9 +264,9 @@ const Project = () => {
     setMemoryBoardReadmeOpen(true);
   };
 
-  // const openflappyBirdReadme = () => {
-  //   setflappyBirdReadmeOpen(true);
-  // };
+  const openflappyBirdReadme = () => {
+    setflappyBirdReadmeOpen(true);
+  };
 
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -294,23 +295,26 @@ const Project = () => {
   return (
     <>
       <ProjectWrapper>
-        <div
-          ref={containerRef}
-          className={isVisible ? 'title visible' : 'title'}
-        >
-          Project
-        </div>
-        <div className='filter'>
-          <label className='custom-checkbox'>
-            주요 프로젝트만 보기
-            <input
-              type='checkbox'
-              onChange={(e) => setShowOnlyMainProject(e.target.checked)}
-              checked={showOnlyMainProject}
-            />
-            <span className='checkmark'></span>
-          </label>
-        </div>
+        {/* 제목과 주요 프로젝트 체크박스 */}
+        <>
+          <div
+            ref={containerRef}
+            className={isVisible ? 'title visible' : 'title'}
+          >
+            Project
+          </div>
+          <div className='filter'>
+            <label className='custom-checkbox'>
+              주요 프로젝트만 보기
+              <input
+                type='checkbox'
+                onChange={(e) => setShowOnlyMainProject(e.target.checked)}
+                checked={showOnlyMainProject}
+              />
+              <span className='checkmark'></span>
+            </label>
+          </div>
+        </>
         <ProjectContainer>
           {showOnlyMainProject ? (
             <>
@@ -402,7 +406,7 @@ const Project = () => {
                     </li>
                     <li>
                       방문/조회 수, 업로드 시간 등으로 최신게시글 및 인기게시글
-                      분류류 배너 커뮤니티 기능 개발
+                      분류 배너 커뮤니티 기능 개발
                     </li>
                   </ul>
                 </div>
@@ -449,22 +453,17 @@ const Project = () => {
                 <div className='des'>
                   <ul>
                     <li>
-                      개발 기간이 일주일 뿐이였던 게임 개발 경진대회에 출품하기
-                      위해 기존의 모바일 게임을 저만의 방식으로 개성을 살려
-                      커스텀하여 웹 버전으로 개발
-                    </li>
-                    <li>
-                      점수에 따른 난이도 조절 기능을 화면 이동 속도 증가로 구현
+                      게임 개발 경진대회에 출품작으로 기존의 모바일 게임을
+                      저만의 방식으로 개성을 살려 커스텀하여 웹 버전으로 개발
                     </li>
                     <li>
                       Firebase Realtime DB를 사용해 이름,학과, 학번을 입력하여
                       로그인하고 최고 점수 저장 및 리더보드(순위표) 기능
                     </li>
                     <li>
-                      파이프 생성 및 스크롤 : 파이프가 화면 오른쪽에서 왼쪽으로
-                      이동, move_speed에 따라 속도 조절, pipe_seperation을
-                      조정하여 파이프 빈번도 증가, pipe_gap으로 상하 파이프 간격
-                      유지
+                      파이프는 오른쪽에서 왼쪽으로 이동하며, move_speed로 속도,
+                      pipe_seperation으로 출현 간격, pipe_gap으로 상하 간격을
+                      조절한다.
                     </li>
                     <li>
                       음향효과와 배경 이미지 변경 단조로운 게임 방식에 재미 요소
@@ -472,14 +471,21 @@ const Project = () => {
                     </li>
                   </ul>
                 </div>
-                <div className='link' onClick={openJobNest}>
+                <div className='link' onClick={openFlappyBird}>
                   <a target='_blank' rel='noopener noreferrer'>
-                    https://job-nest-iota.vercel.app
+                    https://flappy-bird-jiwoo-park.vercel.app (배포 사이트)
                   </a>{' '}
                 </div>
-                <div className='stack'>TypeScript, React, Vercel</div>
+                <div className='link' onClick={openFlappyBirdGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/flappy-bird (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  HTML/CSS, JavaScript, Firebase, Vercel
+                </div>
                 <div className='ref'>
-                  <div className='readme'>
+                  <div className='readme' onClick={openflappyBirdReadme}>
                     <FontAwesomeIcon
                       icon={faReadme}
                       style={{ paddingRight: '5px' }}
@@ -560,21 +566,29 @@ const Project = () => {
           )}
         </ProjectContainer>
       </ProjectWrapper>
-      <JobNestReadmeModal
-        isOpen={jobNestReadmeOpen}
-        onClose={() => setJobNestReadmeOpen(false)}
-        readmeUrl='https://raw.githubusercontent.com/jiwoopark727/job-nest/main/README.md'
-      />
-      <JamCinemaReadmeModal
-        isOpen={jamCinemaReadmeOpen}
-        onClose={() => setJamCinemaReadmeOpen(false)}
-        readmeUrl='https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/README.md'
-      />
-      <MemoryBoardReadmeModal
-        isOpen={memoryBoardReadmeOpen}
-        onClose={() => setMemoryBoardReadmeOpen(false)}
-        readmeUrl='https://raw.githubusercontent.com/jiwoopark727/memory-board/main/README.md'
-      />
+      {/* 리드미 모달창 */}
+      <>
+        <JobNestReadmeModal
+          isOpen={jobNestReadmeOpen}
+          onClose={() => setJobNestReadmeOpen(false)}
+          readmeUrl='https://raw.githubusercontent.com/jiwoopark727/job-nest/main/README.md'
+        />
+        <JamCinemaReadmeModal
+          isOpen={jamCinemaReadmeOpen}
+          onClose={() => setJamCinemaReadmeOpen(false)}
+          readmeUrl='https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/README.md'
+        />
+        <MemoryBoardReadmeModal
+          isOpen={memoryBoardReadmeOpen}
+          onClose={() => setMemoryBoardReadmeOpen(false)}
+          readmeUrl='https://raw.githubusercontent.com/jiwoopark727/memory-board/main/README.md'
+        />
+        <FlappyBirdReadmeModal
+          isOpen={flappBirdReadmeOpen}
+          onClose={() => setflappyBirdReadmeOpen(false)}
+          readmeUrl='https://raw.githubusercontent.com/jiwoopark727/flappy-bird/main/README.md'
+        />
+      </>
     </>
   );
 };
