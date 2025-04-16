@@ -76,7 +76,7 @@ const ProjectWrapper = styled.div`
   .custom-checkbox input:checked + .checkmark::after {
     content: '';
     position: absolute;
-    left: 6px;
+    left: 7px;
     top: 1px;
     width: 6px;
     height: 12px;
@@ -152,6 +152,7 @@ const ProjectBox = styled.div`
   .des li {
     text-indent: 0;
     padding-left: 0.5rem;
+    border-bottom: 1px solid black;
   }
 
   .link {
@@ -305,7 +306,7 @@ const Project = () => {
             <input
               type='checkbox'
               onChange={(e) => setShowOnlyMainProject(e.target.checked)}
-              checked
+              checked={showOnlyMainProject}
             />
             <span className='checkmark'></span>
           </label>
@@ -437,20 +438,38 @@ const Project = () => {
               </ProjectBox>
               {/* 3(플래피버드) */}
               <ProjectBox>
-                <div className='p_title'>부동산 매물 관리 프로젝트</div>
+                <div className='p_title'>Flappy Bird 게임</div>
                 <div className='date'>
                   2024.10 (1인 게임 개발 경진대회 프로젝트)
                 </div>
                 <hr className='contour' />
                 <div className='sub_title'>
-                  공인중개사를 편리하게 해주는 매물 관리 종합 웹사이트
+                  모바일 게임 Flappy Bird의 모작을 웹 버전으로 개발
                 </div>
                 <div className='des'>
                   <ul>
-                    <li>어쩌구저쩌구</li>
-                    <li>구구절절</li>
-                    <li>쑥떡쑥떡</li>
-                    <li>개떡개떡</li>
+                    <li>
+                      개발 기간이 일주일 뿐이였던 게임 개발 경진대회에 출품하기
+                      위해 기존의 모바일 게임을 저만의 방식으로 개성을 살려
+                      커스텀하여 웹 버전으로 개발
+                    </li>
+                    <li>
+                      점수에 따른 난이도 조절 기능을 화면 이동 속도 증가로 구현
+                    </li>
+                    <li>
+                      Firebase Realtime DB를 사용해 이름,학과, 학번을 입력하여
+                      로그인하고 최고 점수 저장 및 리더보드(순위표) 기능
+                    </li>
+                    <li>
+                      파이프 생성 및 스크롤 : 파이프가 화면 오른쪽에서 왼쪽으로
+                      이동, move_speed에 따라 속도 조절, pipe_seperation을
+                      조정하여 파이프 빈번도 증가, pipe_gap으로 상하 파이프 간격
+                      유지
+                    </li>
+                    <li>
+                      음향효과와 배경 이미지 변경 단조로운 게임 방식에 재미 요소
+                      추가
+                    </li>
                   </ul>
                 </div>
                 <div className='link' onClick={openJobNest}>
