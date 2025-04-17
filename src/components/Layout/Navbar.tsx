@@ -8,7 +8,7 @@ const NavbarWrapper = styled.div<{ scrolled: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 600;
   border-bottom: ${(props) => (props.scrolled ? '1px solid #b0b0b0' : 'none')};
 `;
 

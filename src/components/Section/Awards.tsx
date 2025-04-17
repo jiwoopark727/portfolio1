@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import CodingAwards from './../../assets/images/CodingAwards.jpg';
-import EsportsAwards from './../../assets/images/EsportsAwards.jpg';
-import GameAwards from './../../assets/images/GameAwards.jpg';
-import WorkExperienceCompletion from './../../assets/images/WorkExperienceCompletion.png';
-import SWVentureCompletion from './../../assets/images/SWVentureCompletion.jpg';
+import CodingAwards from './../../assets/images/awards_completion/CodingAwards.jpg';
+import EsportsAwards from './../../assets/images/awards_completion/EsportsAwards.jpg';
+import GameAwards from './../../assets/images/awards_completion/GameAwards.jpg';
+import WorkExperienceCompletion from './../../assets/images/awards_completion/WorkExperienceCompletion.png';
+import SWVentureCompletion from './../../assets/images/awards_completion/SWVentureCompletion.jpg';
 import { useEffect, useRef, useState } from 'react';
 import { keyframes } from '@emotion/react';
 

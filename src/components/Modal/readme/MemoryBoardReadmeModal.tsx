@@ -12,7 +12,7 @@ interface ReadmeModalProps {
 const ModalWrapper = styled.div`
   display: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? 'flex' : 'none')};
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   top: 0;
   left: 0;
   right: 0;
@@ -24,9 +24,9 @@ const ModalWrapper = styled.div`
 
 const ModalContent = styled.div`
   background: #fafafa;
-  max-width: 1000px;
-  max-height: 85vh;
-  padding: 40px;
+  width: 1200px;
+  height: 85vh;
+  padding: 50px;
   overflow-y: scroll;
   font-size: 22px;
 `;

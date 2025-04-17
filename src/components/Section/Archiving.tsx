@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import g_logo from './../../assets/images/github_logo.png';
-import t_logo from './../../assets/images/tistory_logo.png';
+import g_logo from './../../assets/images/logo/github_logo.png';
+import t_logo from './../../assets/images/logo/tistory_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { keyframes } from '@emotion/react';

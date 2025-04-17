@@ -1,13 +1,17 @@
 import styled from '@emotion/styled';
+import { useEffect, useRef, useState } from 'react';
+import { keyframes } from '@emotion/react';
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import JobNestReadmeModal from '../Modal/JobNestReadmeModal.tsx';
-import JamCinemaReadmeModal from '../Modal/JamCinemaReadmeModal.tsx';
-import MemoryBoardReadmeModal from '../Modal/MemoryBoardReadmeModal.tsx';
-import { useEffect, useRef, useState } from 'react';
-import { keyframes } from '@emotion/react';
-import FlappyBirdReadmeModal from '../Modal/FlappyBirdReadmeModal.tsx';
+import JobNestReadmeModal from '../Modal/readme/JobNestReadmeModal.tsx';
+import JamCinemaReadmeModal from '../Modal/readme/JamCinemaReadmeModal.tsx';
+import MemoryBoardReadmeModal from '../Modal/readme/MemoryBoardReadmeModal.tsx';
+import FlappyBirdReadmeModal from '../Modal/readme/FlappyBirdReadmeModal.tsx';
+import JobNestCarouselModal from '../Modal/carousel/JobNestCarouselModal.tsx';
+import FlappyBirdCarouselModal from '../Modal/carousel/FlappyBirdCarouselModal.tsx';
+import MemoryBoardCarouselModal from '../Modal/carousel/MemoryBoardCarouselModal.tsx';
+import JamCinemaCarouselModal from '../Modal/carousel/JamCinemaCarouselModal.tsx';
 
 const fadeIn = keyframes`
   0% {
@@ -77,7 +81,7 @@ const ProjectWrapper = styled.div`
   .custom-checkbox input:checked + .checkmark::after {
     content: '';
     position: absolute;
-    left: 7px;
+    left: 6px;
     top: 1px;
     width: 6px;
     height: 12px;
@@ -219,27 +223,25 @@ const ProjectBox = styled.div`
 const Project = () => {
   const [showOnlyMainProject, setShowOnlyMainProject] = useState(true);
 
+  // 배포사이트&깃헙 페이지 새탭에서 열어주는 함수
   const openJobNest = () => {
     window.open('https://job-nest-iota.vercel.app', '_blank');
   };
   const openJobNestGH = () => {
     window.open('https://github.com/jiwoopark727/job-nest', '_blank');
   };
-
   const openJamCinema = () => {
     window.open('https://memory-page.vercel.app', '_blank');
   };
   const openJamCinemaGH = () => {
     window.open('https://github.com/jiwoopark727/jam-cinema', '_blank');
   };
-
   const openMemoryBoard = () => {
     window.open('https://memory-page.vercel.app', '_blank');
   };
   const openMemoryBoardGH = () => {
     window.open('https://github.com/jiwoopark727/memory-board', '_blank');
   };
-
   const openFlappyBird = () => {
     window.open('https://flappy-bird-jiwoo-park.vercel.app/', '_blank');
   };
@@ -247,30 +249,96 @@ const Project = () => {
     window.open('https://github.com/jiwoopark727/flappy-bird', '_blank');
   };
 
+  // 리드미 열고 닫는 state변수와 handle 함수
   const [jobNestReadmeOpen, setJobNestReadmeOpen] = useState(false);
   const [jamCinemaReadmeOpen, setJamCinemaReadmeOpen] = useState(false);
   const [memoryBoardReadmeOpen, setMemoryBoardReadmeOpen] = useState(false);
   const [flappBirdReadmeOpen, setflappyBirdReadmeOpen] = useState(false);
-
   const openJobNestReadme = () => {
     setJobNestReadmeOpen(true);
   };
-
   const openJamCinemaReadme = () => {
     setJamCinemaReadmeOpen(true);
   };
-
   const openMemoryBoardReadme = () => {
     setMemoryBoardReadmeOpen(true);
   };
-
   const openflappyBirdReadme = () => {
     setflappyBirdReadmeOpen(true);
   };
 
+  // 이미지 버튼 캐러셀 슬라이드 부분
+  const [isMemoryBoardCarouselOpen, setIsMemoryBoardCarouselOpen] =
+    useState(false);
+  const [isJamCinemaCarouselOpen, setIsJamCinemaCarouselOpen] = useState(false);
+  const [isFlappyBirdCarouselOpen, setIsFlappyBirdCarouselOpen] =
+    useState(false);
+  const [isJobNestCarouselOpen, setIsJobNestCarouselOpen] = useState(false);
+
+  const MemoryBoarddImages = [
+    'src/assets/images/portfolio_img/memory_board/home.png',
+    'src/assets/images/portfolio_img/memory_board/dev.png',
+    'src/assets/images/portfolio_img/memory_board/manual.png',
+    'src/assets/images/portfolio_img/memory_board/login.png',
+    'src/assets/images/portfolio_img/memory_board/create.png',
+    'src/assets/images/portfolio_img/memory_board/board_create.png',
+    'src/assets/images/portfolio_img/memory_board/board.png',
+    'src/assets/images/portfolio_img/memory_board/share.png',
+    'src/assets/images/portfolio_img/memory_board/kakao_share1.png',
+    'src/assets/images/portfolio_img/memory_board/kakao_share2.png',
+    'src/assets/images/portfolio_img/memory_board/kakao_share3.png',
+    'src/assets/images/portfolio_img/memory_board/insta_share.png',
+    'src/assets/images/portfolio_img/memory_board/memo_create.png',
+    'src/assets/images/portfolio_img/memory_board/memo_create2.png',
+    'src/assets/images/portfolio_img/memory_board/memo_create3.png',
+    'src/assets/images/portfolio_img/memory_board/memo_create4.png',
+    'src/assets/images/portfolio_img/memory_board/memo1.png',
+    'src/assets/images/portfolio_img/memory_board/memo2.png',
+    'src/assets/images/portfolio_img/memory_board/memo3.png',
+  ];
+  const JamCinemaImages = [
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_login_main.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_main2.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_main3.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_signup.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_signup_complete.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_login.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_mypage.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_search.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_movie_info.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_news.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_community.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_post.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_write.png',
+    'src/assets/images/portfolio_img/jam_cinema/jamcinema_dark.png',
+  ];
+  const FlappyBirdImages = [
+    'src/assets/images/portfolio_img/flappy_bird/readme_home.png',
+    'src/assets/images/portfolio_img/flappy_bird/readme_start.png',
+    'src/assets/images/portfolio_img/flappy_bird/readme_first.png',
+    'src/assets/images/portfolio_img/flappy_bird/readme_second.png',
+    'src/assets/images/portfolio_img/flappy_bird/readme_third.png',
+    'src/assets/images/portfolio_img/flappy_bird/readme_finish.png',
+    'src/assets/images/portfolio_img/flappy_bird/readme_board.png',
+    'src/assets/images/portfolio_img/flappy_bird/readme_board2.png',
+  ];
+  const JobNestImages = [
+    'src/assets/images/portfolio_img/job_nest/jobnest_main.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_bookmark_manage.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_todo.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_calendar.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_login.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_contract.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_search.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_map.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_property.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_registration.png',
+    'src/assets/images/portfolio_img/job_nest/jobnest_registration_ex.png',
+  ];
+
+  // 화면에 등장 시 애니메이션 동작 부분(IntersectionObserver)
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -367,7 +435,10 @@ const Project = () => {
                     />
                     README
                   </div>
-                  <div className='image'>
+                  <div
+                    className='image'
+                    onClick={() => setIsMemoryBoardCarouselOpen(true)}
+                  >
                     <FontAwesomeIcon
                       icon={faImage}
                       style={{ paddingRight: '5px' }}
@@ -431,7 +502,10 @@ const Project = () => {
                     />
                     README
                   </div>
-                  <div className='image'>
+                  <div
+                    className='image'
+                    onClick={() => setIsJamCinemaCarouselOpen(true)}
+                  >
                     <FontAwesomeIcon
                       icon={faImage}
                       style={{ paddingRight: '5px' }}
@@ -442,13 +516,13 @@ const Project = () => {
               </ProjectBox>
               {/* 3(플래피버드) */}
               <ProjectBox>
-                <div className='p_title'>Flappy Bird 게임</div>
+                <div className='p_title'>Flappy Bird - 웹 버전 게임</div>
                 <div className='date'>
                   2024.10 (1인 게임 개발 경진대회 프로젝트)
                 </div>
                 <hr className='contour' />
                 <div className='sub_title'>
-                  모바일 게임 Flappy Bird의 모작을 웹 버전으로 개발
+                  모바일 게임 Flappy Bird의 모작을 커스텀하여 웹 버전으로 개발
                 </div>
                 <div className='des'>
                   <ul>
@@ -492,7 +566,10 @@ const Project = () => {
                     />
                     README
                   </div>
-                  <div className='image'>
+                  <div
+                    className='image'
+                    onClick={() => setIsFlappyBirdCarouselOpen(true)}
+                  >
                     <FontAwesomeIcon
                       icon={faImage}
                       style={{ paddingRight: '5px' }}
@@ -551,7 +628,10 @@ const Project = () => {
                     />
                     README
                   </div>
-                  <div className='image'>
+                  <div
+                    className='image'
+                    onClick={() => setIsJobNestCarouselOpen(true)}
+                  >
                     <FontAwesomeIcon
                       icon={faImage}
                       style={{ paddingRight: '5px' }}
@@ -587,6 +667,29 @@ const Project = () => {
           isOpen={flappBirdReadmeOpen}
           onClose={() => setflappyBirdReadmeOpen(false)}
           readmeUrl='https://raw.githubusercontent.com/jiwoopark727/flappy-bird/main/README.md'
+        />
+      </>
+      {/* 이미지 캐러셀 */}
+      <>
+        <MemoryBoardCarouselModal
+          images={MemoryBoarddImages}
+          isOpen={isMemoryBoardCarouselOpen}
+          onClose={() => setIsMemoryBoardCarouselOpen(false)}
+        />
+        <JamCinemaCarouselModal
+          images={JamCinemaImages}
+          isOpen={isJamCinemaCarouselOpen}
+          onClose={() => setIsJamCinemaCarouselOpen(false)}
+        />
+        <FlappyBirdCarouselModal
+          images={FlappyBirdImages}
+          isOpen={isFlappyBirdCarouselOpen}
+          onClose={() => setIsFlappyBirdCarouselOpen(false)}
+        />
+        <JobNestCarouselModal
+          images={JobNestImages}
+          isOpen={isJobNestCarouselOpen}
+          onClose={() => setIsJobNestCarouselOpen(false)}
         />
       </>
     </>
