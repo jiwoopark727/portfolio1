@@ -259,7 +259,7 @@ const Awards = () => {
             강의르 수강하고 회사 측과 연계 협업 프로젝트를 완료했습니다.
           </div>
         </DescribeContainer>
-        {/* 4 */}
+        {/* 5 */}
         <TypeContainer>
           <TypeBox bg_logo={SWVentureCompletion}></TypeBox>
         </TypeContainer>
@@ -278,8 +278,9 @@ const Awards = () => {
           </div>
           <div className='des'>
             <span className='sub_type'>설명 :</span>
-            청년 일경험 React 과정에 참가하여 React에 대한 동작원리와 중요 개념
-            강의르 수강하고 회사 측과 연계 협업 프로젝트를 완료했습니다.
+            최신 IT 지정 교과목 수강, 각종 강연 및 취업 박람회 참가, 학술제 및
+            경시,경진 대회 참가 등 SW 인재가 되기 위한 여러 프로그램들을 참여,
+            수료했습니다.
           </div>
         </DescribeContainer>
       </AwardsContainer>

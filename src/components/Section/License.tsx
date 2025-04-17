@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import itq_logo from './../../assets/images/itq_logo.png';
-import word_logo from './../../assets/images/word_logo.png';
-import info_license from './../../assets/images/info_license.png';
+import itq_logo from './../../assets/images/logo/itq_logo.png';
+import word_logo from './../../assets/images/logo/word_logo.png';
+import info_license from './../../assets/images/license/info_license.png';
 import { useEffect, useRef, useState } from 'react';
 import { keyframes } from '@emotion/react';
 
