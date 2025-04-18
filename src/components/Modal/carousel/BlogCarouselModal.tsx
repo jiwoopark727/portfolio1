@@ -34,8 +34,8 @@ const ModalContent = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: 1200px;
-  height: 700px;
+  width: 1020px;
+  height: 630px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,9 +44,7 @@ const ImageContainer = styled.div`
 
 const Image = styled.img`
   max-width: 100%;
-  min-width: 800px;
   max-height: 100%;
-  min-height: 600px;
   object-fit: contain;
 `;
 
@@ -76,7 +74,7 @@ const ButtonGroup = styled.div`
   }
 `;
 
-export const JamCinemaCarouselModal: React.FC<Props> = ({
+export const BlogCarouselModal: React.FC<Props> = ({
   images,
   initialIndex = 0,
   isOpen,
@@ -116,4 +114,4 @@ export const JamCinemaCarouselModal: React.FC<Props> = ({
   );
 };
 
-export default JamCinemaCarouselModal;
+export default BlogCarouselModal;

@@ -138,10 +138,11 @@ const Skills = () => {
         <SkillsBox>
           <span className='subject'>상태 관리</span>
           <span className='content'>
-            <img src='https://img.shields.io/badge/Recoil-white.svg?style=for-the-badge&logo=recoil&logoColor=3578E5' />
+            {/* <img src='https://img.shields.io/badge/Recoil-white.svg?style=for-the-badge&logo=recoil&logoColor=3578E5' /> */}
             <img src='https://img.shields.io/badge/Zustand-white.svg?style=for-the-badge&logo=zustand&logoColor=1572B6' />
             <img src='https://img.shields.io/badge/Redux-white.svg?style=for-the-badge&logo=redux&logoColor=764ABC' />
-            <img src='https://img.shields.io/badge/React query-white.svg?style=for-the-badge&logo=redux&logoColor=764ABC' />
+            <img src='https://img.shields.io/badge/React query-white.svg?style=for-the-badge&logo=reactquery&logoColor=764ABC' />
+            <img src='https://img.shields.io/badge/Context API-white.svg?style=for-the-badge&logo=reactquery&logoColor=764ABC' />
           </span>
         </SkillsBox>
         <SkillsBox>
@@ -150,6 +151,7 @@ const Skills = () => {
             <img src='https://img.shields.io/badge/My SQL-white.svg?style=for-the-badge&logo=mysql&logoColor=4479A1' />
             <img src='https://img.shields.io/badge/FireBase-white.svg?style=for-the-badge&logo=firebase&logoColor=DD2C00' />
             <img src='https://img.shields.io/badge/Maria DB-white.svg?style=for-the-badge&logo=mariadb&logoColor=003545' />
+            <img src='https://img.shields.io/badge/Mongo DB-white.svg?style=for-the-badge&logo=mongodb&logoColor=003545' />
           </span>
         </SkillsBox>
         <SkillsBox>

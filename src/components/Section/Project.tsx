@@ -12,6 +12,8 @@ import JobNestCarouselModal from '../Modal/carousel/JobNestCarouselModal.tsx';
 import FlappyBirdCarouselModal from '../Modal/carousel/FlappyBirdCarouselModal.tsx';
 import MemoryBoardCarouselModal from '../Modal/carousel/MemoryBoardCarouselModal.tsx';
 import JamCinemaCarouselModal from '../Modal/carousel/JamCinemaCarouselModal.tsx';
+import BlogCarouselModal from '../Modal/carousel/BlogCarouselModal.tsx';
+import ShopCarouselModal from '../Modal/carousel/ShopCarouselModal.tsx';
 
 const fadeIn = keyframes`
   0% {
@@ -220,6 +222,126 @@ const ProjectBox = styled.div`
   }
 `;
 
+const ProjectBox2 = styled.div`
+  height: 600px;
+  width: 660px;
+  background-color: #fff;
+  border-radius: 20px;
+  border: 2px solid #dadada;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+  margin: auto;
+  padding: 40px;
+
+  .p_title {
+    width: fit-content;
+    padding: 0 12px;
+    height: 45px;
+    background-color: gray;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 700;
+  }
+
+  .date {
+    margin-top: 12px;
+    margin-left: 3px;
+    font-size: 17px;
+    color: #5e5e5e;
+  }
+
+  .contour {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 92%;
+  }
+
+  .sub_title {
+    color: black;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .des {
+    font-size: 19px;
+    color: black;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    list-style-position: outside;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .des li {
+    text-indent: 0;
+    padding-left: 0.5rem;
+    margin-bottom: 4px;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #d22bc7;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 5px solid #d22bc7;
+  }
+
+  .stack {
+    width: fit-content;
+    padding: 3px 18px 3px 18px;
+    height: 42px;
+    background-color: #fff5b7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: 1px solid #ffdd00;
+    margin-bottom: 20px;
+  }
+
+  .ref {
+    max-width: 220px;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 5fr 5fr;
+
+    .readme {
+      height: 36px;
+      width: fit-content;
+      padding: 0 12px;
+      border-radius: 5px;
+      border: 1px solid #b8b8b8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .image {
+      height: 36px;
+      width: fit-content;
+      padding: 0 12px;
+      border-radius: 5px;
+      border: 1px solid #b8b8b8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+`;
+
 const Project = () => {
   const [showOnlyMainProject, setShowOnlyMainProject] = useState(true);
 
@@ -274,6 +396,8 @@ const Project = () => {
   const [isFlappyBirdCarouselOpen, setIsFlappyBirdCarouselOpen] =
     useState(false);
   const [isJobNestCarouselOpen, setIsJobNestCarouselOpen] = useState(false);
+  const [isBlogCarouselOpen, setIsBlogCarouselOpen] = useState(false);
+  const [isShopCarouselOpen, setIsShopCarouselOpen] = useState(false);
 
   const MemoryBoarddImages = [
     'src/assets/images/portfolio_img/memory_board/home.png',
@@ -334,6 +458,18 @@ const Project = () => {
     'src/assets/images/portfolio_img/job_nest/jobnest_property.png',
     'src/assets/images/portfolio_img/job_nest/jobnest_registration.png',
     'src/assets/images/portfolio_img/job_nest/jobnest_registration_ex.png',
+  ];
+  const BlogImages = [
+    'src/assets/images/portfolio_img/blog/blog_home.png',
+    'src/assets/images/portfolio_img/blog/blog_filter.png',
+    'src/assets/images/portfolio_img/blog/blog_posting.png',
+    'src/assets/images/portfolio_img/blog/blog_detail.png',
+  ];
+  const ShopImages = [
+    'src/assets/images/portfolio_img/shop/shop_home.png',
+    'src/assets/images/portfolio_img/shop/shop_more.png',
+    'src/assets/images/portfolio_img/shop/shop_detail.png',
+    'src/assets/images/portfolio_img/shop/shop_cart.png',
   ];
 
   // 화면에 등장 시 애니메이션 동작 부분(IntersectionObserver)
@@ -640,6 +776,207 @@ const Project = () => {
                   </div>
                 </div>
               </ProjectBox>
+              {/* 5(리액트 블로그) */}
+              <ProjectBox2>
+                <div className='p_title'>나만의 블로그</div>
+                <div className='date'>2024.04 (1人 개인 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  리액트를 처음 공부하면서 개발했던 블로그
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>state 변수를 활용하여 button 기능 개발</li>
+                    <li>모달창 동적인 UI로 구현</li>
+                    <li>props로 부모 컴포넌트의 state 가져오기</li>
+                    <li>OAuth 2.0 으로 Google 로그인 구현</li>
+                    <li>블로그 글 CRUD 기능 구현</li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openJobNestGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/blog (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>React, Redux</div>
+                <div className='ref'>
+                  <div
+                    className='image'
+                    onClick={() => setIsBlogCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
+                </div>
+              </ProjectBox2>
+              {/* 6(리액트 신발 쇼핑몰) */}
+              <ProjectBox2>
+                <div className='p_title'>리액트 신발 쇼핑몰</div>
+                <div className='date'>
+                  2024.04 - 2024.05 (1人 개인 프로젝트)
+                </div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  리액트 공부를 하면서 개발한 두번째 프로젝트
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>AJAX를 이용한 서버 통신</li>
+                    <li>transition을 사용하여 컴포넌트 전환 애니메이션 구현</li>
+                    <li>Context API, Redux를 활용한 전역 상태관리</li>
+                    <li>object/array state로 장바구니 기능 구현</li>
+                    <li>localstorage를 활용한 최근 본 상품 기능 구현</li>
+                    <li>
+                      useMemo, useTransitoin, useDeferredValue을 활용한 성능개선
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openJobNestGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/shoe-store (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>React, Redux, Context API</div>
+                <div className='ref'>
+                  <div
+                    className='image'
+                    onClick={() => setIsShopCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
+                </div>
+              </ProjectBox2>
+              {/* 7(자바 웹소켓 자판기) */}
+              <ProjectBox2>
+                <div className='p_title'>
+                  부동산 매물 관리 프로젝트 - JobNest (잡네스트)
+                </div>
+                <div className='date'>2024.08 - 2024.09 (4人 팀 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  공인중개사들을 위한 부동산 매물 관리 플랫폼 웹사이트
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      공인중개사이셨던 부모님을 통해 알게 된 낙후된 홈페이지들로
+                      인한 공인중개사들의 불편함을 해소하고자 직접 개발
+                    </li>
+                    <li>
+                      Handsontable을 활용한 엑셀 시트 스타일의 매물 관리(CRUD)
+                      시스템
+                    </li>
+                    <li>카카오맵 API를 이용한 매물 위치 표시</li>
+                    <li>OAuth 2.0 으로 Google 로그인 구현</li>
+                    <li>Google Calendar API와 연동하여 일정 관리</li>
+                    <li>
+                      서버와의 통신으로 등기부등본 및 건축물 대장 열람 기능(더미
+                      데이터)
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openJobNest}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://job-nest-iota.vercel.app (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openJobNestGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/job-nest (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  TypeScript, React, Vercel, Redux, TailWind CSS
+                </div>
+                <div className='ref'>
+                  <div className='readme' onClick={openJobNestReadme}>
+                    <FontAwesomeIcon
+                      icon={faReadme}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    README
+                  </div>
+                  <div
+                    className='image'
+                    onClick={() => setIsJobNestCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
+                </div>
+              </ProjectBox2>
+              {/* 8(리액트 환전 계산기) */}
+              <ProjectBox2>
+                <div className='p_title'>
+                  부동산 매물 관리 프로젝트 - JobNest (잡네스트)
+                </div>
+                <div className='date'>2024.08 - 2024.09 (4人 팀 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  공인중개사들을 위한 부동산 매물 관리 플랫폼 웹사이트
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      공인중개사이셨던 부모님을 통해 알게 된 낙후된 홈페이지들로
+                      인한 공인중개사들의 불편함을 해소하고자 직접 개발
+                    </li>
+                    <li>
+                      Handsontable을 활용한 엑셀 시트 스타일의 매물 관리(CRUD)
+                      시스템
+                    </li>
+                    <li>카카오맵 API를 이용한 매물 위치 표시</li>
+                    <li>OAuth 2.0 으로 Google 로그인 구현</li>
+                    <li>Google Calendar API와 연동하여 일정 관리</li>
+                    <li>
+                      서버와의 통신으로 등기부등본 및 건축물 대장 열람 기능(더미
+                      데이터)
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openJobNest}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://job-nest-iota.vercel.app (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openJobNestGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/job-nest (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  TypeScript, React, Vercel, Redux, TailWind CSS
+                </div>
+                <div className='ref'>
+                  <div className='readme' onClick={openJobNestReadme}>
+                    <FontAwesomeIcon
+                      icon={faReadme}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    README
+                  </div>
+                  <div
+                    className='image'
+                    onClick={() => setIsJobNestCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
+                </div>
+              </ProjectBox2>
             </>
           ) : (
             <></>
@@ -690,6 +1027,16 @@ const Project = () => {
           images={JobNestImages}
           isOpen={isJobNestCarouselOpen}
           onClose={() => setIsJobNestCarouselOpen(false)}
+        />
+        <BlogCarouselModal
+          images={BlogImages}
+          isOpen={isBlogCarouselOpen}
+          onClose={() => setIsBlogCarouselOpen(false)}
+        />
+        <ShopCarouselModal
+          images={ShopImages}
+          isOpen={isShopCarouselOpen}
+          onClose={() => setIsShopCarouselOpen(false)}
         />
       </>
     </>

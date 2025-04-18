@@ -65,6 +65,12 @@ const ButtonGroup = styled.div`
       background: #ddd;
     }
   }
+
+  span {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  }
 `;
 
 export const JobNestCarouselModal: React.FC<Props> = ({
@@ -97,7 +103,9 @@ export const JobNestCarouselModal: React.FC<Props> = ({
         </ImageContainer>
         <ButtonGroup>
           <button onClick={prevImage}>&#8249;</button>
-          {currentIndex + 1}/{images.length}
+          <span>
+            {currentIndex + 1} / {images.length}
+          </span>
           <button onClick={nextImage}>&#8250;</button>
         </ButtonGroup>
       </ModalContent>
