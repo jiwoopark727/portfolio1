@@ -14,6 +14,7 @@ import MemoryBoardCarouselModal from '../Modal/carousel/MemoryBoardCarouselModal
 import JamCinemaCarouselModal from '../Modal/carousel/JamCinemaCarouselModal.tsx';
 import BlogCarouselModal from '../Modal/carousel/BlogCarouselModal.tsx';
 import ShopCarouselModal from '../Modal/carousel/ShopCarouselModal.tsx';
+import VendingMachineCarouselModal from '../Modal/carousel/VendingMachineCarouselModal.tsx';
 
 const fadeIn = keyframes`
   0% {
@@ -370,6 +371,15 @@ const Project = () => {
   const openFlappyBirdGH = () => {
     window.open('https://github.com/jiwoopark727/flappy-bird', '_blank');
   };
+  const openBlogGH = () => {
+    window.open('https://github.com/jiwoopark727/blog', '_blank');
+  };
+  const openShopGH = () => {
+    window.open('https://github.com/jiwoopark727/shoe-store', '_blank');
+  };
+  const openVendingMachineGH = () => {
+    window.open('https://github.com/jiwoopark727/vending-machine', '_blank');
+  };
 
   // 리드미 열고 닫는 state변수와 handle 함수
   const [jobNestReadmeOpen, setJobNestReadmeOpen] = useState(false);
@@ -398,6 +408,8 @@ const Project = () => {
   const [isJobNestCarouselOpen, setIsJobNestCarouselOpen] = useState(false);
   const [isBlogCarouselOpen, setIsBlogCarouselOpen] = useState(false);
   const [isShopCarouselOpen, setIsShopCarouselOpen] = useState(false);
+  const [isVendingMachineCarouselOpen, setIsVendingMachineCarouselOpen] =
+    useState(false);
 
   const MemoryBoarddImages = [
     'src/assets/images/portfolio_img/memory_board/home.png',
@@ -470,6 +482,15 @@ const Project = () => {
     'src/assets/images/portfolio_img/shop/shop_more.png',
     'src/assets/images/portfolio_img/shop/shop_detail.png',
     'src/assets/images/portfolio_img/shop/shop_cart.png',
+  ];
+  const VendingMachineImages = [
+    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_home.png',
+    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_insert_coin.png',
+    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_buy_poomjeol.png',
+    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_admin.png',
+    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_admin_info.png',
+    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_admin_info2.png',
+    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_money.png',
   ];
 
   // 화면에 등장 시 애니메이션 동작 부분(IntersectionObserver)
@@ -793,7 +814,7 @@ const Project = () => {
                     <li>블로그 글 CRUD 기능 구현</li>
                   </ul>
                 </div>
-                <div className='link' onClick={openJobNestGH}>
+                <div className='link' onClick={openBlogGH}>
                   <a target='_blank' rel='noopener noreferrer'>
                     https://github.com/jiwoopark727/blog (깃허브)
                   </a>{' '}
@@ -814,7 +835,7 @@ const Project = () => {
               </ProjectBox2>
               {/* 6(리액트 신발 쇼핑몰) */}
               <ProjectBox2>
-                <div className='p_title'>리액트 신발 쇼핑몰</div>
+                <div className='p_title'>신발 쇼핑몰 - Shoe Marker</div>
                 <div className='date'>
                   2024.04 - 2024.05 (1人 개인 프로젝트)
                 </div>
@@ -834,7 +855,7 @@ const Project = () => {
                     </li>
                   </ul>
                 </div>
-                <div className='link' onClick={openJobNestGH}>
+                <div className='link' onClick={openShopGH}>
                   <a target='_blank' rel='noopener noreferrer'>
                     https://github.com/jiwoopark727/shoe-store (깃허브)
                   </a>{' '}
@@ -855,57 +876,40 @@ const Project = () => {
               </ProjectBox2>
               {/* 7(자바 웹소켓 자판기) */}
               <ProjectBox2>
-                <div className='p_title'>
-                  부동산 매물 관리 프로젝트 - JobNest (잡네스트)
+                <div className='p_title'>자판기 프로그램 - Vending Machine</div>
+                <div className='date'>
+                  2024.05 - 2024.06 (1人 개인인 프로젝트)
                 </div>
-                <div className='date'>2024.08 - 2024.09 (4人 팀 프로젝트)</div>
                 <hr className='contour' />
                 <div className='sub_title'>
-                  공인중개사들을 위한 부동산 매물 관리 플랫폼 웹사이트
+                  자바로 구현된 소켓 프로그래밍 기반의 자판기 시뮬레이션
+                  프로젝트
                 </div>
                 <div className='des'>
                   <ul>
                     <li>
-                      공인중개사이셨던 부모님을 통해 알게 된 낙후된 홈페이지들로
-                      인한 공인중개사들의 불편함을 해소하고자 직접 개발
+                      서버-클라이언트 통신: TCP 소켓을 이용한 양방향 통신 구현
                     </li>
                     <li>
-                      Handsontable을 활용한 엑셀 시트 스타일의 매물 관리(CRUD)
-                      시스템
+                      자판기 기능 시뮬레이션: 상품 선택, 결제, 잔돈 반환 등의
+                      기능 구현
                     </li>
-                    <li>카카오맵 API를 이용한 매물 위치 표시</li>
-                    <li>OAuth 2.0 으로 Google 로그인 구현</li>
-                    <li>Google Calendar API와 연동하여 일정 관리</li>
                     <li>
-                      서버와의 통신으로 등기부등본 및 건축물 대장 열람 기능(더미
-                      데이터)
+                      멀티스레딩: 서버 측에서 다수의 클라이언트 요청을 처리하기
+                      위한 멀티스레딩 구현
                     </li>
                   </ul>
                 </div>
-                <div className='link' onClick={openJobNest}>
+                <div className='link' onClick={openVendingMachineGH}>
                   <a target='_blank' rel='noopener noreferrer'>
-                    https://job-nest-iota.vercel.app (배포 사이트)
+                    https://github.com/jiwoopark727/vending-machine (깃허브)
                   </a>{' '}
                 </div>
-                <div className='link' onClick={openJobNestGH}>
-                  <a target='_blank' rel='noopener noreferrer'>
-                    https://github.com/jiwoopark727/job-nest (깃허브)
-                  </a>{' '}
-                </div>
-                <div className='stack'>
-                  TypeScript, React, Vercel, Redux, TailWind CSS
-                </div>
+                <div className='stack'>Java, Socket</div>
                 <div className='ref'>
-                  <div className='readme' onClick={openJobNestReadme}>
-                    <FontAwesomeIcon
-                      icon={faReadme}
-                      style={{ paddingRight: '5px' }}
-                    />
-                    README
-                  </div>
                   <div
                     className='image'
-                    onClick={() => setIsJobNestCarouselOpen(true)}
+                    onClick={() => setIsVendingMachineCarouselOpen(true)}
                   >
                     <FontAwesomeIcon
                       icon={faImage}
@@ -1037,6 +1041,11 @@ const Project = () => {
           images={ShopImages}
           isOpen={isShopCarouselOpen}
           onClose={() => setIsShopCarouselOpen(false)}
+        />
+        <VendingMachineCarouselModal
+          images={VendingMachineImages}
+          isOpen={isVendingMachineCarouselOpen}
+          onClose={() => setIsVendingMachineCarouselOpen(false)}
         />
       </>
     </>
