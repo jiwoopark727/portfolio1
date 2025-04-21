@@ -25,7 +25,6 @@ const fadeIn = keyframes`
 const SkillsWrapper = styled.div`
   height: 75vh;
   background-color: #fff;
-  font-size: 40px;
   font-weight: bold;
   line-height: 1.9;
   padding-top: 10vh;
@@ -33,7 +32,7 @@ const SkillsWrapper = styled.div`
 
   .title {
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 800;
     padding-bottom: 50px;
 
@@ -53,7 +52,7 @@ const SkillsContainer = styled.div`
   max-width: 980px;
   margin: 0 auto;
   align-items: center;
-
+  height: 380px;
   opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
@@ -68,7 +67,7 @@ const SkillsBox = styled.div`
 
   .subject {
     width: 210px;
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .content {

@@ -24,11 +24,12 @@ const ModalWrapper = styled.div`
 
 const ModalContent = styled.div`
   background: #fafafa;
+  border-radius: 20px;
   max-width: 1000px;
-  max-height: 85vh;
+  max-height: 90vh;
   padding: 50px;
   overflow-y: scroll;
-  font-size: 22px;
+  font-size: 15px;
 `;
 
 const JamCinemaReadmeModal: React.FC<ReadmeModalProps> = ({

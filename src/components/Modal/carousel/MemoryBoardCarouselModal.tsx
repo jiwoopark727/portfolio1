@@ -23,10 +23,10 @@ const Overlay = styled.div`
 
 const ModalContent = styled.div`
   background: #fafafa;
-  padding: 20px;
+  padding: 35px;
   border-radius: 20px;
-  width: 900px;
-  height: 900px;
+  width: 570px;
+  height: 780px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,32 +42,26 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height: 800px;
+  height: 650px;
   object-fit: contain;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
-  gap: 20px;
-  margin-top: 16px;
+  gap: 15px;
+  margin-top: 15px;
 
   button {
-    background: #dedede;
     border: none;
     font-size: 52px;
-    border-radius: 30px;
     cursor: pointer;
     transition: background 0.2s;
-
-    &:hover {
-      background: #b6b6b6;
-    }
   }
 
   span {
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 15px;
   }
 `;
 

@@ -31,7 +31,7 @@ const AboutMeWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding-bottom: 85px;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 800;
 
     opacity: 0;
@@ -69,7 +69,6 @@ const AboutMeBox = styled.div`
   text-align: center;
   border: 1.5px solid #dadada;
   border-radius: 8px;
-  font-size: 18px;
   font-weight: bold;
   border-radius: 8px;
   box-shadow: 17px 17px 10px rgba(0, 0, 0, 0.15);
@@ -87,13 +86,13 @@ const ItemText = styled.div`
   flex-direction: column;
   text-align: start;
   .subject {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     padding-bottom: 5px;
   }
 
   .content {
-    font-size: 20px;
+    font-size: 18px;
     color: gray;
   }
 `;

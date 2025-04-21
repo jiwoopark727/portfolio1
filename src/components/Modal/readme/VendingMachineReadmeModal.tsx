@@ -24,11 +24,11 @@ const ModalWrapper = styled.div`
 
 const ModalContent = styled.div`
   background: #fafafa;
-  max-width: 1150px;
-  max-height: 85vh;
+  border-radius: 20px;
+  width: 700px;
+  max-height: 90vh;
   padding: 50px;
-  overflow-y: scroll;
-  font-size: 22px;
+  font-size: 15px;
 `;
 
 const VendingMachineReadmeModal: React.FC<ReadmeModalProps> = ({

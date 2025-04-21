@@ -33,25 +33,25 @@ const BannerText = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 75px;
+    font-size: 60px;
     padding-bottom: 30px;
   }
 
   .title {
-    font-size: 75px;
+    font-size: 60px;
     padding-bottom: 80px;
   }
 
   .contour {
     /* border: 2px solid #8596f2; */
     border: 2px solid black;
-    margin: 20px auto;
+    margin: 10px auto;
     width: 10%;
-    margin-bottom: 110px;
+    margin-bottom: 80px;
   }
 
   .Introduction {
-    font-size: 30px;
+    font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;

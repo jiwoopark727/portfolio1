@@ -38,15 +38,14 @@ const slideRightIn = keyframes`
 `;
 
 const ArchivingWrapper = styled.div`
-  height: 60vh;
   background-color: #f9fafb;
   padding-top: 10vh;
-  padding-bottom: 12vh;
+  padding-bottom: 17vh;
 
   .title {
     display: flex;
     justify-content: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 800;
 
     opacity: 0;
@@ -72,7 +71,7 @@ const ArchivingBox1 = styled.div`
   justify-content: center;
   text-align: center;
   margin-top: 80px;
-  font-size: 30px;
+  font-size: 25px;
   width: 400px;
   height: 250px;
   border-radius: 25px;
@@ -101,7 +100,7 @@ const ArchivingBox2 = styled.div`
   justify-content: center;
   text-align: center;
   margin-top: 80px;
-  font-size: 30px;
+  font-size: 25px;
   width: 400px;
   height: 250px;
   border-radius: 25px;
@@ -124,7 +123,7 @@ const ArchivingBox2 = styled.div`
 
 const InnerContent = styled.div<{ bg_logo: string }>`
   .icon {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .title_wrapper {
@@ -134,7 +133,7 @@ const InnerContent = styled.div<{ bg_logo: string }>`
 
   .g_title {
     padding-left: 5px;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
   }
@@ -149,8 +148,8 @@ const InnerContent = styled.div<{ bg_logo: string }>`
     background-image: url(${(props) => props.bg_logo});
     background-size: cover;
     background-position: center center;
-    width: 150px;
-    height: 47px;
+    width: 125px;
+    height: 40px;
     margin-bottom: 20px;
   }
 

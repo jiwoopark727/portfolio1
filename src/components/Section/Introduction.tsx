@@ -23,7 +23,7 @@ const IntroductionContainer = styled.div`
   display: flex;
   text-align: center;
   justify-content: center;
-  font-size: 38px;
+  font-size: 30px;
   font-weight: bold;
   line-height: 1.9;
   opacity: 0;

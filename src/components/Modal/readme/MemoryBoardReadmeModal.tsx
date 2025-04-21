@@ -24,11 +24,12 @@ const ModalWrapper = styled.div`
 
 const ModalContent = styled.div`
   background: #fafafa;
-  width: 1200px;
-  height: 85vh;
+  border-radius: 20px;
+  width: 1000px;
+  height: 90vh;
   padding: 50px;
   overflow-y: scroll;
-  font-size: 22px;
+  font-size: 15px;
 `;
 
 const MemoryBoardReadmeModal: React.FC<ReadmeModalProps> = ({
