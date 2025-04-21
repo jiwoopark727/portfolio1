@@ -52,14 +52,18 @@ const ButtonGroup = styled.div`
   margin-top: 15px;
 
   button {
+    background-color: #fafafa;
     border: none;
-    font-size: 52px;
+    padding: 0 10px;
+    font-size: 30px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background 0.2s;
   }
 
   span {
     display: flex;
+    position: relative;
+    top: 4px;
     align-items: center;
     font-size: 15px;
   }
