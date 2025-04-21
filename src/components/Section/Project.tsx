@@ -8,6 +8,8 @@ import JobNestReadmeModal from '../Modal/readme/JobNestReadmeModal.tsx';
 import JamCinemaReadmeModal from '../Modal/readme/JamCinemaReadmeModal.tsx';
 import MemoryBoardReadmeModal from '../Modal/readme/MemoryBoardReadmeModal.tsx';
 import FlappyBirdReadmeModal from '../Modal/readme/FlappyBirdReadmeModal.tsx';
+import VendingMachineReadmeModal from '../Modal/readme/VendingMachineReadmeModal.tsx';
+
 import JobNestCarouselModal from '../Modal/carousel/JobNestCarouselModal.tsx';
 import FlappyBirdCarouselModal from '../Modal/carousel/FlappyBirdCarouselModal.tsx';
 import MemoryBoardCarouselModal from '../Modal/carousel/MemoryBoardCarouselModal.tsx';
@@ -15,6 +17,8 @@ import JamCinemaCarouselModal from '../Modal/carousel/JamCinemaCarouselModal.tsx
 import BlogCarouselModal from '../Modal/carousel/BlogCarouselModal.tsx';
 import ShopCarouselModal from '../Modal/carousel/ShopCarouselModal.tsx';
 import VendingMachineCarouselModal from '../Modal/carousel/VendingMachineCarouselModal.tsx';
+import CurrencyExchangeCarouselModal from '../Modal/carousel/CurrencyExchangeCarouselModal.tsx';
+import CurrencyExchangeReadmeModal from '../Modal/readme/CurrencyExchangeReadmeModal.tsx';
 
 const fadeIn = keyframes`
   0% {
@@ -380,12 +384,19 @@ const Project = () => {
   const openVendingMachineGH = () => {
     window.open('https://github.com/jiwoopark727/vending-machine', '_blank');
   };
+  const openCurrencyExchangeGH = () => {
+    window.open('https://github.com/jiwoopark727/currency-exchange', '_blank');
+  };
 
   // 리드미 열고 닫는 state변수와 handle 함수
   const [jobNestReadmeOpen, setJobNestReadmeOpen] = useState(false);
   const [jamCinemaReadmeOpen, setJamCinemaReadmeOpen] = useState(false);
   const [memoryBoardReadmeOpen, setMemoryBoardReadmeOpen] = useState(false);
   const [flappBirdReadmeOpen, setflappyBirdReadmeOpen] = useState(false);
+  const [vendingMachineReadmeOpen, setVendingMachineReadmeOpen] =
+    useState(false);
+  const [currencyExchangeReadmeOpen, setCurrencyExchangeReadmeOpen] =
+    useState(false);
   const openJobNestReadme = () => {
     setJobNestReadmeOpen(true);
   };
@@ -398,6 +409,12 @@ const Project = () => {
   const openflappyBirdReadme = () => {
     setflappyBirdReadmeOpen(true);
   };
+  const openVendingMachineReadme = () => {
+    setVendingMachineReadmeOpen(true);
+  };
+  const openCurrencyExchangeReadme = () => {
+    setCurrencyExchangeReadmeOpen(true);
+  };
 
   // 이미지 버튼 캐러셀 슬라이드 부분
   const [isMemoryBoardCarouselOpen, setIsMemoryBoardCarouselOpen] =
@@ -409,6 +426,8 @@ const Project = () => {
   const [isBlogCarouselOpen, setIsBlogCarouselOpen] = useState(false);
   const [isShopCarouselOpen, setIsShopCarouselOpen] = useState(false);
   const [isVendingMachineCarouselOpen, setIsVendingMachineCarouselOpen] =
+    useState(false);
+  const [isCurrencyExchangeCarouselOpen, setIsCurrencyExchangeCarouselOpen] =
     useState(false);
 
   const MemoryBoarddImages = [
@@ -484,13 +503,16 @@ const Project = () => {
     'src/assets/images/portfolio_img/shop/shop_cart.png',
   ];
   const VendingMachineImages = [
-    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_home.png',
-    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_insert_coin.png',
-    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_buy_poomjeol.png',
-    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_admin.png',
-    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_admin_info.png',
-    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_admin_info2.png',
-    'src/assets/images/portfolio_img/VendingMachine/VendingMachine_money.png',
+    'src/assets/images/portfolio_img/vending_machine/VendingMachine_home.png',
+    'src/assets/images/portfolio_img/vending_machine/VendingMachine_insert_coin.png',
+    'src/assets/images/portfolio_img/vending_machine/VendingMachine_buy_poomjeol.png',
+    'src/assets/images/portfolio_img/vending_machine/VendingMachine_admin.png',
+    'src/assets/images/portfolio_img/vending_machine/VendingMachine_admin_info.png',
+    'src/assets/images/portfolio_img/vending_machine/VendingMachine_admin_info2.png',
+    'src/assets/images/portfolio_img/vending_machine/VendingMachine_money.png',
+  ];
+  const CurrencyExchangeImages = [
+    'src/assets/images/portfolio_img/currency_exchange/currency_exchange_home.png',
   ];
 
   // 화면에 등장 시 애니메이션 동작 부분(IntersectionObserver)
@@ -907,6 +929,13 @@ const Project = () => {
                 </div>
                 <div className='stack'>Java, Socket</div>
                 <div className='ref'>
+                  <div className='readme' onClick={openVendingMachineReadme}>
+                    <FontAwesomeIcon
+                      icon={faReadme}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    README
+                  </div>
                   <div
                     className='image'
                     onClick={() => setIsVendingMachineCarouselOpen(true)}
@@ -921,48 +950,37 @@ const Project = () => {
               </ProjectBox2>
               {/* 8(리액트 환전 계산기) */}
               <ProjectBox2>
-                <div className='p_title'>
-                  부동산 매물 관리 프로젝트 - JobNest (잡네스트)
-                </div>
-                <div className='date'>2024.08 - 2024.09 (4人 팀 프로젝트)</div>
+                <div className='p_title'>환전계산기 - Currency Exchange</div>
+                <div className='date'>2024.08 (1人 개인 프로젝트)</div>
                 <hr className='contour' />
                 <div className='sub_title'>
-                  공인중개사들을 위한 부동산 매물 관리 플랫폼 웹사이트
+                  해외 여행자들은 위한 환전 계산기 웹 사이트
                 </div>
                 <div className='des'>
                   <ul>
                     <li>
-                      공인중개사이셨던 부모님을 통해 알게 된 낙후된 홈페이지들로
-                      인한 공인중개사들의 불편함을 해소하고자 직접 개발
+                      일본 여행을 가게 되면서 환전 계산을 해주는 사이트가 있으면
+                      편하겠다 생각이 들어 개발
                     </li>
                     <li>
-                      Handsontable을 활용한 엑셀 시트 스타일의 매물 관리(CRUD)
-                      시스템
+                      사용자가 입력한 금액을 기준으로 환율을 계산하여 결과를
+                      표시
                     </li>
-                    <li>카카오맵 API를 이용한 매물 위치 표시</li>
-                    <li>OAuth 2.0 으로 Google 로그인 구현</li>
-                    <li>Google Calendar API와 연동하여 일정 관리</li>
                     <li>
-                      서버와의 통신으로 등기부등본 및 건축물 대장 열람 기능(더미
-                      데이터)
+                      직관적인 UI를 통해 사용자 입력을 받고 결과를 시각적으로
+                      제공
                     </li>
                   </ul>
                 </div>
-                <div className='link' onClick={openJobNest}>
+                <div className='link' onClick={openCurrencyExchangeGH}>
                   <a target='_blank' rel='noopener noreferrer'>
-                    https://job-nest-iota.vercel.app (배포 사이트)
+                    https://github.com/jiwoopark727/currency-exchange.git
+                    (깃허브)
                   </a>{' '}
                 </div>
-                <div className='link' onClick={openJobNestGH}>
-                  <a target='_blank' rel='noopener noreferrer'>
-                    https://github.com/jiwoopark727/job-nest (깃허브)
-                  </a>{' '}
-                </div>
-                <div className='stack'>
-                  TypeScript, React, Vercel, Redux, TailWind CSS
-                </div>
+                <div className='stack'>HTML/CSS, JavaScript</div>
                 <div className='ref'>
-                  <div className='readme' onClick={openJobNestReadme}>
+                  <div className='readme' onClick={openCurrencyExchangeReadme}>
                     <FontAwesomeIcon
                       icon={faReadme}
                       style={{ paddingRight: '5px' }}
@@ -971,7 +989,7 @@ const Project = () => {
                   </div>
                   <div
                     className='image'
-                    onClick={() => setIsJobNestCarouselOpen(true)}
+                    onClick={() => setIsCurrencyExchangeCarouselOpen(true)}
                   >
                     <FontAwesomeIcon
                       icon={faImage}
@@ -1008,6 +1026,16 @@ const Project = () => {
           isOpen={flappBirdReadmeOpen}
           onClose={() => setflappyBirdReadmeOpen(false)}
           readmeUrl='https://raw.githubusercontent.com/jiwoopark727/flappy-bird/main/README.md'
+        />
+        <VendingMachineReadmeModal
+          isOpen={vendingMachineReadmeOpen}
+          onClose={() => setVendingMachineReadmeOpen(false)}
+          readmeUrl='https://raw.githubusercontent.com/jiwoopark727/vending-machine/main/README.md'
+        />
+        <CurrencyExchangeReadmeModal
+          isOpen={currencyExchangeReadmeOpen}
+          onClose={() => setCurrencyExchangeReadmeOpen(false)}
+          readmeUrl='https://raw.githubusercontent.com/jiwoopark727/currency-exchange/main/README.md'
         />
       </>
       {/* 이미지 캐러셀 */}
@@ -1046,6 +1074,11 @@ const Project = () => {
           images={VendingMachineImages}
           isOpen={isVendingMachineCarouselOpen}
           onClose={() => setIsVendingMachineCarouselOpen(false)}
+        />
+        <CurrencyExchangeCarouselModal
+          images={CurrencyExchangeImages}
+          isOpen={isCurrencyExchangeCarouselOpen}
+          onClose={() => setIsCurrencyExchangeCarouselOpen(false)}
         />
       </>
     </>
