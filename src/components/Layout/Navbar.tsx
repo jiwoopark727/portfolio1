@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 
 const NavbarWrapper = styled.div<{ scrolled: boolean }>`
-  height: 70px;
+  height: 55px;
   width: 100%;
   background-color: #f5f5f5;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 600;
   border-bottom: ${(props) => (props.scrolled ? '1px solid #b0b0b0' : 'none')};
 `;
 

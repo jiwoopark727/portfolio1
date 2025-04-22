@@ -25,7 +25,6 @@ const fadeIn = keyframes`
 const SkillsWrapper = styled.div`
   height: 75vh;
   background-color: #fff;
-  font-size: 40px;
   font-weight: bold;
   line-height: 1.9;
   padding-top: 10vh;
@@ -33,7 +32,7 @@ const SkillsWrapper = styled.div`
 
   .title {
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 800;
     padding-bottom: 50px;
 
@@ -53,7 +52,7 @@ const SkillsContainer = styled.div`
   max-width: 980px;
   margin: 0 auto;
   align-items: center;
-
+  height: 380px;
   opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
@@ -68,7 +67,7 @@ const SkillsBox = styled.div`
 
   .subject {
     width: 210px;
-    font-size: 30px;
+    font-size: 22px;
   }
 
   .content {
@@ -77,7 +76,7 @@ const SkillsBox = styled.div`
   }
 
   .content img {
-    height: 38px;
+    height: 40px;
     margin-right: 20px;
     border: 1px solid #cacaca;
     box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
@@ -95,7 +94,7 @@ const Skills = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.6 }
+      { threshold: 0.4 }
     );
 
     if (containerRef.current) {
@@ -138,10 +137,11 @@ const Skills = () => {
         <SkillsBox>
           <span className='subject'>상태 관리</span>
           <span className='content'>
-            <img src='https://img.shields.io/badge/Recoil-white.svg?style=for-the-badge&logo=recoil&logoColor=3578E5' />
+            {/* <img src='https://img.shields.io/badge/Recoil-white.svg?style=for-the-badge&logo=recoil&logoColor=3578E5' /> */}
             <img src='https://img.shields.io/badge/Zustand-white.svg?style=for-the-badge&logo=zustand&logoColor=1572B6' />
             <img src='https://img.shields.io/badge/Redux-white.svg?style=for-the-badge&logo=redux&logoColor=764ABC' />
-            <img src='https://img.shields.io/badge/React query-white.svg?style=for-the-badge&logo=redux&logoColor=764ABC' />
+            <img src='https://img.shields.io/badge/React query-white.svg?style=for-the-badge&logo=reactquery&logoColor=764ABC' />
+            <img src='https://img.shields.io/badge/Context API-white.svg?style=for-the-badge&logo=reactquery&logoColor=764ABC' />
           </span>
         </SkillsBox>
         <SkillsBox>
@@ -150,6 +150,7 @@ const Skills = () => {
             <img src='https://img.shields.io/badge/My SQL-white.svg?style=for-the-badge&logo=mysql&logoColor=4479A1' />
             <img src='https://img.shields.io/badge/FireBase-white.svg?style=for-the-badge&logo=firebase&logoColor=DD2C00' />
             <img src='https://img.shields.io/badge/Maria DB-white.svg?style=for-the-badge&logo=mariadb&logoColor=003545' />
+            <img src='https://img.shields.io/badge/Mongo DB-white.svg?style=for-the-badge&logo=mongodb&logoColor=003545' />
           </span>
         </SkillsBox>
         <SkillsBox>

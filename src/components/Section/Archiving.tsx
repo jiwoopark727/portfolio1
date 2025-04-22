@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import g_logo from './../../assets/images/github_logo.png';
-import t_logo from './../../assets/images/tistory_logo.png';
+import g_logo from './../../assets/images/logo/github_logo.png';
+import t_logo from './../../assets/images/logo/tistory_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { keyframes } from '@emotion/react';
@@ -38,15 +38,14 @@ const slideRightIn = keyframes`
 `;
 
 const ArchivingWrapper = styled.div`
-  height: 60vh;
   background-color: #f9fafb;
   padding-top: 10vh;
-  padding-bottom: 12vh;
+  padding-bottom: 17vh;
 
   .title {
     display: flex;
     justify-content: center;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 800;
 
     opacity: 0;
@@ -61,7 +60,7 @@ const ArchivingContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 900px;
   justify-items: center;
 `;
 
@@ -72,11 +71,10 @@ const ArchivingBox1 = styled.div`
   justify-content: center;
   text-align: center;
   margin-top: 80px;
-  font-size: 30px;
-  width: 400px;
+  font-size: 25px;
+  width: 350px;
   height: 250px;
   border-radius: 25px;
-  /* background-color: rgba(51, 112, 255, 0.07); */
   background-color: #f9fafb;
   border: 1px solid #cacaca;
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
@@ -101,8 +99,8 @@ const ArchivingBox2 = styled.div`
   justify-content: center;
   text-align: center;
   margin-top: 80px;
-  font-size: 30px;
-  width: 400px;
+  font-size: 25px;
+  width: 350px;
   height: 250px;
   border-radius: 25px;
   /* background-color: rgba(51, 112, 255, 0.07); */
@@ -124,7 +122,7 @@ const ArchivingBox2 = styled.div`
 
 const InnerContent = styled.div<{ bg_logo: string }>`
   .icon {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .title_wrapper {
@@ -134,7 +132,7 @@ const InnerContent = styled.div<{ bg_logo: string }>`
 
   .g_title {
     padding-left: 5px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
   }
@@ -149,9 +147,9 @@ const InnerContent = styled.div<{ bg_logo: string }>`
     background-image: url(${(props) => props.bg_logo});
     background-size: cover;
     background-position: center center;
-    width: 150px;
-    height: 47px;
-    margin-bottom: 20px;
+    width: 125px;
+    height: 36px;
+    margin-bottom: 19px;
   }
 
   .t_link {
@@ -161,7 +159,7 @@ const InnerContent = styled.div<{ bg_logo: string }>`
   }
 
   .text {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 2.5;
   }
 `;

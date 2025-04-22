@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import CodingAwards from './../../assets/images/CodingAwards.jpg';
-import EsportsAwards from './../../assets/images/EsportsAwards.jpg';
-import GameAwards from './../../assets/images/GameAwards.jpg';
-import WorkExperienceCompletion from './../../assets/images/WorkExperienceCompletion.png';
-import SWVentureCompletion from './../../assets/images/SWVentureCompletion.jpg';
+import CodingAwards from './../../assets/images/awards_completion/CodingAwards.jpg';
+import EsportsAwards from './../../assets/images/awards_completion/EsportsAwards.jpg';
+import GameAwards from './../../assets/images/awards_completion/GameAwards.jpg';
+import WorkExperienceCompletion from './../../assets/images/awards_completion/WorkExperienceCompletion.png';
+import SWVentureCompletion from './../../assets/images/awards_completion/SWVentureCompletion.jpg';
 import { useEffect, useRef, useState } from 'react';
 import { keyframes } from '@emotion/react';
 
@@ -29,13 +29,13 @@ const slideDown = keyframes`
 
 const AwardsWrapper = styled.div`
   background-color: #f9fafb;
-  padding-top: 10vh;
+  padding-top: 15vh;
   padding-bottom: 15vh;
 
   .title {
     display: flex;
     justify-content: center;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 800;
 
     opacity: 0;
@@ -48,7 +48,7 @@ const AwardsWrapper = styled.div`
   .sub_title {
     display: flex;
     justify-content: center;
-    font-size: 20px;
+    font-size: 17px;
 
     opacity: 0;
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -60,10 +60,10 @@ const AwardsWrapper = styled.div`
 
 const AwardsContainer = styled.div`
   display: grid;
-  grid-template-columns: 3.3fr 6.7fr;
+  grid-template-columns: 3.9fr 6.1fr;
   row-gap: 50px;
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 850px;
   justify-items: start;
   padding-top: 80px;
 
@@ -86,8 +86,8 @@ const TypeBox = styled.div<{ bg_logo: string }>`
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 198px;
-  height: 280px;
+  width: 180px;
+  height: 255px;
   border-radius: 8px;
   border: 1px solid #cfcfcf;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
@@ -95,33 +95,33 @@ const TypeBox = styled.div<{ bg_logo: string }>`
 
 const DescribeContainer = styled.div`
   line-height: 1.7;
-  margin-top: 10px;
+  margin-top: 25px;
   .type {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 22px;
     padding-bottom: 15px;
   }
 
   .sub_type {
     font-weight: bold;
     margin-right: 4px;
-    font-size: 24px;
+    font-size: 17px;
   }
 
   .year {
-    font-size: 23px;
+    font-size: 17px;
   }
 
   .issuer {
-    font-size: 23px;
+    font-size: 17px;
   }
 
   .num {
-    font-size: 23px;
+    font-size: 17px;
   }
 
   .des {
-    font-size: 23px;
+    font-size: 17px;
   }
 `;
 
@@ -259,7 +259,7 @@ const Awards = () => {
             강의르 수강하고 회사 측과 연계 협업 프로젝트를 완료했습니다.
           </div>
         </DescribeContainer>
-        {/* 4 */}
+        {/* 5 */}
         <TypeContainer>
           <TypeBox bg_logo={SWVentureCompletion}></TypeBox>
         </TypeContainer>
@@ -278,8 +278,9 @@ const Awards = () => {
           </div>
           <div className='des'>
             <span className='sub_type'>설명 :</span>
-            청년 일경험 React 과정에 참가하여 React에 대한 동작원리와 중요 개념
-            강의르 수강하고 회사 측과 연계 협업 프로젝트를 완료했습니다.
+            최신 IT 지정 교과목 수강, 각종 강연 및 취업 박람회 참가, 학술제 및
+            경시,경진 대회 참가 등 SW 인재가 되기 위한 여러 프로그램들을 참여,
+            수료했습니다.
           </div>
         </DescribeContainer>
       </AwardsContainer>
