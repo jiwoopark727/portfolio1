@@ -27,12 +27,12 @@ const slideDown = keyframes`
 
 const CertificatesWrapper = styled.div`
   background-color: #fff;
-  padding-top: 10vh;
+  padding-top: 15vh;
 
   .title {
     display: flex;
     justify-content: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 800;
 
     opacity: 0;
@@ -45,12 +45,12 @@ const CertificatesWrapper = styled.div`
 
 const CertificatesContainer = styled.div`
   display: grid;
-  grid-template-columns: 3.8fr 6.2fr;
-  row-gap: 50px;
-  margin: 0 auto;
-  max-width: 950px;
+  grid-template-columns: 3fr 7fr;
+  row-gap: 60px;
+  margin: auto;
+  max-width: 750px;
   justify-items: start;
-  padding-top: 80px;
+  padding-top: 100px;
 
   opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -71,8 +71,8 @@ const TypeBox = styled.div<{ bg_logo: string }>`
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
   border-radius: 100px;
   border: 1px solid #cfcfcf;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
@@ -81,21 +81,22 @@ const TypeBox = styled.div<{ bg_logo: string }>`
 const DescribeContainer = styled.div`
   line-height: 1.7;
   padding-top: 10px;
+  padding-left: 80px;
   .type {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .year {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .issuer {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .num {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 

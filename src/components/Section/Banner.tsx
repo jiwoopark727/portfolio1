@@ -73,7 +73,7 @@ const BannerText = styled.div`
 
 const Banner = () => {
   const handleArrowClick = () => {
-    const goalHeight = document.documentElement.clientHeight - 69;
+    const goalHeight = document.documentElement.clientHeight - 54;
     window.scrollTo({
       top: goalHeight,
       behavior: 'smooth',

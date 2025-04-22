@@ -29,13 +29,13 @@ const slideDown = keyframes`
 
 const AwardsWrapper = styled.div`
   background-color: #f9fafb;
-  padding-top: 10vh;
+  padding-top: 15vh;
   padding-bottom: 15vh;
 
   .title {
     display: flex;
     justify-content: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 800;
 
     opacity: 0;
@@ -48,7 +48,7 @@ const AwardsWrapper = styled.div`
   .sub_title {
     display: flex;
     justify-content: center;
-    font-size: 20px;
+    font-size: 18px;
 
     opacity: 0;
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -60,10 +60,10 @@ const AwardsWrapper = styled.div`
 
 const AwardsContainer = styled.div`
   display: grid;
-  grid-template-columns: 3.3fr 6.7fr;
+  grid-template-columns: 3.5fr 6.5fr;
   row-gap: 50px;
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1000px;
   justify-items: start;
   padding-top: 80px;
 
@@ -86,8 +86,8 @@ const TypeBox = styled.div<{ bg_logo: string }>`
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 198px;
-  height: 280px;
+  width: 180px;
+  height: 255px;
   border-radius: 8px;
   border: 1px solid #cfcfcf;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
@@ -98,30 +98,30 @@ const DescribeContainer = styled.div`
   margin-top: 10px;
   .type {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 24px;
     padding-bottom: 15px;
   }
 
   .sub_type {
     font-weight: bold;
     margin-right: 4px;
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .year {
-    font-size: 23px;
+    font-size: 18px;
   }
 
   .issuer {
-    font-size: 23px;
+    font-size: 18px;
   }
 
   .num {
-    font-size: 23px;
+    font-size: 18px;
   }
 
   .des {
-    font-size: 23px;
+    font-size: 18px;
   }
 `;
 
