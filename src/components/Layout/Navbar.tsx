@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
+import { SectionRefs } from '../../types/types.ts';
 
 const NavbarWrapper = styled.div<{ scrolled: boolean }>`
   height: 55px;
@@ -31,6 +32,7 @@ const NavbarInner = styled.div`
 const Logo = styled.div`
   font-size: 20px;
   font-weight: 900;
+  cursor: pointer;
 `;
 
 const NavbarContent = styled.div`
@@ -61,10 +63,10 @@ const MenuItem = styled.li`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
   const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const handleScroll = () => {
+  const handleScroll0 = () => {
     if (window.scrollY > 0) {
       setScrolled(true);
     } else {
@@ -72,11 +74,15 @@ const Navbar = () => {
     }
   };
 
+  const handleScrollMove = (key: string) => {
+    sectionRefs[key]?.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll0);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll0);
     };
   }, []);
 
@@ -84,15 +90,27 @@ const Navbar = () => {
     <NavbarWrapper scrolled={scrolled}>
       <NavbarContainer>
         <NavbarInner>
-          <Logo>PJW</Logo>
+          <Logo onClick={() => handleScrollMove('banner')}>PJW</Logo>
           <NavbarContent>
             <Menu>
-              <MenuItem>프로필</MenuItem>
-              <MenuItem>스킬</MenuItem>
-              <MenuItem>아카이빙</MenuItem>
-              <MenuItem>프로젝트</MenuItem>
-              <MenuItem>수상 내역</MenuItem>
-              <MenuItem>자격증</MenuItem>
+              <MenuItem onClick={() => handleScrollMove('profile')}>
+                프로필
+              </MenuItem>
+              <MenuItem onClick={() => handleScrollMove('skills')}>
+                스킬
+              </MenuItem>
+              <MenuItem onClick={() => handleScrollMove('archiving')}>
+                아카이빙
+              </MenuItem>
+              <MenuItem onClick={() => handleScrollMove('project')}>
+                프로젝트
+              </MenuItem>
+              <MenuItem onClick={() => handleScrollMove('awards')}>
+                수상 내역
+              </MenuItem>
+              <MenuItem onClick={() => handleScrollMove('license')}>
+                자격증
+              </MenuItem>
             </Menu>
           </NavbarContent>
         </NavbarInner>

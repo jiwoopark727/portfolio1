@@ -7,6 +7,7 @@ import Project from '../components/Section/Project';
 import Introduction from '../components/Section/Introduction';
 import Awards from '../components/Section/Awards';
 import License from '../components/Section/License';
+import { SectionRefs } from '../types/types.ts'; // 경로에 맞게
 
 const MainViewContainer = styled.div`
   height: auto;
@@ -14,18 +15,35 @@ const MainViewContainer = styled.div`
   padding-bottom: 280px;
 `;
 
-const MainView = () => {
+const MainView = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
   return (
     <MainViewContainer>
-      <Banner />
+      <div ref={sectionRefs.banner}>
+        <Banner />
+      </div>
+
       <Introduction />
-      <Profile />
-      <Skills />
-      <Archiving />
-      <Project />
-      <Awards />
-      <License />
+
+      <div ref={sectionRefs.profile}>
+        <Profile />
+      </div>
+      <div ref={sectionRefs.skills}>
+        <Skills />
+      </div>
+      <div ref={sectionRefs.archiving}>
+        <Archiving />
+      </div>
+      <div ref={sectionRefs.project}>
+        <Project />
+      </div>
+      <div ref={sectionRefs.awards}>
+        <Awards />
+      </div>
+      <div ref={sectionRefs.license}>
+        <License />
+      </div>
     </MainViewContainer>
   );
 };
+
 export default MainView;
