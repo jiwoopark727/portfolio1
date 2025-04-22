@@ -35,7 +35,7 @@ const AwardsWrapper = styled.div`
   .title {
     display: flex;
     justify-content: center;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 800;
 
     opacity: 0;
@@ -48,7 +48,7 @@ const AwardsWrapper = styled.div`
   .sub_title {
     display: flex;
     justify-content: center;
-    font-size: 18px;
+    font-size: 17px;
 
     opacity: 0;
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -63,7 +63,7 @@ const AwardsContainer = styled.div`
   grid-template-columns: 3.5fr 6.5fr;
   row-gap: 50px;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 850px;
   justify-items: start;
   padding-top: 80px;
 
@@ -98,30 +98,30 @@ const DescribeContainer = styled.div`
   margin-top: 10px;
   .type {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
     padding-bottom: 15px;
   }
 
   .sub_type {
     font-weight: bold;
     margin-right: 4px;
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .year {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .issuer {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .num {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .des {
-    font-size: 18px;
+    font-size: 17px;
   }
 `;
 

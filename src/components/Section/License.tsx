@@ -32,7 +32,7 @@ const CertificatesWrapper = styled.div`
   .title {
     display: flex;
     justify-content: center;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 800;
 
     opacity: 0;
@@ -84,19 +84,19 @@ const DescribeContainer = styled.div`
   padding-left: 80px;
   .type {
     font-weight: bold;
-    font-size: 26px;
+    font-size: 23px;
   }
 
   .year {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .issuer {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .num {
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 

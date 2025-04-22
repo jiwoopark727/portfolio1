@@ -32,7 +32,7 @@ const SkillsWrapper = styled.div`
 
   .title {
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 800;
     padding-bottom: 50px;
 
@@ -67,7 +67,7 @@ const SkillsBox = styled.div`
 
   .subject {
     width: 210px;
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .content {
@@ -76,7 +76,7 @@ const SkillsBox = styled.div`
   }
 
   .content img {
-    height: 38px;
+    height: 40px;
     margin-right: 20px;
     border: 1px solid #cacaca;
     box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
@@ -94,7 +94,7 @@ const Skills = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.6 }
+      { threshold: 0.4 }
     );
 
     if (containerRef.current) {

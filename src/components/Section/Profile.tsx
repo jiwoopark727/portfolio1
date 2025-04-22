@@ -25,13 +25,14 @@ const slideDown = keyframes`
 const AboutMeWrapper = styled.div`
   background-color: #f9fafb;
   padding-top: 28vh;
-  padding-bottom: 250px;
+  padding-bottom: 150px;
+
   .title {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 85px;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 800;
 
     opacity: 0;
@@ -46,9 +47,9 @@ const AboutMeWrapper = styled.div`
 const AboutMeContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 200px;
-  row-gap: 100px;
-  max-width: 1450px;
+  column-gap: 50px;
+  row-gap: 50px;
+  max-width: 1200px;
   margin: 0 auto;
 
   opacity: 0;
@@ -75,7 +76,7 @@ const AboutMeBox = styled.div`
 `;
 
 const ItemIcon = styled.div`
-  font-size: 42px;
+  font-size: 30px;
   padding-left: 10px;
   padding-right: 30px;
   color: #4a4a4a;
@@ -86,7 +87,7 @@ const ItemText = styled.div`
   flex-direction: column;
   text-align: start;
   .subject {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     padding-bottom: 5px;
   }

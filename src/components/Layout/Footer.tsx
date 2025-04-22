@@ -13,8 +13,6 @@ const FooterInner = styled.div`
   height: 200px;
   padding-left: 67px;
   padding-right: 67px;
-  margin-left: 300px;
-  margin-right: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
