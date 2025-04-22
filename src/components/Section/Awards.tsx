@@ -60,7 +60,7 @@ const AwardsWrapper = styled.div`
 
 const AwardsContainer = styled.div`
   display: grid;
-  grid-template-columns: 3.5fr 6.5fr;
+  grid-template-columns: 3.9fr 6.1fr;
   row-gap: 50px;
   margin: 0 auto;
   max-width: 850px;
@@ -95,7 +95,7 @@ const TypeBox = styled.div<{ bg_logo: string }>`
 
 const DescribeContainer = styled.div`
   line-height: 1.7;
-  margin-top: 10px;
+  margin-top: 25px;
   .type {
     font-weight: bold;
     font-size: 22px;

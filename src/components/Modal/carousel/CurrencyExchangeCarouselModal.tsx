@@ -25,8 +25,8 @@ const ModalContent = styled.div`
   background: #fafafa;
   padding: 35px;
   border-radius: 20px;
-  width: 570px;
-  height: 780px;
+  width: 700px;
+  height: 530px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ const ModalContent = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  height: 800px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height: 650px;
+  height: 400px;
   object-fit: contain;
 `;
 

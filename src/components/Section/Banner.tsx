@@ -33,12 +33,12 @@ const BannerText = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 60px;
+    font-size: 45px;
     padding-bottom: 30px;
   }
 
   .title {
-    font-size: 60px;
+    font-size: 45px;
     padding-bottom: 80px;
   }
 
@@ -51,7 +51,7 @@ const BannerText = styled.div`
   }
 
   .Introduction {
-    font-size: 25px;
+    font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
