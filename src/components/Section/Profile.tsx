@@ -62,6 +62,7 @@ const AboutMeContainer = styled.div`
 
 const AboutMeBox = styled.div`
   width: 340px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: start;

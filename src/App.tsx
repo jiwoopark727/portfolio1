@@ -3,6 +3,7 @@ import Navbar from './components/Layout/Navbar';
 import { Global, css } from '@emotion/react';
 import MainView from './views/MainView';
 import { useEffect, useRef } from 'react';
+import ScrollToTopButton from './components/Styled/ScrollToTopButton';
 // import { PretendardRegular } from './assets/Pretendard-1.3.9/web/';
 
 const globalStyles = css`
@@ -39,6 +40,7 @@ function App() {
       <MainView sectionRefs={sectionRefs} />
       {/* 푸터 */}
       <Footer></Footer>
+      <ScrollToTopButton />
     </>
   );
 }

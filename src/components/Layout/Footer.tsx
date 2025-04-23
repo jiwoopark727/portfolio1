@@ -19,7 +19,7 @@ const FooterInner = styled.div`
 `;
 
 const InnerText = styled.div`
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 const Footer = () => {
