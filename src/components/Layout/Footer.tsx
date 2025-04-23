@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterInner>
-        <InnerText>© 2025. Park Jiwoo Woo. All rights reserved.</InnerText>
+        <InnerText>© 2025. Jiwoo Park. All rights reserved.</InnerText>
       </FooterInner>
     </FooterContainer>
   );
