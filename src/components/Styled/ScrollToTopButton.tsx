@@ -1,4 +1,3 @@
-/** components/Common/ScrollToTopButton.tsx */
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { FaArrowUp } from 'react-icons/fa';

@@ -7,7 +7,7 @@ import Project from '../components/Section/Project';
 import Introduction from '../components/Section/Introduction';
 import Awards from '../components/Section/Awards';
 import License from '../components/Section/License';
-import { SectionRefs } from '../types/types.ts'; // 경로에 맞게
+import { SectionRefs } from '../types/types.ts';
 
 const MainViewContainer = styled.div`
   height: auto;
