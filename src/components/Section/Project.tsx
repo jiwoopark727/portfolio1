@@ -642,7 +642,8 @@ const Project = () => {
                   </a>{' '}
                 </div>
                 <div className='stack'>
-                  TypeScript, React, Python, Vercel, styled-components, Zustand
+                  TypeScript, React, Python, Vercel, styled-components, Zustand,
+                  MongoDB
                 </div>
                 <div className='ref'>
                   <div className='readme' onClick={openMemoryBoardReadme}>
@@ -708,7 +709,7 @@ const Project = () => {
                   </a>{' '}
                 </div>
                 <div className='stack'>
-                  TypeScript, Node.js, React, Redux, Vercel
+                  TypeScript, Node.js, React, Redux, Vercel, MariaDB
                 </div>
                 <div className='ref'>
                   <div className='readme' onClick={openJamCinemaReadme}>
@@ -898,7 +899,8 @@ const Project = () => {
                   </a>{' '}
                 </div>
                 <div className='stack'>
-                  TypeScript, React, Python, Vercel, styled-components, Zustand
+                  TypeScript, React, Python, Vercel, styled-components, Zustand,
+                  MongoDB
                 </div>
                 <div className='ref'>
                   <div className='readme' onClick={openMemoryBoardReadme}>
@@ -964,7 +966,7 @@ const Project = () => {
                   </a>{' '}
                 </div>
                 <div className='stack'>
-                  TypeScript, Node.js, React, Redux, Vercel
+                  TypeScript, Node.js, React, Redux, Vercel, MariaDB
                 </div>
                 <div className='ref'>
                   <div className='readme' onClick={openJamCinemaReadme}>
