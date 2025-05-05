@@ -11,94 +11,67 @@
 ## 🎯 주요 기능
 
 - **헤더(내비게이션 바)**: 헤더에 fixed된 네비게이션 바가 있으며 해당 네비 바에는 로고(PJW)와 밑에 나오는 각종 카테고리 탭을 적어놓았으며 해당 탭 클릭 시 해당 섹션 스크롤 위치로 이동합니다.
-- **프로필**: 딥서치 뉴스 API를 사용하여 영화 키워드를 가진 최신 뉴스 기사들을 리스트 형식으로 제공, 무한 스크롤 방식으로 5개 씩 리스트업, 100개를 최대로 보여주고 DB 효율성을 위해 100개 이후의 것은 삭제함으로써 최신화 상태를 유지
-- **스킬**: 자체 커뮤니티를 구축해 게시글 조회 및 글 쓰기 등을 할 수 있으며 조회수와 글 작성 시간을 바탕으로 인기 게시글과 최신 게시글을 따로 표시
-- **아카이빙**: 영화포스터, 제작사, 배우, 관련영상 등 다양한 종류의 영화 정보를 제공
-- **프로젝트**: 장르별 영화, 에디터 추천 영화, 주간 인기 영화, 평점 높은순 영화, 현재 상영, 개봉 예정 영화 등 다양한 카테고리 별로 영화를 분류하여 기호에 따라 쉽게 탐색 가능
-- **수상내역**: 입력값 하나마다 포함하는 영화들을 띄워주고 로그인을 한 상태라면 검색 기록을 저장
-- **자격증증**: 입력값 하나마다 포함하는 영화들을 띄워주고 로그인을 한 상태라면 검색 기록을 저장
+- **프로필**: 이름, 생년월일, 위치, 연락처, 이메일, 학력 등의 정보를 제공
+- **스킬**: 다룰 줄 아는 여러 스킬들을 아이콘 이미지와 함께 나열
+- **아카이빙**: 소스 코드 저장소이자 협업 툴인 제 깃허브 주소와, 공부 및 지식 공유 목적으로 운영하는 티스토리 블로그 주소 제공
+- **프로젝트**: 그동안 해왔던 프로젝트들 제목과, 기간, 인원수, 설명, 배포 사이트 및 깃허브 주소, 리드미 파일과 이미지 캐러셀 슬라이드를 제공
+- **수상내역**: 수상했던 상들의 정보를 제공 (+ 수료도 포함)
+- **자격증**: 정보처리기사 등의 자격증 정보를 제공
+- **애니메이션 기능**: 스크롤 애니메이션이 주를 이루고 마우스온 이벤트 또한 제공
+- **UI&UX**: 포트폴리오이니만큼 UI를 최대한 깔끔하고 보기 편하게 구성, 스크롤 탑 버튼, 네비게이션 바의 메뉴 탭 클릭 시 해당 섹션 스크롤 이동 기능들을 추가해 UX 향상
 
 <br/>
 
 ## 🛠 기술 스택
 
-- **Frontend**: `React`, `TypeScript`, `Vite`, `styled-components`
-- **Backend**: `Node.js`, `mariaDB`, `HeidiSQL`
-- **API**: `The Movie DataBase(TMDB) API`, `Intersection Observer API`, `Deep Search News API`
+- **Frontend**: `React`, `TypeScript`, `Vite`, `Emotion`
 - **Deployment**: `Vercel`
 
 <br/>
 
 ## 🎬 데모 배포 사이트 및 스크린샷
 
-🚀 <a href="https://job-nest-iota.vercel.app" target="_blank" rel="noopener noreferrer"><strong>[JAM CINEMA 배포 사이트]</strong></a>
+🚀 <a href="https://pjw-portfolio1.vercel.app" target="_blank" rel="noopener noreferrer"><strong>[박지우 포트폴리오 배포 사이트]</strong></a>
 
 <table>
   <tr>
     <td align="center">
-      <p><회원가입 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_signup.png" height="230" alt="회원가입 화면">
+      <p><배너 화면></p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/src/assets/images/portfolio_banner.png" height="230" alt="배너 화면">
     </td>
     <td align="center">
-      <p><회원가입 완료 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_signup_complete.png" height="230" alt="회원가입 완료 화면">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <p><로그인 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_login.png" height="230" alt="로그인 화면">
-    </td>
-    <td align="center">
-      <p><마이페이지 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_mypage.png" height="230" alt="마이페이지 화면">
+      <p><소개말 화면></p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/src/assets/images/portfolio_intro.png" height="230" alt="소개말 화면">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <p>영화정보 화면</p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_movie_info.png" height="230" alt="영화정보 화면">
+      <p><프로필 화면></p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/src/assets/images/portfolio_profile.png" height="230" alt="프로필 화면">
     </td>
     <td align="center">
-      <p><영화검색 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_search.png" height="230" alt="영화검색 화면">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <p><뉴스페이지 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_news.png" height="230" alt="뉴스페이지 화면">
-    </td>
-    <td align="center">
-      <p><커뮤니티 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_community.png" height="230" alt="커뮤니티 화면">
+      <p><스킬 화면></p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/src/assets/images/portfolio_skills.png" height="230" alt="스킬 화면">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <p><커뮤니티 글쓰기 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_write.png" height="230" alt="커뮤니티 글쓰기 화면">
+      <p>아카이빙 화면</p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/src/assets/images/portfolio_archiving.png" height="230" alt="아카이빙 화면">
     </td>
     <td align="center">
-      <p><커뮤니티 게시글 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_post.png" height="230" alt="커뮤니티 게시글 화면">
-    </td>
-  </tr>
-    <tr>
-    <td align="center">
-      <p><다크모드 화면(main1)></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_dark.png" height="230" alt="다크모드 화면">
-    </td>
-    <td align="center">
-      <p><메인2 화면(최신영화뉴스, 커뮤니티(인기,최신 게시글))></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_main2.png" height="230" alt="메인2 화면">
+      <p><프로젝트 화면></p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/src/assets/images/portfolio_project.png" height="230" alt="프로젝트 화면">
     </td>
   </tr>
-    </tr>
-    <tr>
+  <tr>
     <td align="center">
-      <p><메인3 화면(장르별 영화, 에디터 픽 영화)></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/jam-cinema/main/client/src/assets/images/jamcinema_main3.png" height="230" alt="메인3 화면">
+      <p><수상내역 화면></p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/src/assets/images/portfolio_awards.png" height="230" alt="수상내역 화면">
+    </td>
+    <td align="center">
+      <p><자격증 화면></p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/src/assets/images/portfolio_license.png" height="230" alt="자격증 화면">
     </td>
   </tr>
 </table>
@@ -109,23 +82,22 @@
 
 ````plaintext
 📦 root
-├── 📁 client              # 프론트엔드 프로젝트 (React)
-│   └── 📁 src
-│       ├── 📁 assets      # 이미지, 아이콘 등 정적 파일
-│       ├── 📁 components  # 재사용 가능한 UI 컴포넌트
-│       ├── 📁 store       # 상태 관리 (Redux toolkit)
-│       └── 📁 views       # 페이지 단위 컴포넌트
+│ 📁 src
+│  ├── 📁 assets           # 이미지, 아이콘 등 정적 파일
+│  ├── 📁 components       # 재사용 가능한 UI 컴포넌트
+│       └── 📁 Layout      # 헤더(네비게이션 바), 푸터 컴포넌트
+│       └── 📁 Modal       # 리드미, 이미지 슬라이드 모달 컴포넌트
+│       └── 📁 Section     # SPA의 스크롤 위치에 따른 각 섹션 별 컴포넌트
+│       └── 📁 Styled      # 스타일 버튼과 같은 컴포넌트
+│  ├── 📁 types       # 각 컴포넌트 ref 참조 위한 타입 구조 설정
+│  └── 📁 views       # 페이지 단위 컴포넌트(이 프로젝트의 경우에는 하나 뿐)
 │
-└── 📁 server              # 백엔드 프로젝트 (Node.js)
-    ├── 📁 routers         # API 라우터 정의
-    └── 📁 types           # TypeScript 타입 정의
-
 
 ## 🔧 설치 및 실행 방법
 
 ```bash
 # 레포지토리 클론
-git clone [https://github.com/JIWOO/jobnest.git](https://github.com/jiwoopark727/job-nest.git)
+git clone [https://github.com/jiwoopark727/portfolio1.git)
 cd jobnest
 
 # 패키지 설치

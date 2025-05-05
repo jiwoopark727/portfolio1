@@ -615,6 +615,50 @@ const Project = () => {
           {showOnlyMainProject ? (
             // 주요 프로젝트만
             <>
+              {/* 9(포트폴리오 웹사이트) */}
+              <ProjectBox>
+                <div className='p_title'>박지우 포트폴리오</div>
+                <div className='date'>2025.3 - 2025.04 (1人 개인 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  저를 상세히 표현하기 위한 웹 포트폴리오
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      포트폴리오를 문서로 만드는 것보다 웹으로 만들기로 생각
+                    </li>
+                    <li>시멘틱 태그와 유사하게 구조를 설계하여 파악에 용이</li>
+                    <li>
+                      포트폴리오인만큼 최대한 깔끔한 UI로 보기 편하게 제작
+                    </li>
+                    <li>
+                      스크롤 애니메이션, 마우스온 애니메이션 등을 추가하여
+                      심심함 해소
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openPortfolio}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://pjw-portfolio1.vercel.app/ (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openPortfolioGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/portfolio1 (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>React, TypeScript, Vercel, Emotion</div>
+                <div className='ref'>
+                  <div className='readme' onClick={openPortfolio1Readme}>
+                    <FontAwesomeIcon
+                      icon={faReadme}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    README
+                  </div>
+                </div>
+              </ProjectBox>
               {/* 8(추억의칠판) */}
               <ProjectBox>
                 <div className='p_title'>
@@ -710,11 +754,11 @@ const Project = () => {
                     </li>
                   </ul>
                 </div>
-                <div className='link' onClick={openJamCinema}>
+                {/* <div className='link' onClick={openJamCinema}>
                   <a target='_blank' rel='noopener noreferrer'>
                     https://job-nest-iota.vercel.app (배포 사이트)
                   </a>{' '}
-                </div>
+                </div> */}
                 <div className='link' onClick={openJamCinemaGH}>
                   <a target='_blank' rel='noopener noreferrer'>
                     https://github.com/jiwoopark727/jam-cinema (깃허브)
