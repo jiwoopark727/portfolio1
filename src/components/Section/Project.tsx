@@ -389,9 +389,9 @@ const Project = () => {
   const openJobNestGH = () => {
     window.open('https://github.com/jiwoopark727/job-nest', '_blank');
   };
-  const openJamCinema = () => {
-    window.open('https://memory-page.vercel.app', '_blank');
-  };
+  // const openJamCinema = () => {
+  //   window.open('https://memory-page.vercel.app', '_blank');
+  // };
   const openJamCinemaGH = () => {
     window.open('https://github.com/jiwoopark727/jam-cinema', '_blank');
   };
