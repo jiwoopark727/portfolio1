@@ -955,11 +955,11 @@ const Project = () => {
                     </li>
                   </ul>
                 </div>
-                <div className='link' onClick={openJamCinema}>
+                {/* <div className='link' onClick={openJamCinema}>
                   <a target='_blank' rel='noopener noreferrer'>
                     https://job-nest-iota.vercel.app (배포 사이트)
                   </a>{' '}
-                </div>
+                </div> */}
                 <div className='link' onClick={openJamCinemaGH}>
                   <a target='_blank' rel='noopener noreferrer'>
                     https://github.com/jiwoopark727/jam-cinema (깃허브)
