@@ -256,7 +256,7 @@ const Awards = () => {
           <div className='des'>
             <span className='sub_type'>설명 :</span>
             청년 일경험 React 과정에 참가하여 React에 대한 동작원리와 중요 개념
-            강의르 수강하고 회사 측과 연계 협업 프로젝트를 완료했습니다.
+            강의를 수강하고 회사 측과 연계 협업 프로젝트를 완료했습니다.
           </div>
         </DescribeContainer>
         {/* 5 */}
