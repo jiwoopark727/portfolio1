@@ -25,10 +25,11 @@ const ModalWrapper = styled.div`
 const ModalContent = styled.div`
   background: #fafafa;
   border-radius: 20px;
-  width: 700px;
+  width: 1100px;
   max-height: 90vh;
   padding: 50px;
   font-size: 15px;
+  overflow-y: scroll;
 `;
 
 const PortfolioReadmeModal: React.FC<ReadmeModalProps> = ({
