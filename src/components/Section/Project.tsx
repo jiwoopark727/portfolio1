@@ -392,6 +392,9 @@ const Project = () => {
   // const openJamCinema = () => {
   //   window.open('https://memory-page.vercel.app', '_blank');
   // };
+  const openMovieGallery = () => {
+    window.open('https://movie-gallery-next.vercel.app', '_blank');
+  };
   const openJamCinemaGH = () => {
     window.open('https://github.com/jiwoopark727/jam-cinema', '_blank');
   };
@@ -424,6 +427,9 @@ const Project = () => {
   };
   const openPortfolioGH = () => {
     window.open('https://github.com/jiwoopark727/portfolio1', '_blank');
+  };
+  const openMovieGalleryGH = () => {
+    window.open('https://github.com/jiwoopark727/movie-gallery-next', '_blank');
   };
 
   // 리드미 열고 닫는 state변수와 handle 함수
@@ -615,6 +621,52 @@ const Project = () => {
           {showOnlyMainProject ? (
             // 주요 프로젝트만
             <>
+              {/* 10(NextJS 영화 갤러리 사이트) */}
+              <ProjectBox>
+                <div className='p_title'>
+                  영화 갤러리 웹사이트 - Movie Gallery Next
+                </div>
+                <div className='date'>2025.5 (1人 개인 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  NextJS를 학습함과 동시에 직접 사용, 체화하기 위한 토이
+                  프로젝트
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      Next.js App Router 활용: 폴더 기반 라우팅 구조를 활용해
+                      페이지를 구조적으로 분리하고 효율적으로 관리
+                    </li>
+                    <li>
+                      비동기 데이터 패칭: fetch와 async/await를 통해 클라이언트
+                      사이드에서 외부 API를 비동기적으로 호출하고 데이터를 처리
+                    </li>
+                    <li>
+                      컴포넌트 기반 UI 설계: 재사용 가능한 컴포넌트를 분리,
+                      유지보수 용이한 구조 설계
+                    </li>
+                    <li>
+                      CSS Modules 도입: 컴포넌트명.module.css 방식으로 스타일을
+                      적용하여, 컴포넌트 단위의 캡슐화된 스타일 관리를 실현 +
+                      반응형 css 구현
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openMovieGallery}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://movie-gallery-next.vercel.app/ (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openMovieGalleryGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/movie-gallery-next (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  NextJS, TypeScript, Vercel, ModuleCSS
+                </div>
+              </ProjectBox>
               {/* 9(포트폴리오 웹사이트) */}
               <ProjectBox>
                 <div className='p_title'>박지우 포트폴리오</div>
@@ -916,6 +968,52 @@ const Project = () => {
           ) : (
             // 전체 프로젝트
             <>
+              {/* 10(NextJS 영화 갤러리 사이트) */}
+              <ProjectBox>
+                <div className='p_title'>
+                  영화 갤러리 웹사이트 - Movie Gallery Next
+                </div>
+                <div className='date'>2025.5 (1人 개인 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  NextJS를 학습함과 동시에 직접 사용, 체화하기 위한 토이
+                  프로젝트
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      Next.js App Router 활용: 폴더 기반 라우팅 구조를 활용해
+                      페이지를 구조적으로 분리하고 효율적으로 관리
+                    </li>
+                    <li>
+                      비동기 데이터 패칭: fetch와 async/await를 통해 클라이언트
+                      사이드에서 외부 API를 비동기적으로 호출하고 데이터를 처리
+                    </li>
+                    <li>
+                      컴포넌트 기반 UI 설계: 재사용 가능한 컴포넌트를 분리,
+                      유지보수 용이한 구조 설계
+                    </li>
+                    <li>
+                      CSS Modules 도입: 컴포넌트명.module.css 방식으로 스타일을
+                      적용하여, 컴포넌트 단위의 캡슐화된 스타일 관리를 실현 +
+                      반응형 css 구현
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openMovieGallery}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://movie-gallery-next.vercel.app/ (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openMovieGalleryGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/movie-gallery-next (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  NextJS, TypeScript, Vercel, ModuleCSS
+                </div>
+              </ProjectBox>
               {/* 9(포트폴리오 웹사이트) */}
               <ProjectBox>
                 <div className='p_title'>박지우 포트폴리오</div>
