@@ -923,7 +923,7 @@ const Project = () => {
             // 전체 프로젝트
             <>
               {/* 10(NextJS 영화 갤러리 사이트) */}
-              <ProjectBox>
+              <ProjectBox2>
                 <div className='p_title'>
                   영화 갤러리 웹사이트 - Movie Gallery Next
                 </div>
@@ -967,7 +967,7 @@ const Project = () => {
                 <div className='stack'>
                   NextJS, TypeScript, Vercel, ModuleCSS
                 </div>
-              </ProjectBox>
+              </ProjectBox2>
               {/* 9(포트폴리오 웹사이트) */}
               <ProjectBox>
                 <div className='p_title'>박지우 포트폴리오</div>
