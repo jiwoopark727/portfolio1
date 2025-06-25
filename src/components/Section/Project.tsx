@@ -673,8 +673,8 @@ const Project = () => {
                 <div className='date'>2024.12 - 2025.02 (4人 팀 프로젝트)</div>
                 <hr className='contour' />
                 <div className='sub_title'>
-                  졸업을 축하하며 서로의 추억을 공유하는 모바일 웹사이트 -
-                  실배포 프로젝트
+                  서로의 추억을 공유하는 하이브리드 모바일 웹사이트 - 실배포
+                  프로젝트
                 </div>
                 <div className='des'>
                   <ul>
@@ -682,7 +682,7 @@ const Project = () => {
                       백엔드 두 명과 프론트 한 명과 졸업을 기념해 추억을 남기기
                       위해 개발
                     </li>
-                    <li>모바일웹 기반 웹 사이트로 반응형으로 개발</li>
+                    <li>하이브리드 모바일웹 기반 웹 사이트 반응형 개발</li>
                     <li>
                       카카오API, 인스타그램API 를 사용해 간편한 sns 공유 기능
                       개발
@@ -1020,8 +1020,8 @@ const Project = () => {
                 <div className='date'>2024.12 - 2025.02 (4人 팀 프로젝트)</div>
                 <hr className='contour' />
                 <div className='sub_title'>
-                  졸업을 축하하며 서로의 추억을 공유하는 모바일 웹사이트 -
-                  실배포 프로젝트
+                  서로의 추억을 공유하는 하이브리드 모바일 웹사이트 - 실배포
+                  프로젝트
                 </div>
                 <div className='des'>
                   <ul>
@@ -1029,7 +1029,7 @@ const Project = () => {
                       백엔드 두 명과 프론트 한 명과 졸업을 기념해 추억을 남기기
                       위해 개발
                     </li>
-                    <li>모바일웹 기반 웹 사이트로 반응형으로 개발</li>
+                    <li>하이브리드 모바일 웹 사이트 반응형 개발</li>
                     <li>
                       카카오API, 인스타그램API 를 사용해 간편한 sns 공유 기능
                       개발
