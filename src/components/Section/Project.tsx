@@ -20,6 +20,7 @@ import VendingMachineCarouselModal from '../Modal/carousel/VendingMachineCarouse
 import CurrencyExchangeCarouselModal from '../Modal/carousel/CurrencyExchangeCarouselModal.tsx';
 import CurrencyExchangeReadmeModal from '../Modal/readme/CurrencyExchangeReadmeModal.tsx';
 import Portfolio1ReadmeModal from '../Modal/readme/Portfolio1ReadmeModal.tsx';
+import MovieGalleryCarouselModal from '../Modal/carousel/MovieGalleryCarouselModal.tsx';
 
 const fadeIn = keyframes`
   0% {
@@ -257,7 +258,7 @@ const ProjectBox = styled.div`
 `;
 
 const ProjectBox2 = styled.div`
-  height: 450px;
+  height: 490px;
   width: 560px;
   background-color: #fff;
   border-radius: 20px;
@@ -478,90 +479,98 @@ const Project = () => {
     useState(false);
   const [isCurrencyExchangeCarouselOpen, setIsCurrencyExchangeCarouselOpen] =
     useState(false);
+  const [isMovieGalleryCarouselOpen, setIsMovieGalleryCarouselOpen] =
+    useState(false);
 
   const MemoryBoarddImages = [
-    'src/assets/images/portfolio_img/memory_board/home.png',
-    'src/assets/images/portfolio_img/memory_board/dev.png',
-    'src/assets/images/portfolio_img/memory_board/manual.png',
-    'src/assets/images/portfolio_img/memory_board/login.png',
-    'src/assets/images/portfolio_img/memory_board/create.png',
-    'src/assets/images/portfolio_img/memory_board/board_create.png',
-    'src/assets/images/portfolio_img/memory_board/board.png',
-    'src/assets/images/portfolio_img/memory_board/share.png',
-    'src/assets/images/portfolio_img/memory_board/kakao_share1.png',
-    'src/assets/images/portfolio_img/memory_board/kakao_share2.png',
-    'src/assets/images/portfolio_img/memory_board/kakao_share3.png',
-    'src/assets/images/portfolio_img/memory_board/insta_share.png',
-    'src/assets/images/portfolio_img/memory_board/memo_create.png',
-    'src/assets/images/portfolio_img/memory_board/memo_create2.png',
-    'src/assets/images/portfolio_img/memory_board/memo_create3.png',
-    'src/assets/images/portfolio_img/memory_board/memo_create4.png',
-    'src/assets/images/portfolio_img/memory_board/memo1.png',
-    'src/assets/images/portfolio_img/memory_board/memo2.png',
-    'src/assets/images/portfolio_img/memory_board/memo3.png',
+    './src/assets/images/portfolio_img/memory_board/home.png',
+    './src/assets/images/portfolio_img/memory_board/dev.png',
+    './src/assets/images/portfolio_img/memory_board/manual.png',
+    './src/assets/images/portfolio_img/memory_board/login.png',
+    './src/assets/images/portfolio_img/memory_board/create.png',
+    './src/assets/images/portfolio_img/memory_board/board_create.png',
+    './src/assets/images/portfolio_img/memory_board/board.png',
+    './src/assets/images/portfolio_img/memory_board/share.png',
+    './src/assets/images/portfolio_img/memory_board/kakao_share1.png',
+    './src/assets/images/portfolio_img/memory_board/kakao_share2.png',
+    './src/assets/images/portfolio_img/memory_board/kakao_share3.png',
+    './src/assets/images/portfolio_img/memory_board/insta_share.png',
+    './src/assets/images/portfolio_img/memory_board/memo_create.png',
+    './src/assets/images/portfolio_img/memory_board/memo_create2.png',
+    './src/assets/images/portfolio_img/memory_board/memo_create3.png',
+    './src/assets/images/portfolio_img/memory_board/memo_create4.png',
+    './src/assets/images/portfolio_img/memory_board/memo1.png',
+    './src/assets/images/portfolio_img/memory_board/memo2.png',
+    './src/assets/images/portfolio_img/memory_board/memo3.png',
   ];
   const JamCinemaImages = [
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_login_main.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_main2.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_main3.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_signup.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_signup_complete.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_login.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_mypage.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_search.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_movie_info.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_news.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_community.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_post.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_write.png',
-    'src/assets/images/portfolio_img/jam_cinema/jamcinema_dark.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_login_main.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_main2.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_main3.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_signup.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_signup_complete.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_login.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_mypage.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_search.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_movie_info.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_news.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_community.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_post.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_write.png',
+    './src/assets/images/portfolio_img/jam_cinema/jamcinema_dark.png',
   ];
   const FlappyBirdImages = [
-    'src/assets/images/portfolio_img/flappy_bird/readme_home.png',
-    'src/assets/images/portfolio_img/flappy_bird/readme_start.png',
-    'src/assets/images/portfolio_img/flappy_bird/readme_first.png',
-    'src/assets/images/portfolio_img/flappy_bird/readme_second.png',
-    'src/assets/images/portfolio_img/flappy_bird/readme_third.png',
-    'src/assets/images/portfolio_img/flappy_bird/readme_finish.png',
-    'src/assets/images/portfolio_img/flappy_bird/readme_board.png',
-    'src/assets/images/portfolio_img/flappy_bird/readme_board2.png',
+    './src/assets/images/portfolio_img/flappy_bird/readme_home.png',
+    './src/assets/images/portfolio_img/flappy_bird/readme_start.png',
+    './src/assets/images/portfolio_img/flappy_bird/readme_first.png',
+    './src/assets/images/portfolio_img/flappy_bird/readme_second.png',
+    './src/assets/images/portfolio_img/flappy_bird/readme_third.png',
+    './src/assets/images/portfolio_img/flappy_bird/readme_finish.png',
+    './src/assets/images/portfolio_img/flappy_bird/readme_board.png',
+    './src/assets/images/portfolio_img/flappy_bird/readme_board2.png',
   ];
   const JobNestImages = [
-    'src/assets/images/portfolio_img/job_nest/jobnest_main.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_bookmark_manage.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_todo.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_calendar.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_login.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_contract.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_search.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_map.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_property.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_registration.png',
-    'src/assets/images/portfolio_img/job_nest/jobnest_registration_ex.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_main.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_bookmark_manage.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_todo.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_calendar.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_login.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_contract.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_search.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_map.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_property.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_registration.png',
+    './src/assets/images/portfolio_img/job_nest/jobnest_registration_ex.png',
   ];
   const BlogImages = [
-    'src/assets/images/portfolio_img/blog/blog_home.png',
-    'src/assets/images/portfolio_img/blog/blog_filter.png',
-    'src/assets/images/portfolio_img/blog/blog_posting.png',
-    'src/assets/images/portfolio_img/blog/blog_detail.png',
+    './src/assets/images/portfolio_img/blog/blog_home.png',
+    './src/assets/images/portfolio_img/blog/blog_filter.png',
+    './src/assets/images/portfolio_img/blog/blog_posting.png',
+    './src/assets/images/portfolio_img/blog/blog_detail.png',
   ];
   const ShopImages = [
-    'src/assets/images/portfolio_img/shop/shop_home.png',
-    'src/assets/images/portfolio_img/shop/shop_more.png',
-    'src/assets/images/portfolio_img/shop/shop_detail.png',
-    'src/assets/images/portfolio_img/shop/shop_cart.png',
+    './src/assets/images/portfolio_img/shop/shop_home.png',
+    './src/assets/images/portfolio_img/shop/shop_more.png',
+    './src/assets/images/portfolio_img/shop/shop_detail.png',
+    './src/assets/images/portfolio_img/shop/shop_cart.png',
   ];
   const VendingMachineImages = [
-    'src/assets/images/portfolio_img/vending_machine/VendingMachine_home.png',
-    'src/assets/images/portfolio_img/vending_machine/VendingMachine_insert_coin.png',
-    'src/assets/images/portfolio_img/vending_machine/VendingMachine_buy_poomjeol.png',
-    'src/assets/images/portfolio_img/vending_machine/VendingMachine_admin.png',
-    'src/assets/images/portfolio_img/vending_machine/VendingMachine_admin_info.png',
-    'src/assets/images/portfolio_img/vending_machine/VendingMachine_admin_info2.png',
-    'src/assets/images/portfolio_img/vending_machine/VendingMachine_money.png',
+    './src/assets/images/portfolio_img/vending_machine/VendingMachine_home.png',
+    './src/assets/images/portfolio_img/vending_machine/VendingMachine_insert_coin.png',
+    './src/assets/images/portfolio_img/vending_machine/VendingMachine_buy_poomjeol.png',
+    './src/assets/images/portfolio_img/vending_machine/VendingMachine_admin.png',
+    './src/assets/images/portfolio_img/vending_machine/VendingMachine_admin_info.png',
+    './src/assets/images/portfolio_img/vending_machine/VendingMachine_admin_info2.png',
+    './src/assets/images/portfolio_img/vending_machine/VendingMachine_money.png',
   ];
   const CurrencyExchangeImages = [
-    'src/assets/images/portfolio_img/currency_exchange/currency_exchange_home.png',
+    './src/assets/images/portfolio_img/currency_exchange/currency_exchange_home.png',
+  ];
+  const MovieGalleryImages = [
+    './src/assets/images/portfolio_img/movie_gallery/moviegallery_home.png',
+    './src/assets/images/portfolio_img/movie_gallery/moviegallery_detail.png',
+    './src/assets/images/portfolio_img/movie_gallery/moviegallery_credits.png',
+    './src/assets/images/portfolio_img/movie_gallery/moviegallery_aboutus.png',
   ];
 
   // 화면에 등장 시 애니메이션 동작 부분(IntersectionObserver)
@@ -966,6 +975,18 @@ const Project = () => {
                 </div>
                 <div className='stack'>
                   NextJS, TypeScript, Vercel, ModuleCSS
+                </div>
+                <div className='ref'>
+                  <div
+                    className='image'
+                    onClick={() => setIsMovieGalleryCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
                 </div>
               </ProjectBox2>
               {/* 9(포트폴리오 웹사이트) */}
@@ -1487,6 +1508,11 @@ const Project = () => {
       </>
       {/* 이미지 캐러셀 */}
       <>
+        <MovieGalleryCarouselModal
+          images={MovieGalleryImages}
+          isOpen={isMovieGalleryCarouselOpen}
+          onClose={() => setIsMovieGalleryCarouselOpen(false)}
+        />
         <MemoryBoardCarouselModal
           images={MemoryBoarddImages}
           isOpen={isMemoryBoardCarouselOpen}
