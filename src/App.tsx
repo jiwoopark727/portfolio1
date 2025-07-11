@@ -1,17 +1,9 @@
 import Footer from './components/Layout/Footer';
 import Navbar from './components/Layout/Navbar';
-import { Global, css } from '@emotion/react';
 import MainView from './views/MainView';
 import { useEffect, useRef } from 'react';
 import ScrollToTopButton from './components/Styled/ScrollToTopButton';
-
-const globalStyles = css`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`;
+import GlobalStyle from './styles/GlobalStyle.tsx';
 
 function App() {
   useEffect(() => {
@@ -30,15 +22,16 @@ function App() {
     awards: useRef<HTMLDivElement>(null),
     license: useRef<HTMLDivElement>(null),
   };
+
   return (
     <>
-      <Global styles={globalStyles} />
+      <GlobalStyle />
       {/* 헤더 */}
       <Navbar sectionRefs={sectionRefs} />
       {/* 메인 콘텐츠 */}
       <MainView sectionRefs={sectionRefs} />
       {/* 푸터 */}
-      <Footer></Footer>
+      <Footer />
       <ScrollToTopButton />
     </>
   );
