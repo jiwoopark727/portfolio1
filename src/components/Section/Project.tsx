@@ -21,6 +21,8 @@ import CurrencyExchangeCarouselModal from '../Modal/carousel/CurrencyExchangeCar
 import CurrencyExchangeReadmeModal from '../Modal/readme/CurrencyExchangeReadmeModal.tsx';
 import Portfolio1ReadmeModal from '../Modal/readme/Portfolio1ReadmeModal.tsx';
 import MovieGalleryCarouselModal from '../Modal/carousel/MovieGalleryCarouselModal.tsx';
+import MoodifyCarouselModal from '../Modal/carousel/MoodifyCarouselModal.tsx';
+import MoodifyReadmeModal from '../Modal/readme/MoodifyReadmeModal.tsx';
 
 const fadeIn = keyframes`
   0% {
@@ -135,7 +137,7 @@ const ProjectContainer = styled.div`
 `;
 
 const ProjectBox = styled.div`
-  height: 450px;
+  height: 530px;
   width: 560px;
   background-color: #fff;
   border-radius: 20px;
@@ -258,7 +260,7 @@ const ProjectBox = styled.div`
 `;
 
 const ProjectBox2 = styled.div`
-  height: 490px;
+  height: 530px;
   width: 560px;
   background-color: #fff;
   border-radius: 20px;
@@ -393,9 +395,6 @@ const Project = () => {
   // const openJamCinema = () => {
   //   window.open('https://memory-page.vercel.app', '_blank');
   // };
-  const openMovieGallery = () => {
-    window.open('https://movie-gallery-next.vercel.app', '_blank');
-  };
   const openJamCinemaGH = () => {
     window.open('https://github.com/jiwoopark727/jam-cinema', '_blank');
   };
@@ -429,8 +428,17 @@ const Project = () => {
   const openPortfolioGH = () => {
     window.open('https://github.com/jiwoopark727/portfolio1', '_blank');
   };
+  const openMovieGallery = () => {
+    window.open('https://movie-gallery-next.vercel.app', '_blank');
+  };
   const openMovieGalleryGH = () => {
     window.open('https://github.com/jiwoopark727/movie-gallery-next', '_blank');
+  };
+  const openMoodify = () => {
+    window.open('https://pjw-moodify.vercel.app', '_blank');
+  };
+  const openMoodifyGH = () => {
+    window.open('https://github.com/jiwoopark727/moodify', '_blank');
   };
 
   // 리드미 열고 닫는 state변수와 handle 함수
@@ -443,6 +451,8 @@ const Project = () => {
   const [currencyExchangeReadmeOpen, setCurrencyExchangeReadmeOpen] =
     useState(false);
   const [portfolio1ReadmeOpen, setPortfolio1ReadmeOpen] = useState(false);
+  // const [movieGalleryReadmeOpen, setMovieGalleryReadmeOpen] = useState(false);
+  const [moodifyReadmeOpen, setMoodifyReadmeOpen] = useState(false);
 
   const openJobNestReadme = () => {
     setJobNestReadmeOpen(true);
@@ -465,6 +475,12 @@ const Project = () => {
   const openPortfolio1Readme = () => {
     setPortfolio1ReadmeOpen(true);
   };
+  // const openMovieGalleryReadme = () => {
+  //   setPortfolio1ReadmeOpen(true);
+  // };
+  const openMoodifyReadme = () => {
+    setMoodifyReadmeOpen(true);
+  };
 
   // 이미지 버튼 캐러셀 슬라이드 부분
   const [isMemoryBoardCarouselOpen, setIsMemoryBoardCarouselOpen] =
@@ -481,6 +497,7 @@ const Project = () => {
     useState(false);
   const [isMovieGalleryCarouselOpen, setIsMovieGalleryCarouselOpen] =
     useState(false);
+  const [isMoodifyCarouselOpen, setIsMoodifyCarouselOpen] = useState(false);
 
   const MemoryBoarddImages = [
     '/assets/images/portfolio_img/memory_board/home.png',
@@ -572,6 +589,13 @@ const Project = () => {
     '/assets/images/portfolio_img/movie_gallery/moviegallery_credits.png',
     '/assets/images/portfolio_img/movie_gallery/moviegallery_aboutus.png',
   ];
+  const MoodifyImages = [
+    '/assets/images/portfolio_img/moodify/moodify_home.png',
+    '/assets/images/portfolio_img/moodify/moodify_playlist.png',
+    '/assets/images/portfolio_img/moodify/moodify_track.png',
+    '/assets/images/portfolio_img/moodify/moodify_memo.png',
+    '/assets/images/portfolio_img/moodify/moodify_timeline.png',
+  ];
 
   // 화면에 등장 시 애니메이션 동작 부분(IntersectionObserver)
   const containerRef = useRef(null);
@@ -630,6 +654,74 @@ const Project = () => {
           {showOnlyMainProject ? (
             // 주요 프로젝트만
             <>
+              {/* 10(무디파이-Moodify) */}
+              <ProjectBox>
+                <div className='p_title'>
+                  감정 기반 음악 추천 플랫폼 - Moodify
+                </div>
+                <div className='date'>2025.6 - 2025.07 (1人 개인 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  날씨와 감정을 기반으로 음악을 추천해주는 감성 큐레이션
+                  웹사이트
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      기분과 날씨에 따라 추천 음악 키워드를 생성하고,
+                      Spotify/Youtube API를 통해 음악 검색 및 감상 가능
+                    </li>
+                    <li>
+                      Zustand와 LocalStorage를 활용하여 유저의 감정, 날씨,
+                      키워드, 메모 기록을 타임라인으로 저장
+                    </li>
+                    <li>
+                      모바일 친화적 UI: 카드형 UI + Tailwind 기반 반응형 디자인
+                    </li>
+                    <li>
+                      감정과 날씨를 기반으로 YouTube 영상 자동 추천 기능 포함
+                    </li>
+                    <li>hydration error 해결을 위한 컴포넌트 구조 개선</li>
+                    <li>
+                      Spotify/Youtube API 통신을 위한 Next.js API Route
+                      커스터마이징
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openMoodify}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://pjw-moodify.vercel.app/ (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openMoodifyGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/moodify (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  Next.js 15 (App Router), React, TypeScript, Zustand, Tailwind
+                  CSS, Vercel
+                </div>
+                <div className='ref'>
+                  <div className='readme' onClick={openMoodifyReadme}>
+                    <FontAwesomeIcon
+                      icon={faReadme}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    README
+                  </div>
+                  <div
+                    className='image'
+                    onClick={() => setIsMoodifyCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
+                </div>
+              </ProjectBox>
               {/* 9(포트폴리오 웹사이트) */}
               <ProjectBox>
                 <div className='p_title'>박지우 포트폴리오</div>
@@ -931,6 +1023,74 @@ const Project = () => {
           ) : (
             // 전체 프로젝트
             <>
+              {/* 11(무디파이-Moodify) */}
+              <ProjectBox>
+                <div className='p_title'>
+                  감정 기반 음악 추천 플랫폼 - Moodify
+                </div>
+                <div className='date'>2025.6 - 2025.07 (1人 개인 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  날씨와 감정을 기반으로 음악을 추천해주는 감성 큐레이션
+                  웹사이트
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      기분과 날씨에 따라 추천 음악 키워드를 생성하고,
+                      Spotify/Youtube API를 통해 음악 검색 및 감상 가능
+                    </li>
+                    <li>
+                      Zustand와 LocalStorage를 활용하여 유저의 감정, 날씨,
+                      키워드, 메모 기록을 타임라인으로 저장
+                    </li>
+                    <li>
+                      모바일 친화적 UI: 카드형 UI + Tailwind 기반 반응형 디자인
+                    </li>
+                    <li>
+                      감정과 날씨를 기반으로 YouTube 영상 자동 추천 기능 포함
+                    </li>
+                    <li>hydration error 해결을 위한 컴포넌트 구조 개선</li>
+                    <li>
+                      Spotify/Youtube API 통신을 위한 Next.js API Route
+                      커스터마이징
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openMoodify}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://pjw-moodify.vercel.app/ (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openMoodifyGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/moodify (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  Next.js 15 (App Router), React, TypeScript, Zustand, Tailwind
+                  CSS, Vercel
+                </div>
+                <div className='ref'>
+                  <div className='readme' onClick={openMoodifyReadme}>
+                    <FontAwesomeIcon
+                      icon={faReadme}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    README
+                  </div>
+                  <div
+                    className='image'
+                    onClick={() => setIsMoodifyCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
+                </div>
+              </ProjectBox>
               {/* 10(NextJS 영화 갤러리 사이트) */}
               <ProjectBox2>
                 <div className='p_title'>
@@ -1505,9 +1665,19 @@ const Project = () => {
           onClose={() => setPortfolio1ReadmeOpen(false)}
           readmeUrl='https://raw.githubusercontent.com/jiwoopark727/portfolio1/main/README.md'
         />
+        <MoodifyReadmeModal
+          isOpen={moodifyReadmeOpen}
+          onClose={() => setMoodifyReadmeOpen(false)}
+          readmeUrl='https://raw.githubusercontent.com/jiwoopark727/moodify/main/README.md'
+        />
       </>
       {/* 이미지 캐러셀 */}
       <>
+        <MoodifyCarouselModal
+          images={MoodifyImages}
+          isOpen={isMoodifyCarouselOpen}
+          onClose={() => setIsMoodifyCarouselOpen(false)}
+        />
         <MovieGalleryCarouselModal
           images={MovieGalleryImages}
           isOpen={isMovieGalleryCarouselOpen}
