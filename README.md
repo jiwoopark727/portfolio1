@@ -26,14 +26,6 @@
 
 - **Frontend**: `React`, `TypeScript`, `Vite`, `Emotion`
 - **Deployment**: `Vercel`
-- **PWA**: `next-pwa` 기반의 Progressive Web App 기능 지원 (설치형 웹 앱 구현)
-
-> 💡 **PWA 지원**
->
-> - 모바일 및 데스크탑 브라우저에서 앱처럼 설치 가능
-> - 홈 화면 추가 및 Splash 화면 적용
-> - `next-pwa`를 사용해 서비스 워커 설정, 캐시 전략 최적화
-> - 오프라인 환경에서도 기본 UI 자산 접근 가능
 
 <br/>
 
