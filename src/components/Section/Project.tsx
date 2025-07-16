@@ -595,6 +595,7 @@ const Project = () => {
     '/assets/images/portfolio_img/moodify/moodify_track.png',
     '/assets/images/portfolio_img/moodify/moodify_memo.png',
     '/assets/images/portfolio_img/moodify/moodify_timeline.png',
+    '/assets/images/portfolio_img/moodify/moodify_install.png',
   ];
 
   // 화면에 등장 시 애니메이션 동작 부분(IntersectionObserver)
