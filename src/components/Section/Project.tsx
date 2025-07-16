@@ -137,7 +137,7 @@ const ProjectContainer = styled.div`
 `;
 
 const ProjectBox = styled.div`
-  height: 530px;
+  height: 520px;
   width: 560px;
   background-color: #fff;
   border-radius: 20px;
@@ -260,7 +260,7 @@ const ProjectBox = styled.div`
 `;
 
 const ProjectBox2 = styled.div`
-  height: 530px;
+  height: 520px;
   width: 560px;
   background-color: #fff;
   border-radius: 20px;
@@ -663,28 +663,32 @@ const Project = () => {
                 <hr className='contour' />
                 <div className='sub_title'>
                   날씨와 감정을 기반으로 음악을 추천해주는 감성 큐레이션
-                  웹사이트
+                  웹사이트 + PWA(웹앱)
                 </div>
                 <div className='des'>
                   <ul>
                     <li>
-                      기분과 날씨에 따라 추천 음악 키워드를 생성하고,
-                      Spotify/Youtube API를 통해 음악 검색 및 감상 가능
+                      기분과 날씨에 따라 키워드 랜덤 생성 → Spotify/Youtube
+                      API로 음악 검색, 감상
                     </li>
                     <li>
-                      Zustand와 LocalStorage를 활용하여 유저의 감정, 날씨,
-                      키워드, 메모 기록을 타임라인으로 저장
+                      유저의 감정, 날씨, 메모를 Zustand + LocalStorage로 관리,
+                      타임라인에 시각화
                     </li>
                     <li>
                       모바일 친화적 UI: 카드형 UI + Tailwind 기반 반응형 디자인
-                    </li>
-                    <li>
-                      감정과 날씨를 기반으로 YouTube 영상 자동 추천 기능 포함
                     </li>
                     <li>hydration error 해결을 위한 컴포넌트 구조 개선</li>
                     <li>
                       Spotify/Youtube API 통신을 위한 Next.js API Route
                       커스터마이징
+                    </li>
+                    <li>
+                      PWA(Progressive Web App) 지원 → 모바일에 앱처럼 설치 가능
+                      <br />
+                      → 오프라인 환경에서도 정적 자산 제공 가능
+                      <br />→ next-pwa 도입, 서비스 워커 설정 및 캐시 최적화
+                      적용
                     </li>
                   </ul>
                 </div>
@@ -699,8 +703,8 @@ const Project = () => {
                   </a>{' '}
                 </div>
                 <div className='stack'>
-                  Next.js 15 (App Router), React, TypeScript, Zustand, Tailwind
-                  CSS, Vercel
+                  Next.js 15, React, TypeScript, Zustand, Tailwind CSS, Vercel,
+                  next-pwa
                 </div>
                 <div className='ref'>
                   <div className='readme' onClick={openMoodifyReadme}>
@@ -1032,28 +1036,32 @@ const Project = () => {
                 <hr className='contour' />
                 <div className='sub_title'>
                   날씨와 감정을 기반으로 음악을 추천해주는 감성 큐레이션
-                  웹사이트
+                  웹사이트 + PWA(웹앱)
                 </div>
                 <div className='des'>
                   <ul>
                     <li>
-                      기분과 날씨에 따라 추천 음악 키워드를 생성하고,
-                      Spotify/Youtube API를 통해 음악 검색 및 감상 가능
+                      기분과 날씨에 따라 키워드 랜덤 생성 → Spotify/Youtube
+                      API로 음악 검색, 감상
                     </li>
                     <li>
-                      Zustand와 LocalStorage를 활용하여 유저의 감정, 날씨,
-                      키워드, 메모 기록을 타임라인으로 저장
+                      유저의 감정, 날씨, 메모를 Zustand + LocalStorage로 관리,
+                      타임라인에 시각화
                     </li>
                     <li>
                       모바일 친화적 UI: 카드형 UI + Tailwind 기반 반응형 디자인
-                    </li>
-                    <li>
-                      감정과 날씨를 기반으로 YouTube 영상 자동 추천 기능 포함
                     </li>
                     <li>hydration error 해결을 위한 컴포넌트 구조 개선</li>
                     <li>
                       Spotify/Youtube API 통신을 위한 Next.js API Route
                       커스터마이징
+                    </li>
+                    <li>
+                      PWA(Progressive Web App) 지원 → 모바일에 앱처럼 설치 가능
+                      <br />
+                      → 오프라인 환경에서도 정적 자산 제공 가능
+                      <br />→ next-pwa 도입, 서비스 워커 설정 및 캐시 최적화
+                      적용
                     </li>
                   </ul>
                 </div>
@@ -1068,8 +1076,8 @@ const Project = () => {
                   </a>{' '}
                 </div>
                 <div className='stack'>
-                  Next.js 15 (App Router), React, TypeScript, Zustand, Tailwind
-                  CSS, Vercel
+                  Next.js 15, React, TypeScript, Zustand, Tailwind CSS, Vercel,
+                  next-pwa
                 </div>
                 <div className='ref'>
                   <div className='readme' onClick={openMoodifyReadme}>
