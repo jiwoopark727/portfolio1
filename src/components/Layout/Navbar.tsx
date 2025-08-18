@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 import { SectionRefs } from '../../types/types.ts';
+import GradientText from '../../styles/GradientText.tsx';
 
 const NavbarWrapper = styled.div<{ scrolled: boolean }>`
   height: 55px;
@@ -30,8 +31,8 @@ const NavbarInner = styled.div`
 `;
 
 const Logo = styled.div`
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 26px;
+  font-weight: extrabold;
   cursor: pointer;
 `;
 
@@ -90,7 +91,16 @@ const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
     <NavbarWrapper scrolled={scrolled}>
       <NavbarContainer>
         <NavbarInner>
-          <Logo onClick={() => handleScrollMove('banner')}>PJW</Logo>
+          <Logo onClick={() => handleScrollMove('banner')}>
+            <GradientText
+              colors={['#4f2cfc', '#ec8ed3', '#4f2cfc', '#ec8ed3', '#4f2cfc']}
+              animationSpeed={3}
+              showBorder={false}
+              className='custom-class'
+            >
+              PJW
+            </GradientText>
+          </Logo>
           <NavbarContent>
             <Menu>
               <MenuItem onClick={() => handleScrollMove('profile')}>
