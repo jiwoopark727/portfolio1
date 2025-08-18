@@ -29,7 +29,7 @@ function App() {
       <GlobalStyle />
 
       <TextCursor
-        text='💻'
+        text='👻'
         delay={0.01}
         spacing={80}
         followMouseDirection={true}
