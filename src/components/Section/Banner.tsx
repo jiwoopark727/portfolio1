@@ -3,8 +3,10 @@ import bannerBg from '../../assets/images/banner_bg.jpg';
 import ArrowDown from '../Styled/ArrowDown';
 import TypeIt from 'typeit-react';
 import SplitText from '../../styles/SplitText/SplitText';
+import Iridescence from '../../styles/Iridescence/Iridescence';
 
 const BannerWrapper = styled.div`
+  position: relative; // 배경과 내용 겹치기 위한 기준
   height: 100vh;
   background-image: url(${bannerBg});
   background-repeat: no-repeat;
@@ -13,9 +15,24 @@ const BannerWrapper = styled.div`
   justify-content: center;
   align-items: start;
   padding-top: 200px;
+  overflow: hidden;
+  color: #fff;
 `;
 
-const BannerContainer = styled.div``;
+const BannerContainer = styled.div`
+  position: relative;
+  z-index: 1; // Iridescence 위에 올라가도록
+`;
+
+const IridescenceBg = styled(Iridescence)`
+  position: absolute !important; // 배경에 고정
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; // 배경이 클릭 막지 않게
+`;
 
 const BannerText = styled.div`
   opacity: 0;
@@ -44,8 +61,7 @@ const BannerText = styled.div`
   }
 
   .contour {
-    /* border: 2px solid #8596f2; */
-    border: 2px solid black;
+    border: 2px solid #fff;
     margin: 10px auto;
     width: 10%;
     margin-bottom: 80px;
@@ -89,6 +105,14 @@ const Banner = () => {
   };
   return (
     <BannerWrapper>
+      {/* 배경으로 들어가는 Iridescence */}
+      <IridescenceBg
+        color={[0.6, 0.7, 0.9]}
+        speed={0.8}
+        amplitude={0.15}
+        mouseReact
+      />
+
       <BannerContainer>
         <BannerText>
           <h1 className='name'>&lt; 박지우 /&gt;</h1>
@@ -150,9 +174,9 @@ const Banner = () => {
             </h3>
           </div>
         </BannerText>
-
-        <ArrowDown onClick={handleArrowClick} />
       </BannerContainer>
+
+      <ArrowDown onClick={handleArrowClick} />
     </BannerWrapper>
   );
 };

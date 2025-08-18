@@ -6,11 +6,11 @@ import GradientText from '../../styles/GradientText/GradientText.tsx';
 const NavbarWrapper = styled.div<{ scrolled: boolean }>`
   height: 55px;
   width: 100%;
-  background-color: #f5f5f5;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 600;
+  background-color: ${(props) => (props.scrolled ? '#f5f5f5' : 'none')};
   border-bottom: ${(props) => (props.scrolled ? '1px solid #b0b0b0' : 'none')};
 `;
 
@@ -43,24 +43,26 @@ const NavbarContent = styled.div`
   justify-content: center;
 `;
 
-const Menu = styled.ul`
+const Menu = styled.ul<{ scrolled: boolean }>`
   list-style: none;
   display: flex;
-  gap: 30px; /* 메뉴 간격 */
+  gap: 30px;
   margin: 0;
-  color: #4e5968;
+  color: #ededed;
+  color: ${(props) => (props.scrolled ? '#4e5968' : 'none')};
   z-index: 10;
 `;
 
-const MenuItem = styled.li`
+const MenuItem = styled.li<{ scrolled: boolean }>`
   cursor: pointer;
   font-size: 18px;
   font-weight: 500;
-  padding: 14px 10px 14px 10px;
+  padding: 8px 10px 8px 10px;
   border-radius: 8px;
   z-index: 100;
   &:hover {
-    background-color: #efefef;
+    background-color: #565656;
+    background-color: ${(props) => (props.scrolled ? '#d6d6d6' : 'none')};
   }
 `;
 
@@ -94,7 +96,7 @@ const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
           <Logo onClick={() => handleScrollMove('banner')}>
             <GradientText
               colors={['#4f2cfc', '#ec8ed3', '#4f2cfc', '#ec8ed3', '#4f2cfc']}
-              animationSpeed={3}
+              animationSpeed={5}
               showBorder={false}
               className='custom-class'
             >
@@ -102,23 +104,41 @@ const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
             </GradientText>
           </Logo>
           <NavbarContent>
-            <Menu>
-              <MenuItem onClick={() => handleScrollMove('profile')}>
+            <Menu scrolled={scrolled}>
+              <MenuItem
+                onClick={() => handleScrollMove('profile')}
+                scrolled={scrolled}
+              >
                 프로필
               </MenuItem>
-              <MenuItem onClick={() => handleScrollMove('skills')}>
+              <MenuItem
+                onClick={() => handleScrollMove('skills')}
+                scrolled={scrolled}
+              >
                 스킬
               </MenuItem>
-              <MenuItem onClick={() => handleScrollMove('archiving')}>
+              <MenuItem
+                onClick={() => handleScrollMove('archiving')}
+                scrolled={scrolled}
+              >
                 아카이빙
               </MenuItem>
-              <MenuItem onClick={() => handleScrollMove('project')}>
+              <MenuItem
+                onClick={() => handleScrollMove('project')}
+                scrolled={scrolled}
+              >
                 프로젝트
               </MenuItem>
-              <MenuItem onClick={() => handleScrollMove('awards')}>
+              <MenuItem
+                onClick={() => handleScrollMove('awards')}
+                scrolled={scrolled}
+              >
                 수상 내역
               </MenuItem>
-              <MenuItem onClick={() => handleScrollMove('license')}>
+              <MenuItem
+                onClick={() => handleScrollMove('license')}
+                scrolled={scrolled}
+              >
                 자격증
               </MenuItem>
             </Menu>
