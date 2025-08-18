@@ -1,0 +1,22 @@
+.text-cursor-container {
+  position: fixed; /* 화면 전체에 고정 */
+  top: 0;
+  left: 0;
+  width: 100vw; /* viewport 기준 */
+  height: 100vh;
+  pointer-events: none; /* 마우스 이벤트 통과 */
+  z-index: 9999; /* 모든 UI 위에 */
+}
+
+.text-cursor-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.text-cursor-item {
+  position: absolute;
+  user-select: none;
+  white-space: nowrap;
+  font-size: 1.875rem;
+}
