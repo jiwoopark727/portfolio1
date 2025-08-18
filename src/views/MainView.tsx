@@ -8,7 +8,7 @@ import Introduction from '../components/Section/Introduction';
 import Awards from '../components/Section/Awards';
 import License from '../components/Section/License';
 import { SectionRefs } from '../types/types.ts';
-import TextCursor from '../styles/TextCursor/TextCursor.tsx';
+// import TextCursor from '../styles/TextCursor/TextCursor.tsx';
 
 const MainViewContainer = styled.div`
   height: auto;
@@ -23,7 +23,7 @@ const MainView = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
         <Banner />
       </div>
 
-      <TextCursor
+      {/* <TextCursor
         text='🦋'
         delay={0.01}
         spacing={80}
@@ -32,7 +32,7 @@ const MainView = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
         exitDuration={0.1}
         removalInterval={20}
         maxPoints={7}
-      />
+      /> */}
 
       <Introduction />
 
