@@ -25,13 +25,13 @@ interface TrailItem {
 
 const TextCursor: React.FC<TextCursorProps> = ({
   text = '⚛️',
-  delay = 0.01,
-  spacing = 100,
+  delay = 0.001,
+  spacing = 70,
   followMouseDirection = true,
   randomFloat = true,
   exitDuration = 0.5,
   removalInterval = 30,
-  maxPoints = 5,
+  maxPoints = 7,
 }) => {
   const [trail, setTrail] = useState<TrailItem[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -94,13 +94,6 @@ const TextCursor: React.FC<TextCursorProps> = ({
     });
     lastMoveTimeRef.current = Date.now();
   };
-
-  // useEffect(() => {
-  //   const container = containerRef.current;
-  //   if (!container) return;
-  //   container.addEventListener('mousemove', handleMouseMove);
-  //   return () => container.removeEventListener('mousemove', handleMouseMove);
-  // }, []);
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);

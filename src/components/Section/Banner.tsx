@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import bannerBg from '../../assets/images/banner_bg.jpg';
 import ArrowDown from '../Styled/ArrowDown';
 import TypeIt from 'typeit-react';
+import SplitText from '../../styles/SplitText/SplitText';
 
 const BannerWrapper = styled.div`
   height: 100vh;
@@ -61,6 +62,9 @@ const BannerText = styled.div`
     padding-bottom: 15px;
   }
 
+  .IntroBox {
+    height: 8vh;
+  }
   @keyframes showText {
     0% {
       visibility: hidden;
@@ -80,50 +84,71 @@ const Banner = () => {
     });
   };
 
+  const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
   return (
     <BannerWrapper>
       <BannerContainer>
         <BannerText>
           <h1 className='name'>&lt; 박지우 /&gt;</h1>
-          <h2 className='title'>웹 개발자 포트폴리오</h2>
+          <h2 className='title'>
+            {' '}
+            <SplitText
+              text='웹 개발자 포트폴리오'
+              className='name'
+              delay={100}
+              duration={1}
+              ease='power3.out'
+              splitType='chars'
+              from={{ opacity: 0, y: 80 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin='-100px'
+              textAlign='center'
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
+          </h2>
           {/* 구분선 */}
           <hr className='contour' />
-          <h3 className='Introduction'>
-            <TypeIt
-              options={{
-                speed: 100,
-                startDelay: 1700,
-                waitUntilVisible: true,
-                cursor: false,
-              }}
-            >
-              안녕하세요.
-            </TypeIt>
-          </h3>
-          <h3 className='Introduction'>
-            <TypeIt
-              options={{
-                speed: 110,
-                startDelay: 2600,
-                waitUntilVisible: true,
-                cursor: false,
-              }}
-            >
-              감각적인 웹 개발자
-            </TypeIt>
-          </h3>
-          <h3 className='Introduction'>
-            <TypeIt
-              options={{
-                speed: 120,
-                startDelay: 4000,
-                waitUntilVisible: true,
-                cursor: false,
-              }}
-            >
-              박지우입니다.
-            </TypeIt>
-          </h3>
+          <div className=''>
+            <h3 className='Introduction'>
+              <TypeIt
+                options={{
+                  speed: 100,
+                  startDelay: 1700,
+                  waitUntilVisible: true,
+                  cursor: false,
+                }}
+              >
+                안녕하세요.
+              </TypeIt>
+            </h3>
+            <h3 className='Introduction'>
+              <TypeIt
+                options={{
+                  speed: 110,
+                  startDelay: 2600,
+                  waitUntilVisible: true,
+                  cursor: false,
+                }}
+              >
+                감각적인 웹 개발자
+              </TypeIt>
+            </h3>
+            <h3 className='Introduction'>
+              <TypeIt
+                options={{
+                  speed: 120,
+                  startDelay: 4000,
+                  waitUntilVisible: true,
+                  cursor: false,
+                }}
+              >
+                박지우입니다.
+              </TypeIt>
+            </h3>
+          </div>
         </BannerText>
 
         <ArrowDown onClick={handleArrowClick} />

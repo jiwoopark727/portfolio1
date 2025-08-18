@@ -4,7 +4,6 @@ import MainView from './views/MainView';
 import { useEffect, useRef } from 'react';
 import ScrollToTopButton from './components/Styled/ScrollToTopButton';
 import GlobalStyle from './styles/GlobalStyle.tsx';
-import TextCursor from './styles/TextCursor.tsx';
 
 function App() {
   useEffect(() => {
@@ -27,17 +26,6 @@ function App() {
   return (
     <>
       <GlobalStyle />
-
-      <TextCursor
-        text='👻'
-        delay={0.01}
-        spacing={80}
-        followMouseDirection={true}
-        randomFloat={true}
-        exitDuration={0.3}
-        removalInterval={20}
-        maxPoints={10}
-      />
 
       {/* 헤더 */}
       <Navbar sectionRefs={sectionRefs} />
