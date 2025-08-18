@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 import { SectionRefs } from '../../types/types.ts';
-import GradientText from '../../styles/GradientText.tsx';
+import GradientText from '../../styles/GradientText/GradientText.tsx';
 
 const NavbarWrapper = styled.div<{ scrolled: boolean }>`
   height: 55px;
@@ -98,7 +98,7 @@ const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
               showBorder={false}
               className='custom-class'
             >
-              PJW
+              Park Ji Woo
             </GradientText>
           </Logo>
           <NavbarContent>
