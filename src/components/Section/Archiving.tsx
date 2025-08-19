@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { keyframes } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
+import SplashCursor from '../../styles/SplashCursor/SplashCursor';
 
 const fadeIn = keyframes`
   0% {
@@ -167,10 +168,12 @@ const InnerContent = styled.div<{ bg_logo: string }>`
 const Archiving = () => {
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        setActive(entry.isIntersecting);
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
@@ -199,6 +202,8 @@ const Archiving = () => {
 
   return (
     <ArchivingWrapper>
+      {/* 아카이빙 섹션 보일 때만 Mount */}
+      {active && <SplashCursor />}
       <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
         Archiving
       </div>

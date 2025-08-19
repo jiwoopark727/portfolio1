@@ -24,6 +24,9 @@ const slideDown = keyframes`
 
 const AboutMeWrapper = styled.div`
   background-color: #f9fafb;
+  position: relative;
+  height: 750px;
+  overflow: hidden;
   padding-top: 28vh;
   padding-bottom: 150px;
 
@@ -124,78 +127,83 @@ const AboutMe = () => {
     };
   }, []);
   return (
-    <AboutMeWrapper>
-      <div ref={containerRef} className={isVisible ? 'title visible' : 'title'}>
-        Profile
-      </div>
-      <AboutMeContainer
-        ref={containerRef}
-        className={isVisible ? 'visible' : ''}
-      >
-        {/* 이름 */}
-        <AboutMeBox>
-          <ItemIcon>
-            <FontAwesomeIcon icon={faUser} />
-          </ItemIcon>
-          <ItemText>
-            <span className='subject'>이름</span>
-            <span className='content'>박지우(朴志祐)</span>
-          </ItemText>
-        </AboutMeBox>
-        {/* 생년월일 */}
-        <AboutMeBox>
-          <ItemIcon>
-            <FontAwesomeIcon icon={faCalendar} />
-          </ItemIcon>
-          <ItemText>
-            <span className='subject'>생년월일</span>
-            <span className='content'>1999.07.27</span>
-          </ItemText>
-        </AboutMeBox>
-        {/* 위치 */}
-        <AboutMeBox>
-          <ItemIcon>
-            <FontAwesomeIcon icon={faLocationDot} />
-          </ItemIcon>
-          <ItemText>
-            <span className='subject'>위치</span>
-            <span className='content'>경기도 부천시</span>
-          </ItemText>
-        </AboutMeBox>
-        {/* 연락처 */}
-        <AboutMeBox>
-          <ItemIcon>
-            <FontAwesomeIcon icon={faMobile} />
-          </ItemIcon>
-          <ItemText>
-            <span className='subject'>연락처</span>
-            <span className='content'>010-8646-1362</span>
-          </ItemText>
-        </AboutMeBox>
-        {/* 이메일 */}
-        <AboutMeBox>
-          <ItemIcon>
-            <FontAwesomeIcon icon={faEnvelope} />
-          </ItemIcon>
-          <ItemText>
-            <span className='subject'>이메일</span>
-            <span className='content'>jiwoo727@naver.com</span>
-          </ItemText>
-        </AboutMeBox>
-        {/* 학력 */}
-        <AboutMeBox>
-          <ItemIcon>
-            <FontAwesomeIcon icon={faPencil} />
-          </ItemIcon>
-          <ItemText>
-            <span className='subject'>학력</span>
-            <span className='content'>
-              순천향대학교(컴퓨터소프트웨어공학과(SW융합학부))
-            </span>
-          </ItemText>
-        </AboutMeBox>
-      </AboutMeContainer>
-    </AboutMeWrapper>
+    <>
+      <AboutMeWrapper>
+        <div
+          ref={containerRef}
+          className={isVisible ? 'title visible' : 'title'}
+        >
+          Profile
+        </div>
+        <AboutMeContainer
+          ref={containerRef}
+          className={isVisible ? 'visible' : ''}
+        >
+          {/* 이름 */}
+          <AboutMeBox>
+            <ItemIcon>
+              <FontAwesomeIcon icon={faUser} />
+            </ItemIcon>
+            <ItemText>
+              <span className='subject'>이름</span>
+              <span className='content'>박지우(朴志祐)</span>
+            </ItemText>
+          </AboutMeBox>
+          {/* 생년월일 */}
+          <AboutMeBox>
+            <ItemIcon>
+              <FontAwesomeIcon icon={faCalendar} />
+            </ItemIcon>
+            <ItemText>
+              <span className='subject'>생년월일</span>
+              <span className='content'>1999.07.27</span>
+            </ItemText>
+          </AboutMeBox>
+          {/* 위치 */}
+          <AboutMeBox>
+            <ItemIcon>
+              <FontAwesomeIcon icon={faLocationDot} />
+            </ItemIcon>
+            <ItemText>
+              <span className='subject'>위치</span>
+              <span className='content'>경기도 부천시</span>
+            </ItemText>
+          </AboutMeBox>
+          {/* 연락처 */}
+          <AboutMeBox>
+            <ItemIcon>
+              <FontAwesomeIcon icon={faMobile} />
+            </ItemIcon>
+            <ItemText>
+              <span className='subject'>연락처</span>
+              <span className='content'>010-8646-1362</span>
+            </ItemText>
+          </AboutMeBox>
+          {/* 이메일 */}
+          <AboutMeBox>
+            <ItemIcon>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </ItemIcon>
+            <ItemText>
+              <span className='subject'>이메일</span>
+              <span className='content'>jiwoo727@naver.com</span>
+            </ItemText>
+          </AboutMeBox>
+          {/* 학력 */}
+          <AboutMeBox>
+            <ItemIcon>
+              <FontAwesomeIcon icon={faPencil} />
+            </ItemIcon>
+            <ItemText>
+              <span className='subject'>학력</span>
+              <span className='content'>
+                순천향대학교(컴퓨터소프트웨어공학과(SW융합학부))
+              </span>
+            </ItemText>
+          </AboutMeBox>
+        </AboutMeContainer>
+      </AboutMeWrapper>
+    </>
   );
 };
 export default AboutMe;

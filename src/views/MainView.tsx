@@ -8,6 +8,7 @@ import Introduction from '../components/Section/Introduction';
 import Awards from '../components/Section/Awards';
 import License from '../components/Section/License';
 import { SectionRefs } from '../types/types.ts';
+
 // import TextCursor from '../styles/TextCursor/TextCursor.tsx';
 
 const MainViewContainer = styled.div`
@@ -39,18 +40,23 @@ const MainView = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
       <div ref={sectionRefs.profile}>
         <Profile />
       </div>
+
       <div ref={sectionRefs.skills}>
         <Skills />
       </div>
+
       <div ref={sectionRefs.archiving}>
         <Archiving />
       </div>
+
       <div ref={sectionRefs.project}>
         <Project />
       </div>
+
       <div ref={sectionRefs.awards}>
         <Awards />
       </div>
+
       <div ref={sectionRefs.license}>
         <License />
       </div>

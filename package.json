@@ -17,7 +17,10 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@react-three/drei": "^10.7.3",
+    "@react-three/fiber": "^9.3.0",
     "gsap": "^3.13.0",
+    "maath": "^0.10.8",
     "matter-js": "^0.20.0",
     "motion": "^12.23.12",
     "ogl": "^1.0.11",
@@ -27,6 +30,7 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.3.0",
     "rehype-raw": "^7.0.0",
+    "three": "^0.179.1",
     "typeit-react": "^2.7.8"
   },
   "devDependencies": {

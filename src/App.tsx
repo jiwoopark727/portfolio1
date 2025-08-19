@@ -26,16 +26,13 @@ function App() {
   return (
     <>
       <GlobalStyle />
-
       {/* 헤더 */}
       <Navbar sectionRefs={sectionRefs} />
-
       {/* 메인 콘텐츠 */}
       <MainView sectionRefs={sectionRefs} />
 
       {/* 푸터 */}
       <Footer />
-
       <ScrollToTopButton />
     </>
   );
