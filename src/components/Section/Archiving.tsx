@@ -173,12 +173,30 @@ const Archiving = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setActive(entry.isIntersecting);
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
       },
       { threshold: 0.9 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setActive(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
     );
 
     if (containerRef.current) {
