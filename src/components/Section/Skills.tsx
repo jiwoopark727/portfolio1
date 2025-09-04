@@ -49,7 +49,7 @@ const SkillsContainer = styled.div`
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   row-gap: 10px;
-  max-width: 980px;
+  max-width: 1200px;
   margin: 0 auto;
   align-items: center;
   height: 380px;
@@ -120,10 +120,11 @@ const Skills = () => {
         <SkillsBox>
           <span className='subject'>프로그래밍 언어</span>
           <span className='content'>
-            <img src='https://img.shields.io/badge/HTML-white.svg?style=for-the-badge&logo=html5&logoColor=E34F26' />
             <img src='https://img.shields.io/badge/JavaScript-white.svg?style=for-the-badge&logo=javascript&logoColor=F7DF1E' />
             <img src='https://img.shields.io/badge/React-white.svg?style=for-the-badge&logo=react&logoColor=61DAFB' />
             <img src='https://img.shields.io/badge/TypeScript-white.svg?style=for-the-badge&logo=typescript&logoColor=61DAFB' />
+            <img src='https://img.shields.io/badge/NextJS-white.svg?style=for-the-badge&logo=next.js&logoColor=000' />
+            <img src='https://img.shields.io/badge/React Native-white.svg?style=for-the-badge&logo=rn&logoColor=E34F26' />
           </span>
         </SkillsBox>
         <SkillsBox>
@@ -137,7 +138,7 @@ const Skills = () => {
         <SkillsBox>
           <span className='subject'>상태 관리</span>
           <span className='content'>
-            {/* <img src='https://img.shields.io/badge/Recoil-white.svg?style=for-the-badge&logo=recoil&logoColor=3578E5' /> */}
+            <img src='https://img.shields.io/badge/Recoil-white.svg?style=for-the-badge&logo=recoil&logoColor=3578E5' />
             <img src='https://img.shields.io/badge/Zustand-white.svg?style=for-the-badge&logo=zustand&logoColor=1572B6' />
             <img src='https://img.shields.io/badge/Redux-white.svg?style=for-the-badge&logo=redux&logoColor=764ABC' />
             <img src='https://img.shields.io/badge/React query-white.svg?style=for-the-badge&logo=reactquery&logoColor=764ABC' />
