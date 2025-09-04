@@ -23,6 +23,8 @@ import Portfolio1ReadmeModal from '../Modal/readme/Portfolio1ReadmeModal.tsx';
 import MovieGalleryCarouselModal from '../Modal/carousel/MovieGalleryCarouselModal.tsx';
 import MoodifyCarouselModal from '../Modal/carousel/MoodifyCarouselModal.tsx';
 import MoodifyReadmeModal from '../Modal/readme/MoodifyReadmeModal.tsx';
+import NBHReadmeModal from '../Modal/readme/NBHReadmeModal.tsx';
+import NBHCarouselModal from '../Modal/carousel/NBHCarouselModal.tsx';
 
 const fadeIn = keyframes`
   0% {
@@ -46,7 +48,7 @@ const slideDown = keyframes`
 
 const ProjectWrapper = styled.div`
   background-color: #fff;
-  padding-top: 17vh;
+  padding-top: 12vh;
   padding-bottom: 15vh;
 
   .title {
@@ -440,6 +442,12 @@ const Project = () => {
   const openMoodifyGH = () => {
     window.open('https://github.com/jiwoopark727/moodify', '_blank');
   };
+  const openNBH = () => {
+    window.open('https://naeng-bu-hae.vercel.app/', '_blank');
+  };
+  const openNBHGH = () => {
+    window.open('https://github.com/jiwoopark727/naeng-bu-hae', '_blank');
+  };
 
   // 리드미 열고 닫는 state변수와 handle 함수
   const [jobNestReadmeOpen, setJobNestReadmeOpen] = useState(false);
@@ -453,6 +461,7 @@ const Project = () => {
   const [portfolio1ReadmeOpen, setPortfolio1ReadmeOpen] = useState(false);
   // const [movieGalleryReadmeOpen, setMovieGalleryReadmeOpen] = useState(false);
   const [moodifyReadmeOpen, setMoodifyReadmeOpen] = useState(false);
+  const [NBHReadmeOpen, setNBHReadmeOpen] = useState(false);
 
   const openJobNestReadme = () => {
     setJobNestReadmeOpen(true);
@@ -481,6 +490,9 @@ const Project = () => {
   const openMoodifyReadme = () => {
     setMoodifyReadmeOpen(true);
   };
+  const openNBHReadme = () => {
+    setNBHReadmeOpen(true);
+  };
 
   // 이미지 버튼 캐러셀 슬라이드 부분
   const [isMemoryBoardCarouselOpen, setIsMemoryBoardCarouselOpen] =
@@ -498,6 +510,7 @@ const Project = () => {
   const [isMovieGalleryCarouselOpen, setIsMovieGalleryCarouselOpen] =
     useState(false);
   const [isMoodifyCarouselOpen, setIsMoodifyCarouselOpen] = useState(false);
+  const [isNBHCarouselOpen, setIsNBHCarouselOpen] = useState(false);
 
   const MemoryBoarddImages = [
     '/assets/images/portfolio_img/memory_board/home.png',
@@ -597,6 +610,17 @@ const Project = () => {
     '/assets/images/portfolio_img/moodify/moodify_timeline.png',
     '/assets/images/portfolio_img/moodify/moodify_install.png',
   ];
+  const NBHImages = [
+    '/assets/images/portfolio_img/nbh/nbh_main.png',
+    '/assets/images/portfolio_img/nbh/nbh_ingredient.png',
+    '/assets/images/portfolio_img/nbh/nbh_recipelist.png',
+    '/assets/images/portfolio_img/nbh/nbh_recipedetail.png',
+    '/assets/images/portfolio_img/nbh/nbh_recipedetail2.png',
+    '/assets/images/portfolio_img/nbh/nbh_mart.png',
+    '/assets/images/portfolio_img/nbh/nbh_mart_search.png',
+    '/assets/images/portfolio_img/nbh/nbh_mart_cart.png',
+    '/assets/images/portfolio_img/nbh/nbh_mart_buy.png',
+  ];
 
   // 화면에 등장 시 애니메이션 동작 부분(IntersectionObserver)
   const containerRef = useRef(null);
@@ -655,6 +679,71 @@ const Project = () => {
           {showOnlyMainProject ? (
             // 주요 프로젝트만
             <>
+              {/* 11(냉장고를 부탁해-NBH) */}
+              <ProjectBox>
+                <div className='p_title'>
+                  냉장고 속 재료 기반 레시피 추천 플랫폼 - 냉장고를
+                  부탁해(N.B.H.)
+                </div>
+                <div className='date'>2025.7 - 2025.08 (2人 팀 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  냉장고 속 재료들로 만들 수 있는 레시피를 추천해주는 하이브리드
+                  웹 애플리케이션
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      재료 선택 기능: 체크박스/버튼 기반으로 원하는 재료를 선택
+                      , 선택한 재료는 localStorage에 저장되어 유지
+                    </li>
+                    <li>
+                      레시피 추천: 선택한 재료들을 조합하여 API 호출, 해당
+                      재료로 만들 수 있는 레시피 목록 제공
+                    </li>
+                    <li>
+                      레시피 상세 페이지: 레시피명, 이미지, 필요한 재료, 조리
+                      과정 확인 가능, 관련 YouTube 영상/링크 임베딩
+                    </li>
+                    <li>
+                      UX/UI 최적화: 직관적인 카테고리별 재료 선택 UI 반응형 UI
+                      설계로 모바일 브라우저에서도 원활하게 사용 가능
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openNBH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://naeng-bu-hae.vercel.app/ (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openNBHGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/naeng-bu-hae (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  Next.js 15, React, TypeScript, Tailwind CSS, Vercel, next-pwa
+                </div>
+                <div className='ref'>
+                  <div className='readme' onClick={openNBHReadme}>
+                    <FontAwesomeIcon
+                      icon={faReadme}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    README
+                  </div>
+                  <div
+                    className='image'
+                    onClick={() => setIsNBHCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
+                </div>
+              </ProjectBox>
               {/* 10(무디파이-Moodify) */}
               <ProjectBox>
                 <div className='p_title'>
@@ -1720,9 +1809,19 @@ const Project = () => {
           onClose={() => setMoodifyReadmeOpen(false)}
           readmeUrl='https://raw.githubusercontent.com/jiwoopark727/moodify/main/README.md'
         />
+        <NBHReadmeModal
+          isOpen={NBHReadmeOpen}
+          onClose={() => setNBHReadmeOpen(false)}
+          readmeUrl='https://raw.githubusercontent.com/jiwoopark727/naeng-bu-hae/main/README.md'
+        />
       </>
       {/* 이미지 캐러셀 */}
       <>
+        <NBHCarouselModal
+          images={NBHImages}
+          isOpen={isNBHCarouselOpen}
+          onClose={() => setIsNBHCarouselOpen(false)}
+        />
         <MoodifyCarouselModal
           images={MoodifyImages}
           isOpen={isMoodifyCarouselOpen}

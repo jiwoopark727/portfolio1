@@ -30,6 +30,15 @@ const ModalContent = styled.div`
   padding: 50px;
   overflow-y: scroll;
   font-size: 15px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  overscroll-behavior: contain;
 `;
 
 const MemoryBoardReadmeModal: React.FC<ReadmeModalProps> = ({
