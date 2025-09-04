@@ -32,6 +32,9 @@ const NavbarInner = styled.div`
 
 const Logo = styled.div`
   font-size: 26px;
+  /* background-color: #d9d9d9;
+  padding: 0.4rem 0.7rem 0.4rem 0.7rem; */
+  /* border-radius: 10px; */
   font-weight: extrabold;
   cursor: pointer;
 `;
@@ -61,8 +64,10 @@ const MenuItem = styled.li<{ scrolled: boolean }>`
   border-radius: 8px;
   z-index: 100;
   &:hover {
-    background-color: #565656;
-    background-color: ${(props) => (props.scrolled ? '#d6d6d6' : 'none')};
+    background-color: #fff;
+    color: #000;
+    background-color: ${(props) => (props.scrolled ? '#000' : 'none')};
+    color: ${(props) => (props.scrolled ? '#fff' : 'none')};
   }
 `;
 

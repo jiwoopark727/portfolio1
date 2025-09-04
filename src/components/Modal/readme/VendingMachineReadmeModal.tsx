@@ -29,6 +29,15 @@ const ModalContent = styled.div`
   max-height: 90vh;
   padding: 50px;
   font-size: 15px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  overscroll-behavior: contain;
 `;
 
 const VendingMachineReadmeModal: React.FC<ReadmeModalProps> = ({

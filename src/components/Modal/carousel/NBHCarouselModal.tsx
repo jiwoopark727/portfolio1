@@ -26,7 +26,7 @@ const ModalContent = styled.div`
   padding: 35px;
   border-radius: 20px;
   width: 500px;
-  height: 750px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ const ModalContent = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  height: 600px;
+  height: 650px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,14 +62,14 @@ const ButtonGroup = styled.div`
 
   span {
     display: flex;
+    align-items: center;
     position: relative;
     top: 4px;
-    align-items: center;
     font-size: 15px;
   }
 `;
 
-export const MoodifyCarouselModal: React.FC<Props> = ({
+export const NBHCarouselModal: React.FC<Props> = ({
   images,
   initialIndex = 0,
   isOpen,
@@ -109,4 +109,4 @@ export const MoodifyCarouselModal: React.FC<Props> = ({
   );
 };
 
-export default MoodifyCarouselModal;
+export default NBHCarouselModal;

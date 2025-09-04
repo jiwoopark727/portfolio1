@@ -25,11 +25,11 @@ const ModalWrapper = styled.div`
 const ModalContent = styled.div`
   background: #fafafa;
   border-radius: 20px;
-  max-width: 1000px;
+  width: 1100px;
   max-height: 90vh;
   padding: 50px;
-  overflow-y: scroll;
   font-size: 15px;
+  overflow-y: scroll;
 
   &::-webkit-scrollbar {
     display: none;
@@ -41,7 +41,7 @@ const ModalContent = styled.div`
   overscroll-behavior: contain;
 `;
 
-const JamCinemaReadmeModal: React.FC<ReadmeModalProps> = ({
+const NBHReadmeModal: React.FC<ReadmeModalProps> = ({
   isOpen,
   onClose,
   readmeUrl,
@@ -66,4 +66,4 @@ const JamCinemaReadmeModal: React.FC<ReadmeModalProps> = ({
   );
 };
 
-export default JamCinemaReadmeModal;
+export default NBHReadmeModal;
