@@ -1136,6 +1136,71 @@ const Project = () => {
           ) : (
             // 전체 프로젝트
             <>
+              {/* 12(냉장고를 부탁해-NBH) */}
+              <ProjectBox>
+                <div className='p_title'>
+                  냉장고 속 재료 기반 레시피 추천 플랫폼 - 냉장고를
+                  부탁해(N.B.H.)
+                </div>
+                <div className='date'>2025.7 - 2025.08 (2人 팀 프로젝트)</div>
+                <hr className='contour' />
+                <div className='sub_title'>
+                  냉장고 속 재료들로 만들 수 있는 레시피를 추천해주는 하이브리드
+                  웹 애플리케이션
+                </div>
+                <div className='des'>
+                  <ul>
+                    <li>
+                      재료 선택 기능: 체크박스/버튼 기반으로 원하는 재료를 선택
+                      , 선택한 재료는 localStorage에 저장되어 유지
+                    </li>
+                    <li>
+                      레시피 추천: 선택한 재료들을 조합하여 API 호출, 해당
+                      재료로 만들 수 있는 레시피 목록 제공
+                    </li>
+                    <li>
+                      레시피 상세 페이지: 레시피명, 이미지, 필요한 재료, 조리
+                      과정 확인 가능, 관련 YouTube 영상/링크 임베딩
+                    </li>
+                    <li>
+                      UX/UI 최적화: 직관적인 카테고리별 재료 선택 UI 반응형 UI
+                      설계로 모바일 브라우저에서도 원활하게 사용 가능
+                    </li>
+                  </ul>
+                </div>
+                <div className='link' onClick={openNBH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://naeng-bu-hae.vercel.app/ (배포 사이트)
+                  </a>{' '}
+                </div>
+                <div className='link' onClick={openNBHGH}>
+                  <a target='_blank' rel='noopener noreferrer'>
+                    https://github.com/jiwoopark727/naeng-bu-hae (깃허브)
+                  </a>{' '}
+                </div>
+                <div className='stack'>
+                  Next.js 15, React, TypeScript, Tailwind CSS, Vercel, next-pwa
+                </div>
+                <div className='ref'>
+                  <div className='readme' onClick={openNBHReadme}>
+                    <FontAwesomeIcon
+                      icon={faReadme}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    README
+                  </div>
+                  <div
+                    className='image'
+                    onClick={() => setIsNBHCarouselOpen(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faImage}
+                      style={{ paddingRight: '5px' }}
+                    />
+                    이미지
+                  </div>
+                </div>
+              </ProjectBox>
               {/* 11(무디파이-Moodify) */}
               <ProjectBox>
                 <div className='p_title'>
